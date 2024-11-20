@@ -1,0 +1,19 @@
+{
+  "name": "sekolah-dasar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/style/input.css -o ./src/style/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "daisyui": "^4.12.14",
+    "tailwindcss": "^3.4.15"
+  },
+  "dependencies": {
+    "flowbite": "^2.5.2"
+  }
+}
