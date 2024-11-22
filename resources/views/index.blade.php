@@ -1,14 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Beranda</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test</title>
+        
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="/src/fontawesome/css/all.min.css" />
+
     @vite('resources/css/app.css')
 </head>
+
 <body>
-    <h1 class="text-red-600 bg-black">Halo semua</h1>
-    <button class="btn btn-secondary">Secondary</button>
-</body>
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-md">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-60 p-2 shadow">
+          <li><a>Beranda</a></li>
+          <li>
+            <details>
+              <summary>Tentang</summary>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Program</summary>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Penerimaan</summary>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Orang tua</summary>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a>Lokasi</a></li>
+        </ul>
+      </div>
+      <a class="text-xl"><img src="./assets/logo.png" alt="Logo"></a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li><a>Beranda</a></li>
+        <li>
+          <details>
+            <summary>Tentang</summary>
+            <ul class="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Program</summary>
+            <ul class="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Penerimaan</summary>
+            <ul class="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Orang tua</summary>
+            <ul class="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a>Lokasi</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end">
+      <a class="btn">Pesan kunjungan</a>
+    </div>
+  </div>
+  <!-- Navbar -->
+
+  </body>
 </html>
