@@ -1,116 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Test</title>
+        <title>SD ISLAM NURUL FIRDAUS</title>
+
+        {{-- font outfit --}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+        {{-- font titan one --}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
         
         <!-- fontawesome -->
         <link rel="stylesheet" href="/src/fontawesome/css/all.min.css" />
 
     @vite('resources/css/app.css')
-</head>
+  </head>
 
-<body>
-  <!-- Navbar -->
-  <div class="navbar bg-base-100 shadow-md">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-          </svg>
+  <body>
+    {{-- navbar --}}
+    @include('navbar')
+    {{-- navbar --}}
+
+    {{-- hero --}}
+    <div class="w-full carousel">
+      <div id="slide1" class="relative w-full carousel-item">
+        <img
+          src="/assets/image-01.png"
+          class="w-full" />
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide4" class="btn btn-circle">❮</a>
+          <a href="#slide2" class="btn btn-circle">❯</a>
         </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-60 p-2 shadow">
-          <li><a>Beranda</a></li>
-          <li>
-            <details>
-              <summary>Tentang</summary>
-              <ul class="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>Program</summary>
-              <ul class="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>Penerimaan</summary>
-              <ul class="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>Orang tua</summary>
-              <ul class="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </details>
-          </li>
-          <li><a>Lokasi</a></li>
-        </ul>
       </div>
-      <a class="text-xl"><img src="./assets/logo.png" alt="Logo"></a>
+      <div id="slide2" class="relative w-full carousel-item">
+        <img
+          src="/assets/image-02.png"
+          class="w-full" />
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" class="btn btn-circle">❮</a>
+          <a href="#slide3" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <div id="slide3" class="relative w-full carousel-item">
+        <img
+          src="/assets/image-03.png"
+          class="w-full" />
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" class="btn btn-circle">❮</a>
+          <a href="#slide4" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <div id="slide4" class="relative w-full carousel-item">
+        <img
+          src="/assets/image-04.png"
+          class="w-full" />
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide3" class="btn btn-circle">❮</a>
+          <a href="#slide1" class="btn btn-circle">❯</a>
+        </div>
+      </div>
     </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
-        <li><a>Beranda</a></li>
-        <li>
-          <details>
-            <summary>Tentang</summary>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <details>
-            <summary>Program</summary>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <details>
-            <summary>Penerimaan</summary>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <details>
-            <summary>Orang tua</summary>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a>Lokasi</a></li>
-      </ul>
-    </div>
-    <div class="navbar-end">
-      <a class="btn">Pesan kunjungan</a>
-    </div>
-  </div>
-  <!-- Navbar -->
-
+    {{-- hero --}}
   </body>
 </html>

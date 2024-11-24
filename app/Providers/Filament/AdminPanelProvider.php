@@ -33,8 +33,8 @@ class AdminPanelProvider extends PanelProvider
             ->profile()
             ->passwordReset()
             ->brandLogo(asset('assets/Logo.png'))
-            // ->darkModeBrandLogo('assets/Logo.png')
-            ->favicon(asset('assets/Logo.png'))
+            ->darkModeBrandLogo('assets/Logo_new.png')
+            // ->favicon(asset('assets/Logo.png'))
             ->brandName('SDI NUFIS')
             ->defaultThemeMode(ThemeMode::Light)
             ->colors([
@@ -49,7 +49,7 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
-                Widgets\TableWidget::class,
+                // Widgets\PieChartWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
