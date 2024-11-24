@@ -8,6 +8,10 @@ module.exports = {
     ],
     theme: {
         extend: {
+            container: {
+                center: true,
+                padding: "1rem",
+            },
             fontFamily: {
                 outfit: ["Outfit", "sans-serif"],
                 titanone: ["TitanOne", "sans-serif"],
@@ -26,6 +30,6 @@ module.exports = {
             },
         },
     },
-    plugins: [require("daisyui")],
+    plugins: [require("daisyui"), require("flowbite/plugin")],
 };
 

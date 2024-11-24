@@ -21,7 +21,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <div class="sticky top-0 z-[1] navbar bg-base-100">
+  <div class="sticky top-0 z-20 navbar bg-base-100">
     <div class="navbar-start">
       {{-- mobile --}}
       <div class="dropdown">
@@ -31,182 +31,182 @@
           </svg>
         </div>
         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-80 p-2 shadow font-semibold">
-          <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Beranda</a></li>
+          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Beranda</a></li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Profile</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Profile</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Visi dan Misi</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Tujuan</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Data Sekolah</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi dan Misi</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tujuan</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
                 <li>
                   <details>
-                    <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">SDM</summary>
+                    <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">SDM</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Info Pendidik</a></li>
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Info Tenaga Pendidik</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Tenaga Pendidik</a></li>
                     </ul>
                   </details>
                 </li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Komite Sekolah</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Komite Sekolah</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Program Sekolah</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Sekolah</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
                 <li>
                   <details>
-                    <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kegiatan</summary>
+                    <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Tahunan</a></li>
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Unggulan</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tahunan</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Unggulan</a></li>
                     </ul>
                   </details>
                 </li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Program Semester</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Ekskul</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Semester</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Ekskul</a></li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kurikulum</a></li>
+          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</a></li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kesiswaan</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kesiswaan</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-80 p-2 shadow">
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Tata Tertib Peserta Didik</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Program Kesiswaan</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Daftar Peserta Didik</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tata Tertib Peserta Didik</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Kesiswaan</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Daftar Peserta Didik</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Informasi</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Informasi</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-72 p-2 shadow">
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Fasilitas Sekolah</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Fasilitas Sekolah</a></li>
                 <li>
                   <details>
-                    <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Berita</summary>
+                    <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Berita</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kegiatan Luar Sekolah</a></li>
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kegiatan Terdekat Sekolah</a></li>
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Alumni</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Luar Sekolah</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Terdekat Sekolah</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Alumni</a></li>
                     </ul>
                   </details>
                 </li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Gallery</a></li>
+          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Gallery</a></li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">PPDB</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">PPDB</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Informasi</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Form Online</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Pengumuman</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Informasi</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Form Online</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Pengumuman</a></li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kontak Person</a></li>
+          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kontak Person</a></li>
         </ul>
       </div>
       {{-- mobile --}}
-      <a class="text-xl"><img src="./assets/logo_new.png" alt="Logo" width="150"></a>
+      <a class="lg:hidden"><img src="./assets/logo_new.png" alt="Logo" width="150"></a>
       {{-- desktop --}}
       <div class="hidden navbar-center lg:flex">
         <a class="text-xl"><img src="./assets/logo_new.png" alt="Logo" width="150"></a>
         <ul class="px-1 font-semibold menu menu-horizontal">
-          <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Beranda</a></li>
+          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Beranda</a></li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Profile</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Profile</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Visi dan Misi</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Tujuan</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Data Sekolah</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi dan Misi</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tujuan</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
                 <li>
                   <details>
-                    <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">SDM</summary>
+                    <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">SDM</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Info Pendidik</a></li>
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Info Tenaga Pendidik</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Tenaga Pendidik</a></li>
                     </ul>
                   </details>
                 </li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Komite Sekolah</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Komite Sekolah</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Program Sekolah</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Sekolah</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
                 <li>
                   <details>
-                    <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kegiatan</summary>
+                    <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Tahunan</a></li>
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Unggulan</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tahunan</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Unggulan</a></li>
                     </ul>
                   </details>
                 </li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Program Semester</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Ekskul</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Semester</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Ekskul</a></li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kurikulum</a></li>
+          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</a></li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kesiswaan</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kesiswaan</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-80 p-2 shadow">
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Tata Tertib Peserta Didik</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Program Kesiswaan</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Daftar Peserta Didik</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tata Tertib Peserta Didik</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Kesiswaan</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Daftar Peserta Didik</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Informasi</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Informasi</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-72 p-2 shadow">
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Fasilitas Sekolah</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Fasilitas Sekolah</a></li>
                 <li>
                   <details>
-                    <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">Berita</summary>
+                    <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Berita</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kegiatan Luar Sekolah</a></li>
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kegiatan Terdekat Sekolah</a></li>
-                      <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Alumni</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Luar Sekolah</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Terdekat Sekolah</a></li>
+                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Alumni</a></li>
                     </ul>
                   </details>
                 </li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Gallery</a></li>
+          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Gallery</a></li>
           <li>
             <details>
-              <summary class="font-outfit hover:bg-colorprimaryorange hover:text-white">PPDB</summary>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">PPDB</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Informasi</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Form Online</a></li>
-                <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Pengumuman</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Informasi</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Form Online</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Pengumuman</a></li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:bg-colorprimaryorange hover:text-white">Kontak Person</a></li>
+          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kontak Person</a></li>
         </ul>
       </div>
       {{-- desktop --}}
     </div>
     <div class="navbar-end">
-      <a class="btn font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700">Daftar Sekarang</a>
+      <a class="rounded-sm btn btn-sm font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 lg:btn-md">Daftar Sekarang</a>
     </div>
   </div>
   <!-- Navbar -->
