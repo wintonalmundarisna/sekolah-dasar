@@ -125,8 +125,7 @@
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Profile</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi dan Misi</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tujuan</a></li>
+                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi, Misi dan Tujuan</a></li>
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
                 <li>
                   <details>

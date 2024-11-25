@@ -139,7 +139,7 @@
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
             class="p-6 text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Kepala Sekolah</h1>
-        <div class="grid grid-cols-1 mt-4 lg:mt-8 md:grid-cols-2">
+        <div class="grid grid-cols-1 gap-5 mt-4 lg:mt-8 md:grid-cols-2">
           <div class="flex items-center justify-center">
             <img data-aos="fade-right"
             data-aos-delay="40"
@@ -158,7 +158,7 @@
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
             class="space-y-2 text-base font-normal leading-6 tracking-tight text-colorprimaryblack font-outfit">
-            <h1 class="pt-3 text-xl font-bold text-center lg:pt-0 text-colorprimarytosca font-outfit lg:text-left">SAMBUTAN KEPALA SEKOLAH <br>SD ISLAM NURUL FIRDAUS</h1>
+            <h1 class="mt-2 text-xl font-bold text-center text-colorprimarytosca font-outfit lg:text-left lg:mt-0">SAMBUTAN KEPALA SEKOLAH <br>SD ISLAM NURUL FIRDAUS</h1>
             <p class="font-bold text-colorprimaryorange">Syukron Hidayatullah, S.Pd.</p>
             <p>Bismillahirrohmanirrohiim…</p>
             <p class="font-bold"><i>Assalamu’alaikum warohmatullahi wabarokatuh</i></p>
@@ -203,7 +203,7 @@
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
             class="p-6 text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Selayang Pandang</h1>
-        <div class="grid grid-cols-1 mt-4 lg:mt-8 md:grid-cols-2 place-items-center">
+        <div class="grid grid-cols-1 gap-5 mt-4 lg:mt-8 md:grid-cols-2 place-items-center">
           <div data-aos="fade-right"
             data-aos-delay="40"
             data-aos-duration="500"
@@ -211,7 +211,7 @@
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
-            class="mb-3 space-y-2 text-base font-normal leading-7 tracking-tight text-colorprimaryblack font-outfit text-balance lg:mb-0">
+            class="space-y-2 text-base font-normal leading-7 tracking-tight text-colorprimaryblack font-outfit text-balance lg:mb-0">
             <p>
               SD Islam Nurul Firdaus merupakan salah satu lembaga pendidikan Tingkat Sekolah Dasar Islam yang berada di bawah naungan Dinas Pendidikan Kota Bekasi. Terletak di Komplek Puri Idaman Jl. Bintara Jaya Raya No. 354 Kel. Bintara Jaya Kec. Bekasi Barat Kota Bekasi. Berdiri sejak tahun 2010 dan telah menghasilkan lulusan berkarakter religius menggunakan kurikulum Diknas, Kurikulum Agama Islam, dan muatan lokal. Sekolah ini menanamkan nilai berbasis karakter dan kreativitas yaitu “Three Best Education; Best Character, Best Moeslem, Best Achievement”, sehingga sekolah ini menjadi pilihan yang tepat untuk  mempersiapkan generasi yang merindukan surga dan siap memimpin dunia sejak dini.
             </p>
