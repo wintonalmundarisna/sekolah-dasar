@@ -31,12 +31,12 @@
           </svg>
         </div>
         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-80 p-2 shadow font-semibold">
-          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Beranda</a></li>
+          <li><a href="/" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Beranda</a></li>
           <li>
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Profile</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi dan Misi</a></li>
+                <li><a href="/visi-misi-tujuan.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi dan Misi</a></li>
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tujuan</a></li>
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
                 <li>
@@ -120,12 +120,12 @@
       <div class="hidden navbar-center lg:flex">
         <a class="text-xl"><img src="./assets/logo_new.png" alt="Logo" width="150"></a>
         <ul class="px-1 font-semibold menu menu-horizontal">
-          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Beranda</a></li>
+          <li><a href="/" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Beranda</a></li>
           <li>
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Profile</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi, Misi dan Tujuan</a></li>
+                <li><a href="/visi-misi-tujuan.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi, Misi dan Tujuan</a></li>
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
                 <li>
                   <details>

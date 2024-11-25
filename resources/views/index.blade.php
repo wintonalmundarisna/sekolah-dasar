@@ -65,7 +65,7 @@
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
                 class="mt-5">
-              <a class="border-none rounded-sm btn btn-sm font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 lg:btn-md">Pesan Kunjungan</a>
+              <a class="border-none rounded-sm btn btn-sm font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 lg:btn-md">Profile Sekolah</a>
             </button>
           </div>
         </div>
