@@ -10,6 +10,11 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
+use Filament\Navigation\NavigationGroup;
+use App\Filament\Resources\GuruResource;
+use Filament\Navigation\NavigationItem;
+use Filament\Pages\Dashboard;
+use Filament\Navigation\NavigationBuilder;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -32,13 +37,13 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->profile()
             ->passwordReset()
+            ->darkModeBrandLogo(asset('assets/Logo_new.png'))
             ->brandLogo(asset('assets/Logo.png'))
-            ->darkModeBrandLogo('assets/Logo_new.png')
             // ->favicon(asset('assets/Logo.png'))
             ->brandName('SDI NUFIS')
             ->defaultThemeMode(ThemeMode::Light)
             ->colors([
-                'primary' => Color::Rose,
+                'primary' => Color::Cyan,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path(path: 'Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -49,7 +54,6 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
-                // Widgets\PieChartWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -65,5 +69,5 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
-    }
+        }
 }
