@@ -20,3 +20,19 @@ Route::get('/', function () {
 Route::get('/visi-misi-tujuan.blade.php', function () {
     return view('visi-misi-tujuan');
 });
+
+Route::get('/data-sekolah.blade.php', function () {
+    return view('data-sekolah');
+});
+
+Route::get('/info-pendidik.blade.php', function () {
+    return view('info-pendidik');
+});
+
+Route::get('/info-tenaga-pendidik.blade.php', function () {
+    return view('info-tenaga-pendidik');
+});
+
+Route::get('/komite-sekolah.blade.php', function () {
+    return view('komite-sekolah');
+});

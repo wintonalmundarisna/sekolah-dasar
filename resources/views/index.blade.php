@@ -131,14 +131,32 @@
     {{-- sambutan kepsek --}}
     <section class="mt-6 !overflow-hidden lg:mt-10">
       <div class="container">
-        <h1 data-aos="fade-up"
-            data-aos-delay="30"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center" 
-            class="p-6 text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Kepala Sekolah</h1>
+        <div class="flex items-center justify-center gap-2 py-4">
+          <img data-aos="fade-right"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              src="/assets/illustrasi03.png" alt="illustrasi" class="w-6">
+          <h1 data-aos="fade-up"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Kepala Sekolah</h1>
+          <img data-aos="fade-left"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
+        </div>
         <div class="grid grid-cols-1 gap-5 mt-4 lg:mt-8 md:grid-cols-2">
           <div class="flex items-center justify-center">
             <img data-aos="fade-right"
@@ -148,7 +166,8 @@
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
-            src="/assets/foto-kepsek.png" alt="foto-kepsek" class="w-1/2 rounded-lg">
+            src="/assets/image-bg.png
+            " alt="foto-kepsek" class="w-1/2 rounded-lg">
           </div>
           <div data-aos="fade-left"
             data-aos-delay="50"
@@ -159,12 +178,11 @@
             data-aos-anchor-placement="top-center" 
             class="space-y-2 text-base font-normal leading-6 tracking-tight text-colorprimaryblack font-outfit">
             <h1 class="mt-2 text-xl font-bold text-center text-colorprimarytosca font-outfit lg:text-left lg:mt-0">SAMBUTAN KEPALA SEKOLAH <br>SD ISLAM NURUL FIRDAUS</h1>
-            <p class="font-bold text-colorprimaryorange">Syukron Hidayatullah, S.Pd.</p>
+            <p class="font-bold text-colorsecondyellowtua">Syukron Hidayatullah, S.Pd.</p>
             <p>Bismillahirrohmanirrohiim…</p>
             <p class="font-bold"><i>Assalamu’alaikum warohmatullahi wabarokatuh</i></p>
             <p>Selamat datang di Website sekolah kami SD Islam Nurul Firdaus yang saya tujukan untuk seluruh unsur pimpinan, guru, karyawan dan siswa serta khalayak umum.</p>
-            <p>Alhamdulillahi rabbil ‘alamiin, puji syukur marilah kita panjatkan kepada Tuhan Yang Maha Esa yang telah memberikan limpahan rahmat, nikmat, dan karuniaNya sehingga saya mampu menuliskan kata sambutan Kepala Sekolah dalam rangka penerbitan website sekolah SD Islam Nurul Firdaus sebagai sarana informasi dan komunikasi sekolah ini melalui media online.</p>
-            <p>Di era global dan pesatnya Teknologi Informasi saat ini, tidak dipungkiri bahwa keberadaan sebuah websi...</p>
+            <p>Alhamdulillahi rabbil ‘alamiin, puji syukur marilah kita panjatkan kepada Tuhan Yang Maha Esa yang telah memberikan limpahan rahmat, nikmat, dan karuniaNya sehingga saya mampu menuliskan kata sambutan Kepala Sekolah dalam rangka penerbitan webs...</p>
             <a onclick="my_modal_3.showModal()" class="border-none rounded-sm btn btn-sm font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 lg:btn-md">Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -195,14 +213,32 @@
     {{-- selayang pandang --}}
     <section class="mt-6 lg:mt-10 !overflow-hidden">
       <div class="container">
-        <h1 data-aos="fade-up"
-            data-aos-delay="30"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center" 
-            class="p-6 text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Selayang Pandang</h1>
+        <div class="flex items-center justify-center gap-2 py-4">
+          <img data-aos="fade-right"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              src="/assets/illustrasi03.png" alt="illustrasi" class="w-6">
+          <h1 data-aos="fade-up"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Selayang Pandang</h1>
+          <img data-aos="fade-left"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
+        </div>
         <div class="grid grid-cols-1 gap-5 mt-4 lg:mt-8 md:grid-cols-2 place-items-center">
           <div data-aos="fade-right"
             data-aos-delay="40"
@@ -234,14 +270,32 @@
     {{-- maps --}}
     <section class="mt-6 lg:mt-10 !overflow-hidden">
       <div class="container">
-        <h1 data-aos="fade-up"
-            data-aos-delay="30"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center" 
-            class="p-6 text-2xl font-bold text-center text-colorprimarytosca font-outfit">Lokasi</h1>
+        <div class="flex items-center justify-center gap-2 py-4">
+          <img data-aos="fade-right"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              src="/assets/illustrasi03.png" alt="illustrasi" class="w-6">
+          <h1 data-aos="fade-up"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Lokasi</h1>
+          <img data-aos="fade-left"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
+        </div>
           <div class="grid grid-cols-1 mt-6">
             <div data-aos="fade-up"
             data-aos-delay="40"
@@ -259,48 +313,7 @@
     {{-- maps --}}
 
     {{-- footer --}}
-      <section class="bg-base-200 mt-14">
-        <div class="container py-8">
-          <footer class="grid grid-cols-1 footer text-base-content md:grid-cols-4">
-            <aside>
-              <img src="./assets/logo_new.png" alt="logo-sekolah">
-            </aside>
-            <nav>
-                <h6 class="footer-title font-outfit">Akses Cepat</h6>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Profile</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Program Sekolah</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">PPDB</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Informasi</a>
-              </nav>
-              <nav>
-                <i class="text-lg fa-solid fa-map-location-dot text-colorprimaryblack"></i><a class="link link-hover font-outfit">Komplek Puri Idaman, Jl. Bintara Jaya Raya No. 354 Rt 005/Rw 003, Kel. Bintara Jaya, Kec. Bekasi Barat 17136. Telp : 021-8694 2175</a>
-                <a class="link link-hover font-outfit"><i class="text-lg fa-brands fa-whatsapp text-colorprimaryblack"></i> 0896-3741-1029</a>
-                <a class="link link-hover font-outfit"><i class="text-lg fa-regular fa-envelope text-colorprimaryblack"></i> nurulfirdaus@gmail.com</a>
-              </nav>
-              <nav>
-                <h6 class="footer-title">Ikuti Kami</h6>
-                <div class="flex gap-3">
-                  <a href="#">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimaryorange">
-                      <i class="text-white fa-brands fa-youtube"></i>
-                    </button>
-                  </a>
-                  <a href="#">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondyellowtua">
-                      <i class="text-white fa-brands fa-tiktok"></i>
-                    </button>
-                  </a>
-                  <a href="#">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimarytosca">
-                      <i class="text-white fa-brands fa-instagram"></i>
-                    </button>
-                  </a>
-                </div>
-              </nav>
-          </footer>
-          <p class="mt-5 text-sm text-center text-colorprimaryblack font-outfit">© Islam Nurul Firdaus - 2024 All rights reserved</p>
-        </div>
-      </section>
+      @include('footer')
     {{-- footer --}}
 
     {{-- AOS --}}

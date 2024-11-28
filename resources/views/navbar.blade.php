@@ -36,19 +36,18 @@
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Profile</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a href="/visi-misi-tujuan.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi dan Misi</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tujuan</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
+                <li><a href="/visi-misi-tujuan.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi, Misi, dan Tujuan</a></li>
+                <li><a href="/data-sekolah.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
                 <li>
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">SDM</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Tenaga Pendidik</a></li>
+                      <li><a href="/info-pendidik.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
+                      <li><a href="info-tenaga-pendidik.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Tenaga Pendidik</a></li>
                     </ul>
                   </details>
                 </li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Komite Sekolah</a></li>
+                <li><a href="/komite-sekolah.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Komite Sekolah</a></li>
               </ul>
             </details>
           </li>
@@ -125,18 +124,18 @@
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Profile</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a href="/visi-misi-tujuan.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi, Misi dan Tujuan</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
+                <li><a href="/visi-misi-tujuan.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi, Misi, dan Tujuan</a></li>
+                <li><a href="/data-sekolah.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
                 <li>
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">SDM</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Tenaga Pendidik</a></li>
+                      <li><a href="/info-pendidik.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
+                      <li><a href="info-tenaga-pendidik.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Tenaga Pendidik</a></li>
                     </ul>
                   </details>
                 </li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Komite Sekolah</a></li>
+                <li><a href="/komite-sekolah.blade.php" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Komite Sekolah</a></li>
               </ul>
             </details>
           </li>

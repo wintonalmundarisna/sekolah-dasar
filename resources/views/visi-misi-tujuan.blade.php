@@ -38,29 +38,70 @@
     {{-- visi, misi, dan tujuan --}}
     <section class="mt-6 !overflow-hidden lg:mt-10">
       <div class="container">
-        <h1 class="p-6 text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Visi, Misi, dan Tujuan</h1>
+        <div class="flex items-center justify-center gap-2 py-4">
+          <img data-aos="fade-right"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              src="/assets/illustrasi03.png" alt="illustrasi" class="w-6">
+          <h1 data-aos="fade-up"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Visi, Misi, dan Tujuan</h1>
+          <img data-aos="fade-left"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center" 
+              src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
+        </div>
         <div class="grid grid-cols-1 gap-5 mt-4 lg:mt-8 md:grid-cols-3">
           {{-- card-1 --}}
-          <a data-aos="fade-up"
+          <div data-aos="fade-up"
             data-aos-delay="40"
             data-aos-duration="500"
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
-            href="#" class="block p-6 border border-gray-200 rounded-lg bg-colorsecondorangemuda max-w-auto">
+            href="#" class="relative block p-6 border rounded-lg border-colorprimaryorange bg-colorsecondorangemuda max-w-auto">
+            <img data-aos="fade-up"
+            data-aos-delay="40"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"  
+            src="/assets/illustrasi05.png" alt="illustrasi" class="absolute w-12 -top-9 -right-2">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-colorprimaryorange font-outfit">VISI</h5>
             <p class="font-normal text-colorprimaryblack font-outfit">“Pendidikan Sekolah Dasar Islam yang sesuai Al-Qur`an & As- Sunnah dalam melahirkan generasi yang Akhlaqul karimah, Alim dan Faqih, Mandiri, dan Berprestasi yang terintegrasi dengan Profil Pelajar Pancasila (P3)”</p>
-          </a>
+          </div>
           {{-- card-2 --}}
-          <a data-aos="fade-up"
+          <div data-aos="fade-up"
             data-aos-delay="40"
             data-aos-duration="500"
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
-            href="#" class="block p-6 border border-gray-200 rounded-lg bg-colorsecondyellowmuda max-w-auto">
+            href="#" class="relative block p-6 border rounded-lg border-colorsecondyellowtua bg-colorsecondyellowmuda max-w-auto">
+            <img data-aos="fade-up"
+            data-aos-delay="40"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"  
+            src="/assets/illustrasi04.png" alt="illustrasi" class="absolute w-9 -top-9 -right-2">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-colorsecondyellowtua font-outfit">MISI</h5>
             <ol class="space-y-3 font-normal list-decimal list-inside text-colorprimaryblack font-outfit">
                 <li>Menjadikan anak didik sebagai pecinta Al-Qur`an dan As-Sunnah</li>
@@ -73,16 +114,24 @@
                 <li>Melaksanakan Jaminan Pendidikan Prima kepada Peserta Didik untuk mendukung proses pembelajaran</li>
                 <li>Melaksanakan pelatihan bagi guru dalam meningkatkan prestasi dalam upaya pencapaian hasil pendidikan yang berkualitas.</li>
             </ol>
-          </a>
+          </div>
           {{-- card-3 --}}
-          <a data-aos="fade-up"
+          <div data-aos="fade-up"
             data-aos-delay="40"
             data-aos-duration="500"
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
-            href="#" class="block p-6 border border-gray-200 rounded-lg bg-colorsecondtoscamuda max-w-auto">
+            href="#" class="relative block p-6 border rounded-lg border-colorprimarytosca bg-colorsecondtoscamuda max-w-auto">
+            <img data-aos="fade-up"
+            data-aos-delay="40"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"  
+            src="/assets/illustrasi01.png" alt="illustrasi" class="absolute w-9 -top-9 -right-1">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-colorprimarytosca font-outfit">TUJUAN</h5>
             <ol class="space-y-3 font-normal list-decimal list-inside text-colorprimaryblack font-outfit">
                 <li>Menciptakan Siswa yang Shaleh Mandiri Dan Berprestasi.</li>
@@ -96,55 +145,14 @@
                 <li>Melaksanakan pembelajaran untuk mengasah kemampuan literasi dan numerasi.</li>
                 <li>Menumbuhkan sikap toleransi dalam bermasyarakat.</li>
             </ol>
-          </a>
+          </div>
         </div>
       </div>
     </section>
     {{-- visi, misi, dan tujuan --}}
 
     {{-- footer --}}
-      <section class="bg-base-200 mt-14">
-        <div class="container py-8">
-          <footer class="grid grid-cols-1 footer text-base-content md:grid-cols-4">
-            <aside>
-              <img src="./assets/logo_new.png" alt="logo-sekolah">
-            </aside>
-            <nav>
-                <h6 class="footer-title font-outfit">Akses Cepat</h6>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Profile</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Program Sekolah</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">PPDB</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Informasi</a>
-              </nav>
-              <nav>
-                <i class="text-lg fa-solid fa-map-location-dot text-colorprimaryblack"></i><a class="link link-hover font-outfit">Komplek Puri Idaman, Jl. Bintara Jaya Raya No. 354 Rt 005/Rw 003, Kel. Bintara Jaya, Kec. Bekasi Barat 17136. Telp : 021-8694 2175</a>
-                <a class="link link-hover font-outfit"><i class="text-lg fa-brands fa-whatsapp text-colorprimaryblack"></i> 0896-3741-1029</a>
-                <a class="link link-hover font-outfit"><i class="text-lg fa-regular fa-envelope text-colorprimaryblack"></i> nurulfirdaus@gmail.com</a>
-              </nav>
-              <nav>
-                <h6 class="footer-title">Ikuti Kami</h6>
-                <div class="flex gap-3">
-                  <a href="#">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimaryorange">
-                      <i class="text-white fa-brands fa-youtube"></i>
-                    </button>
-                  </a>
-                  <a href="#">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondyellowtua">
-                      <i class="text-white fa-brands fa-tiktok"></i>
-                    </button>
-                  </a>
-                  <a href="#">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimarytosca">
-                      <i class="text-white fa-brands fa-instagram"></i>
-                    </button>
-                  </a>
-                </div>
-              </nav>
-          </footer>
-          <p class="mt-5 text-sm text-center text-colorprimaryblack font-outfit">© Islam Nurul Firdaus - 2024 All rights reserved</p>
-        </div>
-      </section>
+      @include('footer')
     {{-- footer --}}
 
     {{-- AOS --}}
