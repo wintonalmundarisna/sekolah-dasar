@@ -2,291 +2,277 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Panel;
 use App\Filament\Resources\GuruResource\Pages;
-use App\Filament\Resources\GuruResource\RelationManagers;
 use App\Models\Guru;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Section;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+// use Filament\Infolists\Components\Section;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TextArea;
 
 class GuruResource extends Resource
 {
-    // ! Baru berhasil ganti label
     protected static ?string $model = Guru::class;
     protected static ?string $slug = 'guru';
-    protected static ?string $label = 'Kelola Data Guru';
+    protected static ?string $label = 'Data Guru';
     protected static ?string $navigationIcon = 'heroicon-o-users';
     protected static ?string $navigationGroup = 'Kesiswaan';
-    
+    protected static ?string $navigationLabel = 'Guru';
+    protected static ?string $panel = 'Guru';
+    // public function panel(Panel $panel): Panel
+    // {
+    //     return $panel
+    //         ->tenant(Guru::class, slugAttribute: 'slug');
+    // }
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nama')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('foto')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nuptk')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('jk')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('tempat-lahir')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\DatePicker::make('tanggal-lahir')
-                    ->required(),
-                Forms\Components\TextInput::make('nip')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status-kepegawaian')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('jenis-ptk')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('agama')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('alamat')
-                    ->required()
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('rt')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('rw')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nama-dusun')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('desa-kelurahan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('kecamatan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('kode-pos')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('telepon')
-                    ->tel()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('hp')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('tugas-tambahan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('sk-cpns')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('tanggal-cpns')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('sk-pengangkatan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('tmt-pengangkatan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('lembaga-pengangkatan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('pangkat-golongan')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('sumber-gaji')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nama-ibu-kandung')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status-perkawinan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nama-suami-istri')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nip-suami-istri')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('pekerjaan-suami-istri')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('tmt-pns')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('lisensi-kepala-sekolah')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('diklat-kepengawasan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('keahlian-braille')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('keahlian-bahasa-isyarat')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('npwp')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nama-wajib-pajak')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('kewarganegaraan')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('bank')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('no-rekening-bank')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('rekening-atas-nama')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nik')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('no-kk')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('karpeg')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('karis-karsu')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('lintang')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('bujur')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('nuks')
-                    ->maxLength(255),
-            ])->tenant(Guru::class, slugAttribute: 'slug');
+                Section::make()
+                    ->schema([
+                        FileUpload::make('foto')
+                            ->image()
+                            ->directory('guru')
+                            ->required(),
+                        TextInput::make('nama')
+                            ->required()
+                            ->maxLength(100),
+                        TextInput::make('nuptk')
+                            ->required()
+                            ->maxLength(255)
+                            ->numeric()
+                            ->label('NUPTK'),
+                        Radio::make('jk')
+                            ->options([
+                                'Laki-Laki' => 'Laki-Laki',
+                                'Perempuan' => 'Perempuan',
+                            ])
+                            ->inline()
+                            ->inlineLabel(false)
+                            ->required()
+                            ->label('Jenis Kelamin'),
+                        TextInput::make('tempat-lahir')
+                            ->required()
+                            ->maxLength(20)
+                            ->label('Tempat Lahir'),
+                        DatePicker::make('tanggal-lahir')
+                            ->required()
+                            ->label('Tanggal Lahir'),
+                        TextInput::make('nip')
+                            ->label('NIP')
+                            ->maxLength(255),
+                        TextInput::make('status-kepegawaian')
+                            ->required()
+                            ->maxLength(10)
+                            ->label('Status Kepegawaian'),
+                        TextInput::make('jenis-ptk')
+                            ->required()
+                            ->maxLength(50)
+                            ->label('Jenis PTK'),
+                        TextInput::make('agama')
+                            ->required()
+                            ->maxLength(10),
+                        TextArea::make('alamat')
+                            ->required()
+                            ->maxLength(65535),
+                        TextInput::make('rt')
+                            ->maxLength(2)
+                            ->label('RT'),
+                        TextInput::make('rw')
+                            ->maxLength(2)
+                            ->label('RW'),
+                        TextInput::make('nama-dusun')
+                            ->maxLength(50)
+                            ->label('Nama Dusun'),
+                        TextInput::make('desa-kelurahan')
+                            ->required()
+                            ->maxLength(30)
+                            ->label('Desa / Kelurahan'),
+                        TextInput::make('kecamatan')
+                            ->required()
+                            ->maxLength(30),
+                        TextInput::make('kode-pos')
+                            ->maxLength(5)
+                            ->label('Kode Pos'),
+                        TextInput::make('telepon')
+                            ->numeric()
+                            ->maxLength(20),
+                        TextInput::make('hp')
+                            ->required()
+                            ->numeric()
+                            ->label('Nomor HP')
+                            ->maxLength(50),
+                        TextInput::make('email')
+                            ->email()
+                            ->required()
+                            ->maxLength(100),
+                        TextInput::make('tugas-tambahan')
+                            ->maxLength(100)
+                            ->label('Tugas Tambahan'),
+                        TextInput::make('sk-cpns')
+                            ->maxLength(255)
+                            ->label('SK CPNS'),
+                        TextInput::make('tanggal-cpns')
+                            ->maxLength(255)
+                            ->label('Tanggal CPNS'),
+                        TextInput::make('sk-pengangkatan')
+                            ->required()
+                            ->maxLength(100)
+                            ->label('SK Pengangkatan'),
+                        TextInput::make('tmt-pengangkatan')
+                            ->maxLength(255)
+                            ->label('TMT Pengangkatan'),
+                        TextInput::make('lembaga-pengangkatan')
+                            ->required()
+                            ->maxLength(100)
+                            ->label('Lembaga Pengangkatan'),
+                        TextInput::make('pangkat-golongan')
+                            ->maxLength(255)
+                            ->label('Pangkat Golongan'),
+                        TextInput::make('sumber-gaji')
+                            ->required()
+                            ->maxLength(50)
+                            ->label('Sumber Gaji'),
+                        TextInput::make('nama-ibu-kandung')
+                            ->required()
+                            ->maxLength(50)
+                            ->label('Nama Ibu Kandung'),
+                        Radio::make('status-perkawinan')
+                            ->options([
+                                'Kawin' => 'Kawin',
+                                'Belum Kawin' => 'Belum Kawin',
+                            ])
+                            ->inline()
+                            ->inlineLabel(false)
+                            ->required()
+                            ->label('Status Perkawinan'),
+                        TextInput::make('nama-suami-istri')
+                            ->maxLength(length: 20)
+                            ->label('Nama Suami / Istri'),
+                        TextInput::make('nip-suami-istri')
+                            ->maxLength(255)
+                            ->label('NIP Suami / Istri'),
+                        TextInput::make('pekerjaan-suami-istri')
+                            ->required()
+                            ->maxLength(50)
+                            ->label('Pekerjaan Suami / Istri'),
+                        TextInput::make('tmt-pns')
+                            ->maxLength(255)
+                            ->label('TMT PNS'),
+                        Radio::make('lisensi-kepala-sekolah')
+                            ->options([
+                                'Ya' => 'Ya',
+                                'Tidak' => 'Tidak',
+                            ])
+                            ->inline()
+                            ->inlineLabel(false)
+                            ->required()
+                            ->label('Sudah Lisensi Kepala Sekolah'),
+                        Radio::make('diklat-kepengawasan')
+                            ->options([
+                                'Ya' => 'Ya',
+                                'Tidak' => 'Tidak',
+                            ])
+                            ->inline()
+                            ->inlineLabel(false)
+                            ->required()
+                            ->label('Pernah Diklat Kepengawasan'),
+                        Radio::make('keahlian-braille')
+                            ->options([
+                                'Ya' => 'Ya',
+                                'Tidak' => 'Tidak',
+                            ])
+                            ->inline()
+                            ->inlineLabel(false)
+                            ->required()
+                            ->label('Keahlian Braille'),
+                        Radio::make('keahlian-bahasa-isyarat')
+                            ->options([
+                                'Ya' => 'Ya',
+                                'Tidak' => 'Tidak',
+                            ])
+                            ->inline()
+                            ->inlineLabel(false)
+                            ->required()
+                            ->label('Keahlian Bahasa Isyarat'),
+                        TextInput::make('npwp')
+                            ->maxLength(255)
+                            ->label('NPWP'),
+                        TextInput::make('nama-wajib-pajak')
+                            ->maxLength(50)
+                            ->label('Nama Wajib Pajak'),
+                        TextInput::make('kewarganegaraan')
+                            ->required()
+                            ->maxLength(30),
+                        TextInput::make('bank')
+                            ->maxLength(255),
+                        TextInput::make('no-rekening-bank')
+                            ->label('Nomor Rekening Bank')
+                            ->maxLength(255),
+                        TextInput::make('rekening-atas-nama')
+                            ->label('Rekening Atas Nama')
+                            ->maxLength(255),
+                        TextInput::make('nik')
+                            ->label('NIK')
+                            ->required()
+                            ->numeric()
+                            ->maxLength(20),
+                        TextInput::make('no-kk')
+                            ->label('No KK')
+                            ->numeric()
+                            ->maxLength(20),
+                        TextInput::make('karpeg')
+                            ->maxLength(255),
+                        TextInput::make('karis-karsu')
+                            ->label('Karis / Karsu')
+                            ->maxLength(255),
+                        TextInput::make('lintang')
+                            ->maxLength(255),
+                        TextInput::make('bujur')
+                            ->maxLength(255),
+                        TextInput::make('nuks')
+                            ->label('NUKS')
+                            ->maxLength(255),
+                    ]),
+            ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('foto')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nuptk')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('jk')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tempat-lahir')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tanggal-lahir')
-                    ->date()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('nip')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('status-kepegawaian')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('jenis-ptk')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('agama')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('rt')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('rw')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nama-dusun')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('desa-kelurahan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('kecamatan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('kode-pos')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('telepon')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('hp')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('email')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tugas-tambahan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('sk-cpns')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tanggal-cpns')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('sk-pengangkatan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tmt-pengangkatan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('lembaga-pengangkatan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('pangkat-golongan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('sumber-gaji')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nama-ibu-kandung')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('status-perkawinan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nama-suami-istri')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nip-suami-istri')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('pekerjaan-suami-istri')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tmt-pns')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('lisensi-kepala-sekolah')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('diklat-kepengawasan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('keahlian-braille')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('keahlian-bahasa-isyarat')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('npwp')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nama-wajib-pajak')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('kewarganegaraan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('bank')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('no-rekening-bank')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('rekening-atas-nama')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nik')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('no-kk')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('karpeg')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('karis-karsu')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('lintang')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('bujur')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nuks')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                ImageColumn::make('foto')
+                    ->circular(),
+                TextColumn::make('nama')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->markdown(true)
+                    ->searchable(),
+                TextColumn::make('jk')
+                    ->label('Jenis Kelamin')
+                    ->searchable(),
+                TextColumn::make('jenis-ptk')
+                    ->label('Jenis PTK')
+                    ->searchable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                ->color('warning'),
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -310,7 +296,4 @@ class GuruResource extends Resource
             'edit' => Pages\EditGuru::route('/{record}/edit'),
         ];
     }
-
-    protected static ?string $navigationLabel = 'Guru';
-    protected static ?string $panel = 'Guru';
 }

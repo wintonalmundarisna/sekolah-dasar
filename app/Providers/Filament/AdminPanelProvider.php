@@ -23,6 +23,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Enums\ThemeMode;
+use Hasnayeen\Themes\Http\Middleware\SetTheme;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -36,15 +37,14 @@ class AdminPanelProvider extends PanelProvider
             ->passwordReset()
             ->login()
             ->profile()
-            ->passwordReset()
             ->darkModeBrandLogo(asset('assets/Logo_new.png'))
             ->brandLogo(asset('assets/Logo.png'))
-            // ->favicon(asset('assets/Logo.png'))
+            ->favicon(asset('assets/Icon.png'))
             ->brandName('SDI NUFIS')
-            ->defaultThemeMode(ThemeMode::Light)
-            ->colors([
-                'primary' => Color::Cyan,
-            ])
+            // ->defaultThemeMode(ThemeMode::Light)
+            // ->colors([
+            //     'primary' => Color::Cyan,
+            // ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path(path: 'Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -55,6 +55,9 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
             ])
+            ->plugin(
+                \Hasnayeen\Themes\ThemesPlugin::make()
+            )
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
@@ -65,6 +68,7 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                SetTheme::class
             ])
             ->authMiddleware([
                 Authenticate::class,

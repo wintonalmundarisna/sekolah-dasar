@@ -9,11 +9,10 @@ use Filament\Resources\Pages\EditRecord;
 class EditGuru extends EditRecord
 {
     protected static string $resource = GuruResource::class;
+    protected static bool $canCreateAnother = false;
 
-    protected function getHeaderActions(): array
+    public function getRedirectUrl(): string
     {
-        return [
-            Actions\DeleteAction::make(),
-        ];
+        return $this->getResource()::getUrl('index');
     }
 }
