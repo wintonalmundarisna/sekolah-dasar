@@ -3,7 +3,7 @@
   <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>VISI, MISI, DAN TUJUAN | SD ISLAM NURUL FIRDAUS</title>
+        <title>Data Sekolah | SD ISLAM NURUL FIRDAUS</title>
 
         {{-- font outfit --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
