@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/visi-misi-tujuan.blade.php', function () {
+Route::get('/visi-misi-tujuan', function () {
     return view('visi-misi-tujuan');
 });
 
