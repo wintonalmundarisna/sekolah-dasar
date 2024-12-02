@@ -62,8 +62,8 @@
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tahunan</a></li>
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Unggulan</a></li>
+                      <li><a href="/kegiatan-tahunan" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tahunan</a></li>
+                      <li><a href="/kegiatan-unggulan" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Unggulan</a></li>
                     </ul>
                   </details>
                 </li>
@@ -150,8 +150,8 @@
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tahunan</a></li>
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Unggulan</a></li>
+                      <li><a href="/kegiatan-tahunan" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tahunan</a></li>
+                      <li><a href="/kegiatan-unggulan" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Unggulan</a></li>
                     </ul>
                   </details>
                 </li>

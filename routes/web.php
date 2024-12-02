@@ -21,18 +21,26 @@ Route::get('/visi-misi-tujuan', function () {
     return view('visi-misi-tujuan');
 });
 
-Route::get('/data-sekolah.blade.php', function () {
+Route::get('/data-sekolah', function () {
     return view('data-sekolah');
 });
 
-Route::get('/info-pendidik.blade.php', function () {
+Route::get('/info-pendidik', function () {
     return view('info-pendidik');
 });
 
-Route::get('/info-tenaga-pendidik.blade.php', function () {
+Route::get('/info-tenaga-pendidik', function () {
     return view('info-tenaga-pendidik');
 });
 
-Route::get('/komite-sekolah.blade.php', function () {
+Route::get('/komite-sekolah', function () {
     return view('komite-sekolah');
+});
+
+Route::get('/kegiatan-tahunan', function () {
+    return view('kegiatan-tahunan');
+});
+
+Route::get('/kegiatan-unggulan', function () {
+    return view('kegiatan-unggulan');
 });
