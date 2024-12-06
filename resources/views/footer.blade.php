@@ -2,7 +2,14 @@
         <div class="container py-8">
           <footer class="grid grid-cols-1 footer text-base-content md:grid-cols-4">
             <aside class="relative">
-              <img src="/assets/illustrasi06.png" alt="illustrasi" class="absolute w-16 -top-16">
+              <img data-aos="fade-down"
+              data-aos-delay="30"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center"
+              src="/assets/illustrasi06.png" alt="illustrasi" class="absolute w-16 -top-16">
               <img src="/assets/logo_new.png" alt="logo-sekolah" class="pt-2">
             </aside>
             <nav>

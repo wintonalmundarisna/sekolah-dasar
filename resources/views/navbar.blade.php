@@ -67,8 +67,8 @@
                     </ul>
                   </details>
                 </li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Semester</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Ekskul</a></li>
+                <li><a href="/program-semester" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Semester</a></li>
+                <li><a href="/ekskul" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Ekskul</a></li>
               </ul>
             </details>
           </li>
@@ -155,8 +155,8 @@
                     </ul>
                   </details>
                 </li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Semester</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Ekskul</a></li>
+                <li><a href="/program-semester" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Semester</a></li>
+                <li><a href="/ekskul" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Ekskul</a></li>
               </ul>
             </details>
           </li>

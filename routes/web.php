@@ -44,3 +44,11 @@ Route::get('/kegiatan-tahunan', function () {
 Route::get('/kegiatan-unggulan', function () {
     return view('kegiatan-unggulan');
 });
+
+Route::get('/program-semester', function () {
+    return view('program-semester');
+});
+
+Route::get('/ekskul', function () {
+    return view('ekskul');
+});

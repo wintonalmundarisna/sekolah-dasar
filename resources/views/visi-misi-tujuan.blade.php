@@ -73,7 +73,7 @@
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
-            href="#" class="relative block p-6 border rounded-lg border-colorprimaryorange bg-colorsecondorangemuda max-w-auto">
+            class="relative block p-6 border rounded-lg border-colorprimaryorange bg-colorsecondorangemuda max-w-auto">
             <img data-aos="fade-up"
             data-aos-delay="40"
             data-aos-duration="500"
@@ -93,7 +93,7 @@
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
-            href="#" class="relative block p-6 border rounded-lg border-colorsecondyellowtua bg-colorsecondyellowmuda max-w-auto">
+            class="relative block p-6 border rounded-lg border-colorsecondyellowtua bg-colorsecondyellowmuda max-w-auto">
             <img data-aos="fade-up"
             data-aos-delay="40"
             data-aos-duration="500"
@@ -123,7 +123,7 @@
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
-            href="#" class="relative block p-6 border rounded-lg border-colorprimarytosca bg-colorsecondtoscamuda max-w-auto">
+            class="relative block p-6 border rounded-lg border-colorprimarytosca bg-colorsecondtoscamuda max-w-auto">
             <img data-aos="fade-up"
             data-aos-delay="40"
             data-aos-duration="500"
