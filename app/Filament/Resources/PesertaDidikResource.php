@@ -19,7 +19,9 @@ use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\TextArea;
 use Filament\Forms\Components\Select;
-
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
 
 
 class PesertaDidikResource extends Resource
@@ -160,10 +162,12 @@ class PesertaDidikResource extends Resource
                             ->label('Pekerjaan Ayah')
                             ->required()
                             ->maxLength(50),
-                        TextInput::make('penghasilan-ayah')
+                        TextInput::make('penghasilan_ayah')
+                            ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
+                            ->numeric()
                             ->required()
                             ->label('Penghasilan Ayah')
-                            ->numeric(),
+                            ->prefix('Rp'),
                         TextInput::make('nik-ayah')
                             ->label('NIK Ayah')
                             ->maxLength(20),
@@ -195,9 +199,11 @@ class PesertaDidikResource extends Resource
                             ->maxLength(50)
                             ->label('Pekerjaan Ibu'),
                         TextInput::make('penghasilan-ibu')
+                            ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
                             ->required()
                             ->label('Penghasilan Ibu')
-                            ->numeric(),
+                            ->numeric()
+                            ->prefix('Rp'),
                         TextInput::make('nik-ibu')
                             ->label('NIK Ibu')
                             ->maxLength(20),
@@ -225,8 +231,10 @@ class PesertaDidikResource extends Resource
                             ->label('Pekerjaan Wali')
                             ->maxLength(50),
                         TextInput::make('penghasilan-wali')
+                            ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
                             ->label('Penghasilan Wali')
-                            ->numeric(),
+                            ->numeric()
+                            ->prefix('Rp'),
                         TextInput::make('nik-wali')
                             ->label('NIK Wali')
                             ->maxLength(20),
@@ -340,24 +348,33 @@ class PesertaDidikResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('foto')
+                ImageColumn::make('foto')
+                // ->circular(),
+                ,
+                TextColumn::make('nama')
+                    ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('nama')
+                TextColumn::make('nipd')
+                    ->label('NIPD')
+                    ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('nipd')
+                TextColumn::make('nisn')
+                    ->label('NISN')
+                    ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('nisn')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('skhun')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('rombel-saat-ini')
+                TextColumn::make('rombel-saat-ini')
+                    ->label('Rombel')
+                    ->sortable()
                     ->searchable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->color('warning'),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

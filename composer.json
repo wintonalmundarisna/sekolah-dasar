@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "ariaieboy/filament-currency": "^1.10",
         "filament/filament": "3.2",
         "guzzlehttp/guzzle": "^7.2",
         "hasnayeen/themes": "^3.0",
