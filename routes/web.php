@@ -52,3 +52,7 @@ Route::get('/program-semester', function () {
 Route::get('/ekskul', function () {
     return view('ekskul');
 });
+
+Route::get('/fasilitas-sekolah', function () {
+    return view('fasilitas-sekolah');
+});
