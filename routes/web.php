@@ -56,3 +56,23 @@ Route::get('/ekskul', function () {
 Route::get('/fasilitas-sekolah', function () {
     return view('fasilitas-sekolah');
 });
+
+Route::get('/kegiatan-terdekat', function () {
+    return view('kegiatan-terdekat');
+});
+
+Route::get('/kegiatan-luar', function () {
+    return view('kegiatan-luar');
+});
+
+Route::get('/alumni', function () {
+    return view('alumni');
+});
+
+Route::get('/kurikulum', function () {
+    return view('kurikulum');
+});
+
+Route::get('/gallery', function () {
+    return view('gallery');
+});

@@ -11,10 +11,6 @@ use Laravel\Sanctum\HasApiTokens;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 
-<<<<<<< HEAD
-=======
-// class User extends Authenticatable implements FilamentUser, MustVerifyEmail
->>>>>>> 5097d9e410940bc5d8728eedbc65dbd97dc08f4e
 class User extends Authenticatable implements FilamentUser
 // class User extends Authenticatable
 {

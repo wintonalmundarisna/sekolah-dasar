@@ -64,21 +64,12 @@
               data-aos-anchor-placement="top-center" 
               src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
         </div>
-        {{-- Grid --}}
-        <div class="grid w-full grid-cols-1 mx-auto mt-4 lg:w-4/5">
-          <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-colorsecondorangemuda">
-            {{-- accordion --}}
-            <h2 id="accordion-color-heading-1">
-              <button type="button" class="flex items-center justify-between w-full gap-3 p-5 text-xl font-bold border border-b-0 border-gray-200 text-colorprimaryorange rtl:text-right rounded-t-xl font-outfit" data-accordion-target="#accordion-color-body-1" aria-expanded="false" aria-controls="accordion-color-body-1">
-                <span class="text-colorprimaryorange">Kegiatan Tahunan</span>
-                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 text-colorprimaryorange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                </svg>
-              </button>
-            </h2>
-            <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
-              <div class="p-5 border border-b-0 border-gray-200">
-                <ol class="space-y-2 font-normal list-decimal list-inside text-colorprimaryblack font-outfit">
+        {{-- accordion --}}
+        <div class="w-full mx-auto mt-4 md:w-4/5">
+          <div tabindex="0" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondorangemuda">
+            <div class="text-xl font-medium collapse-title font-outfit text-colorprimaryorange">Kegiatan Tahunan</div>
+            <div class="collapse-content">
+              <ol class="space-y-2 font-normal list-decimal list-inside text-colorprimaryblack font-outfit">
                   <li>MPLS (Masa Pengenalan Lingkungan Sekolah)</li>
                   <li>MOK (Masa Orientasi Kepramukaan)</li>
                   <li>Lomba HUT RI</li>
@@ -104,21 +95,12 @@
                   <li>ASAJ</li>
                   <li>Wisuda</li>
                 </ol>
-              </div>
             </div>
-            {{-- accordion --}}
-            {{-- accordion --}}
-            <h2 id="accordion-color-heading-2">
-              <button type="button" class="flex items-center justify-between w-full gap-3 p-5 text-xl font-bold border border-b-0 border-gray-200 text-colorprimaryorange rtl:text-right rounded-t-xl font-outfit" data-accordion-target="#accordion-color-body-2" aria-expanded="true" aria-controls="accordion-color-body-2">
-                <span class="text-colorprimaryorange">Kegiatan Unggulan</span>
-                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 text-colorprimaryorange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                </svg>
-              </button>
-            </h2>
-            <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
-              <div class="p-5 border border-b-0 border-gray-200">
-                <ol class="space-y-2 font-normal list-decimal list-inside text-colorprimaryblack font-outfit">
+          </div>
+          <div tabindex="1" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondtoscamuda">
+            <div class="text-xl font-medium collapse-title font-outfit text-colorprimarytosca">Kegiatan Unggulan</div>
+            <div class="collapse-content">
+              <ol class="space-y-2 font-normal list-decimal list-inside text-colorprimaryblack font-outfit">
                   <li>Tahfidz dan Tahsin al-quran metode Tilawati</li>
                   <li>Pembinaan ibadah harian</li>
                   <li>Pembinaan akhlak sehari-hari</li>
@@ -127,12 +109,10 @@
                   <li>Latihan kepemimpinan siswa</li>
                   <li>Ekskul yang bervariasi</li>
                 </ol>
-              </div>
             </div>
-            {{-- accordion --}}
           </div>
         </div>
-        {{-- grid --}}
+        {{-- accordion --}}
       </div>
     </section>
     {{-- Kegiatan Tahunan --}}
