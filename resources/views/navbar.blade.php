@@ -107,13 +107,13 @@
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">PPDB</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Informasi</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Form Online</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Pengumuman</a></li>
+                <li><a href="/informasi" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Informasi</a></li>
+                <li><a href="/form-online" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Form Online</a></li>
+                <li><a href="/pengumuman" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Pengumuman</a></li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kontak Person</a></li>
+          <li><a href="/kontak" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kontak Person</a></li>
         </ul>
       </div>
       {{-- mobile --}}
@@ -195,19 +195,19 @@
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">PPDB</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Informasi</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Form Online</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Pengumuman</a></li>
+                <li><a href="/informasi" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Informasi</a></li>
+                <li><a href="/form-online" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Form Online</a></li>
+                <li><a href="/pengumuman" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Pengumuman</a></li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kontak Person</a></li>
+          <li><a href="/kontak" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kontak Person</a></li>
         </ul>
       </div>
       {{-- desktop --}}
     </div>
     <div class="navbar-end">
-      <a class="rounded-sm btn btn-sm font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 lg:btn-md">Daftar Sekarang</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScBWtq6WvsSDI1-h_zRex5o4nKOiKnJ1LkRt0Him1qvmc4qsg/viewform?usp=sf_link" target="_blank" class="rounded-sm btn btn-sm font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 lg:btn-md">Daftar Sekarang</a>
     </div>
   </div>
   <!-- Navbar -->

@@ -64,8 +64,8 @@
                 data-aos-mirror="true"
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
-                class="mt-5">
-              <a class="border-none rounded-sm btn btn-sm font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 lg:btn-md">Profile Sekolah</a>
+                class="btn mt-5 border-none rounded-lg font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 text-sm md:text-base">
+              <a href="/data-sekolah">Profile Sekolah</a>
             </button>
           </div>
         </div>
@@ -183,7 +183,7 @@
             <p class="font-bold"><i>Assalamu’alaikum warohmatullahi wabarokatuh</i></p>
             <p>Selamat datang di Website sekolah kami SD Islam Nurul Firdaus yang saya tujukan untuk seluruh unsur pimpinan, guru, karyawan dan siswa serta khalayak umum.</p>
             <p>Alhamdulillahi rabbil ‘alamiin, puji syukur marilah kita panjatkan kepada Tuhan Yang Maha Esa yang telah memberikan limpahan rahmat, nikmat, dan karuniaNya sehingga saya mampu menuliskan kata sambutan Kepala Sekolah dalam rangka penerbitan webs...</p>
-            <a onclick="my_modal_3.showModal()" class="border-none rounded-sm btn btn-sm font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 lg:btn-md">Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+            <a onclick="my_modal_3.showModal()" class="btn mt-5 border-none rounded-lg font-outfit bg-colorprimaryorange text-colorprimarywhite hover:bg-orange-700 text-sm md:text-base">Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
         {{-- modal --}}

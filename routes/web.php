@@ -76,3 +76,19 @@ Route::get('/kurikulum', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 });
+
+Route::get('/kontak', function () {
+    return view('kontak');
+});
+
+Route::get('/informasi', function () {
+    return view('informasi');
+});
+
+Route::get('/form-online', function () {
+    return view('form-online');
+});
+
+Route::get('/pengumuman', function () {
+    return view('pengumuman');
+});
