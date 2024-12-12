@@ -72,7 +72,7 @@
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</a></li>
+          <li><a href="/kurikulum" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</a></li>
           <li>
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kesiswaan</summary>
@@ -93,16 +93,16 @@
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Berita</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Luar Sekolah</a></li>
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Terdekat Sekolah</a></li>
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Alumni</a></li>
+                      <li><a href="/kegiatan-luar" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Luar Sekolah</a></li>
+                      <li><a href="/kegiatan-terdekat" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Terdekat Sekolah</a></li>
+                      <li><a href="/alumni" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Alumni</a></li>
                     </ul>
                   </details>
                 </li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Gallery</a></li>
+          <li><a href="/gallery" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Gallery</a></li>
           <li>
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">PPDB</summary>
@@ -160,7 +160,7 @@
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</a></li>
+          <li><a href="/kurikulum" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</a></li>
           <li>
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kesiswaan</summary>
@@ -181,16 +181,16 @@
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Berita</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Luar Sekolah</a></li>
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Terdekat Sekolah</a></li>
-                      <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Alumni</a></li>
+                      <li><a href="/kegiatan-luar" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Luar Sekolah</a></li>
+                      <li><a href="/kegiatan-terdekat" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kegiatan Terdekat Sekolah</a></li>
+                      <li><a href="/alumni" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Alumni</a></li>
                     </ul>
                   </details>
                 </li>
               </ul>
             </details>
           </li>
-          <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Gallery</a></li>
+          <li><a href="/gallery" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Gallery</a></li>
           <li>
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">PPDB</summary>

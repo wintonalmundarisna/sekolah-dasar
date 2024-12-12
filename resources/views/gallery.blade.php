@@ -3,7 +3,7 @@
   <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Fasilitas Sekolah | SD ISLAM NURUL FIRDAUS</title>
+        <title>Gallery | SD ISLAM NURUL FIRDAUS</title>
 
         {{-- font outfit --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
     @include('navbar')
     {{-- navbar --}}
 
-    {{-- Fasilitas sekolah --}}
+    {{-- gallery --}}
     <section class="mt-6 !overflow-hidden lg:mt-10">
       <div class="container">
         <div class="flex items-center justify-center gap-2 py-4">
@@ -57,7 +57,7 @@
               data-aos-mirror="true"
               data-aos-once="false"
               data-aos-anchor-placement="top-center" 
-              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Fasilitas Sekolah</h1>
+              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Gallery Sekolah</h1>
           <img data-aos="fade-left"
               data-aos-delay="30"
               data-aos-duration="500"
@@ -67,297 +67,271 @@
               data-aos-anchor-placement="top-center" 
               src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
         </div>
-        {{-- fasilitas sekolah --}}
+        {{-- gallery --}}
         <div class="flex items-center justify-center w-full py-4 md:py-8">
           <div class="flex gap-3 overflow-y-auto no-scrollbar">
-            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="sarana">Sarana</button>
-            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="sarana-penunjang">Sarana Penunjang</button>
-            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="alat-peraga">Alat Peraga</button>
-            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="bangunan">Bangunan</button>
-            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="fasilitas">Fasilitas</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="filed-trip">Field Trip</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="kegiatan-raker">Kegiatan Raker</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="market-day">Market Day</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="mpls-peserta-didik-baru">MPLS Peserta Didik Baru</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="munaqosyah">Munaqosyah</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="parenting">Parenting</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="perkajum-dan-persari">Perkajum Dan Persari</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="pesantren-kilat">Pesantren Kilat</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="qurban">Qurban</button>
+            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active" data-category="upgrading-dan-workshop-guru">Upgrading Dan Workshop Guru</button>
           </div>
         </div>
         <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
-            {{-- card sarana --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana">
+            {{-- card field trip --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="filed-trip">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Kursi Siswa</h3>
             </div>
-            {{-- card sarana --}}
-            {{-- card sarana --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="filed-trip">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Meja Siswa</h3>
             </div>
-            {{-- card sarana --}}
-            {{-- card sarana --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="filed-trip">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Lemari</h3>
             </div>
-            {{-- card sarana --}}
-            {{-- card sarana --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana">
+            {{-- card field trip --}}
+            {{-- card kegiatan raker --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="kegiatan-raker">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Meja Guru</h3>
             </div>
-            {{-- card sarana --}}
-            {{-- card sarana --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="kegiatan-raker">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Kursi Guru</h3>
             </div>
-            {{-- card sarana --}}
-            {{-- card sarana --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="kegiatan-raker">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Loker Guru</h3>
             </div>
-            {{-- card sarana --}}
-            {{-- card sarana --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana">
+            {{-- card kegiatan raker --}}
+            {{-- card market day --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="market-day">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Papan Tulis</h3>
             </div>
-            {{-- card sarana --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="market-day">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Komputer</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            {{-- card market day --}}
+            {{-- card mpls peserta didik baru --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="mpls-peserta-didik-baru">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Raket</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="mpls-peserta-didik-baru">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Shuttlecock</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="mpls-peserta-didik-baru">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Bola Kasti</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="mpls-peserta-didik-baru">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Bola Sepak</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            {{-- card mpls peserta didik baru --}}
+            {{-- card munaqosyah --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="munaqosyah">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Bola Volley</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            {{-- card munaqosyah --}}
+            {{-- card parenting --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="parenting">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Cone</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="parenting">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Sarana Air Bersih</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card sarana penunjang --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="sarana-penunjang">
+            {{-- card parenting --}}
+            {{-- card perkajum dan persari --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="perkajum-dan-persari">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Printer</h3>
             </div>
-            {{-- card sarana penunjang --}}
-            {{-- card alat peraga --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="alat-peraga">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="perkajum-dan-persari">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Anatomi Manusia</h3>
             </div>
-            {{-- card alat peraga --}}
-            {{-- card bangunan --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="bangunan">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="perkajum-dan-persari">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Ruang Belajar</h3>
             </div>
-            {{-- card bangunan --}}
-            {{-- card bangunan --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="bangunan">
+            {{-- card perkajum dan persari --}}
+            {{-- card pesantren kilat --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="pesantren-kilat">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Ruang Guru</h3>
             </div>
-            {{-- card bangunan --}}
-            {{-- card bangunan --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="bangunan">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="pesantren-kilat">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Ruang Kepala Sekolah</h3>
             </div>
-            {{-- card bangunan --}}
-            {{-- card bangunan --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="bangunan">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="pesantren-kilat">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Ruang UKS</h3>
             </div>
-            {{-- card bangunan --}}
-            {{-- card bangunan --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="bangunan">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="pesantren-kilat">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Ruang Perpustakaan</h3>
             </div>
-            {{-- card bangunan --}}
-            {{-- card bangunan --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="bangunan">
+            {{-- card pesantren kilat --}}
+            {{-- card qurban --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="qurban">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Ruang Kamar Mandi</h3>
             </div>
-            {{-- card bangunan --}}
-            {{-- card fasilitas --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="fasilitas">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="qurban">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Lapangan Bola</h3>
             </div>
-            {{-- card fasilitas --}}
-            {{-- card fasilitas --}}
-            <div class="max-w-sm py-4 rounded-lg card" data-category="fasilitas">
+            <div class="max-w-sm py-4 rounded-lg card" data-category="qurban">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
                   <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Lapangan Basket</h3>
             </div>
-            {{-- card fasilitas --}}
+            {{-- card qurban --}}
+            {{-- card upgrading dan workshop guru --}}
+            <div class="max-w-sm py-4 rounded-lg card" data-category="upgrading-dan-workshop-guru">
+              <div class="rounded-md bg-colorsecondorangemuda">
+                <a href="#" class="relative flex items-center justify-center">
+                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
+                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
+                </a>
+              </div>
+            </div>
+            <div class="max-w-sm py-4 rounded-lg card" data-category="upgrading-dan-workshop-guru">
+              <div class="rounded-md bg-colorsecondorangemuda">
+                <a href="#" class="relative flex items-center justify-center">
+                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
+                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
+                </a>
+              </div>
+            </div>
+            <div class="max-w-sm py-4 rounded-lg card" data-category="upgrading-dan-workshop-guru">
+              <div class="rounded-md bg-colorsecondorangemuda">
+                <a href="#" class="relative flex items-center justify-center">
+                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
+                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
+                </a>
+              </div>
+            </div>
+            {{-- card upgrading dan workshop guru --}}
         </div>
-        {{-- fasilitas sekolah --}}
+        {{-- gallerty --}}
       </div>
     </section>
-    {{-- Fasilitas sekolah --}}
+    {{-- gallerty --}}
 
     {{-- footer --}}
       @include('footer')

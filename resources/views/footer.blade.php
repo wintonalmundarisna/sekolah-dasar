@@ -38,8 +38,13 @@
                     </button>
                   </a>
                   <a href="#">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimarytosca">
+                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondgreen">
                       <i class="text-white fa-brands fa-instagram"></i>
+                    </button>
+                  </a>
+                  <a href="#">
+                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimarytosca">
+                      <i class="text-white fa-brands fa-facebook"></i>
                     </button>
                   </a>
                 </div>
