@@ -24,8 +24,9 @@ class GuruResource extends Resource
 {
     protected static ?string $model = Guru::class;
     protected static ?string $slug = 'guru';
-    protected static ?string $navigationLabel = 'Guru';
     protected static ?string $label = 'Data Guru';
+    protected static ?string $navigationLabel = 'Guru';
+    protected static ?int $navigationSort = 2;
     protected static ?string $navigationIcon = 'heroicon-o-users';
     protected static ?string $navigationGroup = 'Kesiswaan';
     protected static ?string $panel = 'Guru';
@@ -253,9 +254,6 @@ class GuruResource extends Resource
                     ->sortable()
                     ->markdown(true)
                     ->searchable(),
-                // TextColumn::make('jk')
-                //     ->label('Jenis Kelamin')
-                //     ->searchable(),
                 TextColumn::make('jenis-ptk')
                     ->label('Jenis PTK')
                     ->searchable(),
