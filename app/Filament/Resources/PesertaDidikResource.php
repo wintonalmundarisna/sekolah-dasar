@@ -33,8 +33,7 @@ class PesertaDidikResource extends Resource
     protected static ?string $navigationLabel = 'Peserta Didik';
     protected static ?string $navigationGroup = 'Kesiswaan';
     protected static ?string $label = 'Data Peserta Didik';
-
-
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {

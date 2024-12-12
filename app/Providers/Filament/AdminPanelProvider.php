@@ -70,8 +70,12 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
                 SetTheme::class
             ])
+            ->navigationGroups([
+                'Kesiswaan',
+                'Kurikulum',
+            ])
             ->authMiddleware([
                 Authenticate::class,
             ]);
-        }
+    }
 }
