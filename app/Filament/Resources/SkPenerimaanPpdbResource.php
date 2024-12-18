@@ -43,6 +43,7 @@ class SkPenerimaanPpdbResource extends Resource
                             ->columnSpanFull()
                             ->maxLength(100),
                         FileUpload::make('surat_keputusan')
+                            ->fetchFileInformation(false) // Buat video
                             ->disk('public')
                             ->directory('sk_ppdb')
                             ->unique()
@@ -57,16 +58,22 @@ class SkPenerimaanPpdbResource extends Resource
                             ->required()
                             ->columnSpanFull()
                             ->appendFiles()
+                            ->visibility(true)
                             ->label('File Surat Keputusan')
                             ->acceptedFileTypes([
-                                'application/pdf', // PDF
-                                'application/msword', // Microsoft Word
-                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // Microsoft Word (OpenXML/DOCX) 
-                                'application/vnd.ms-excel', // Microsoft Excel 
-                                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Microsoft Excel (OpenXML) 
-                                'application/vnd.ms-powerpoint', // Microsoft PowerPoint 
-                                'application/vnd.openxmlformats-officedocument.presentationml.presentation', // Microsoft PowerPoint (OpenXML) 
-                                'text/plain', // Plain Text
+                                'video/mp4',
+                                'video/avi',
+                                'video/mov',
+                                'video/wmv'
+                                // ->acceptedFileTypes([
+                                //     'application/pdf', // PDF
+                                //     'application/msword', // Microsoft Word
+                                //     'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // Microsoft Word (OpenXML/DOCX) 
+                                //     'application/vnd.ms-excel', // Microsoft Excel 
+                                //     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Microsoft Excel (OpenXML) 
+                                //     'application/vnd.ms-powerpoint', // Microsoft PowerPoint 
+                                //     'application/vnd.openxmlformats-officedocument.presentationml.presentation', // Microsoft PowerPoint (OpenXML) 
+                                //     'text/plain', // Plain Text
                             ])
                     ])
             ]);
