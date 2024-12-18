@@ -65,13 +65,13 @@
               src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
         </div>
         {{-- informasi ppdb --}}
-        <div class="grid grid-cols-1 gap-3 w-full md:w-3/4 bg-colorprimarywhite p-4 mt-3 rounded-lg mx-auto drop-shadow-xl border relative">
-          <h4 class="text-center text-colorprimarytosca font-outfit text-2xl font-semibold mb-4">Informasi PPDB </h4>
+        <div class="relative grid w-full grid-cols-1 gap-3 p-4 mx-auto mt-3 border rounded-lg md:w-3/4 bg-colorprimarywhite drop-shadow-xl">
+          <h4 class="mb-4 text-2xl font-semibold text-center text-colorprimarytosca font-outfit">Informasi PPDB </h4>
           <p class="text-lg font-normal leading-7 tracking-tight text-colorprimaryblack font-outfit">
             Dengan mengucapkan segala puja dan puji syukur kepada Allah SWT, kuota pendaftaran peserta didik baru (PPDB) di SD ISLAM NURUL FIRDAUS sudah <span class="text-colorsecondgreen">terpenuhi</span>.
           </p>
           <p class="text-lg font-normal leading-7 tracking-tight text-colorprimaryblack font-outfit">
-            Dan kami umumkan bahwa pendaftaran untuk calon peserta didik baru tahun ajaran 2024-2025 di <span class="text-colorprimaryorange">tutup</span>.
+            Dan kami umumkan bahwa pendaftaran untuk calon peserta didik baru tahun ajaran 2024-2025 telah di <span class="text-colorprimaryorange">tutup</span>.
           </p>
           <img src="/assets/illustrasi05.png" alt="illustrasi" class="absolute w-12 -top-7 -right-2">
         </div>
