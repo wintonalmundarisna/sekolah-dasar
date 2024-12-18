@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tenaga_kependidikans', function (Blueprint $table) {
             $table->id();
-            $table->string('foto', 100);
+            $table->string('foto', 100)->nullable();
             $table->string('nama', 50);
             $table->string('nuptk', 20)->nullable();
             $table->string('jk', 10);

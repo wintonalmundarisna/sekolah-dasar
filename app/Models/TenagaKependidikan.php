@@ -16,12 +16,17 @@ class TenagaKependidikan extends Model
     public static function booted()
     {
         static::deleted(function ($guru) {
-            Storage::disk('public')->delete($guru->foto);
+            if ($guru->foto) {
+                Storage::disk('public')->delete($guru->foto);
+            }
         });
 
+        // cek, jika ada foto di request, maka ganti, jika tak ada maka hiraukan
         static::updating(function ($guru) {
-            if ($guru->isDirty('foto')) {
-                Storage::disk('public')->delete($guru->getOriginal('foto'));
+            if ($guru->getOriginal('foto')) {
+                if ($guru->isDirty('foto')) {
+                    Storage::disk('public')->delete($guru->getOriginal('foto'));
+                }
             }
         });
     }

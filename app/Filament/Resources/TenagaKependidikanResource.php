@@ -20,6 +20,8 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\TextArea;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Illuminate\Support\Str;
 
 class TenagaKependidikanResource extends Resource
 {
@@ -40,14 +42,24 @@ class TenagaKependidikanResource extends Resource
                     ->schema([
                         FileUpload::make('foto')
                             ->image()
+                            ->disk('public')
                             ->directory('tenaga-kependidikan')
-                            ->required(),
+                            ->imageEditorAspectRatios([
+                                null, // ada button bebas crop
+                                '16:9',
+                                '4:3',
+                                '1:1',
+                            ])
+                            ->imageEditor()
+                            ->imageEditorMode(2)
+                            ->getUploadedFileNameForStorageUsing(
+                                fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
+                                    ->prepend(substr(Str::uuid(), 0, 5) . '_'),
+                            ),
                         TextInput::make('nama')
-                            ->required()
-                            ->maxLength(50),
+                            ->required(),
                         TextInput::make('nuptk')
-                            ->label('NUPTK')
-                            ->maxLength(20),
+                            ->label('NUPTK'),
                         Radio::make('jk')
                             ->options([
                                 'Laki-Laki' => 'Laki-Laki',
@@ -59,88 +71,65 @@ class TenagaKependidikanResource extends Resource
                             ->label('Jenis Kelamin'),
                         TextInput::make('tempat_lahir')
                             ->required()
-                            ->label('Tempat Lahir')
-                            ->maxLength(50),
+                            ->label('Tempat Lahir'),
                         DatePicker::make('tanggal_lahir')
                             ->label('Tanggal Lahir')
                             ->required(),
                         TextInput::make('nip')
-                            ->label('NIP')
-                            ->maxLength(50),
+                            ->label('NIP'),
                         TextInput::make('status_kepegawaian')
                             ->required()
-                            ->label('Status Kepegawaian')
-                            ->maxLength(10),
+                            ->label('Status Kepegawaian'),
                         TextInput::make('jenis_ptk')
                             ->label('Jenis PTK')
-                            ->required()
-                            ->maxLength(50),
+                            ->required(),
                         TextInput::make('agama')
-                            ->required()
-                            ->maxLength(15),
+                            ->required(),
                         Textarea::make('alamat')
                             ->required()
-                            ->maxLength(65535)
                             ->columnSpanFull(),
                         TextInput::make('rt')
-                            ->label('RT')
-                            ->maxLength(2),
+                            ->label('RT'),
                         TextInput::make('rw')
-                            ->label('RW')
-                            ->maxLength(2),
+                            ->label('RW'),
                         TextInput::make('nama_dusun')
-                            ->label('Nama Dusun')
-                            ->maxLength(50),
+                            ->label('Nama Dusun'),
                         TextInput::make('desa_kelurahan')
-                            ->label('Desa / Kelurahan')
-                            ->maxLength(50),
+                            ->label('Desa / Kelurahan'),
                         TextInput::make('kecamatan')
-                            ->required()
-                            ->maxLength(50),
+                            ->required(),
                         TextInput::make('kode_pos')
-                            ->label('Kode POS')
-                            ->maxLength(5),
+                            ->label('Kode POS'),
                         TextInput::make('telepon')
-                            ->tel()
-                            ->maxLength(15),
+                            ->tel(),
                         TextInput::make('hp')
                             ->label('Nomor Handphone')
-                            ->required()
-                            ->maxLength(15),
+                            ->required(),
                         TextInput::make('email')
                             ->email()
-                            ->required()
-                            ->maxLength(100),
+                            ->required(),
                         TextInput::make('tugas_tambahan')
-                            ->label('Tugas Tambahan')
-                            ->maxLength(100),
+                            ->label('Tugas Tambahan'),
                         TextInput::make('sk_cpns')
-                            ->label('SK CPNS')
-                            ->maxLength(100),
+                            ->label('SK CPNS'),
                         TextInput::make('tanggal_cpns')
-                            ->label('Tanggal CPNS')
-                            ->maxLength(20),
+                            ->label('Tanggal CPNS'),
                         TextInput::make('sk_pengangkatan')
-                            ->label('SK Pengangkatan')
-                            ->maxLength(30),
+                            ->label('SK Pengangkatan'),
                         DatePicker::make('tmt_pengangkatan')
                             ->label('TMT Pengangkatan')
                             ->required(),
                         TextInput::make('lembaga_pengangkatan')
                             ->label('Lembaga Pengangkatan')
-                            ->required()
-                            ->maxLength(20),
+                            ->required(),
                         TextInput::make('pangkat_golongan')
-                            ->label('Pangkat Golongan')
-                            ->maxLength(100),
+                            ->label('Pangkat Golongan'),
                         TextInput::make('sumber_gaji')
                             ->label('Sumber Gaji')
-                            ->required()
-                            ->maxLength(50),
+                            ->required(),
                         TextInput::make('nama_ibu_kandung')
                             ->label('Nama Ibu Kandung')
-                            ->required()
-                            ->maxLength(50),
+                            ->required(),
                         Radio::make('status_perkawinan')
                             ->options([
                                 'Kawin' => 'Kawin',
@@ -151,18 +140,14 @@ class TenagaKependidikanResource extends Resource
                             ->required()
                             ->label('Status Perkawinan'),
                         TextInput::make('nama_suami_istri')
-                            ->label('Nama Suami / Istri')
-                            ->maxLength(50),
+                            ->label('Nama Suami / Istri'),
                         TextInput::make('nip_suami_istri')
-                            ->label('NIP Suami / Istri')
-                            ->maxLength(50),
+                            ->label('NIP Suami / Istri'),
                         TextInput::make('pekerjaan_suami_istri')
                             ->label('Pekerjaan Suami / Istri')
-                            ->required()
-                            ->maxLength(50),
+                            ->required(),
                         TextInput::make('tmt_pns')
-                            ->label('TMT PNS')
-                            ->maxLength(50),
+                            ->label('TMT PNS'),
                         Radio::make('lisensi_kepala_sekolah')
                             ->options([
                                 'Ya' => 'Ya',
@@ -200,41 +185,28 @@ class TenagaKependidikanResource extends Resource
                             ->required()
                             ->label('Keahlian Bahasa Isyarat'),
                         TextInput::make('npwp')
-                            ->label('NPWP')
-                            ->maxLength(50),
+                            ->label('NPWP'),
                         TextInput::make('nama_wajib_pajak')
-                            ->label('Nama Wajib Pajak')
-                            ->maxLength(50),
+                            ->label('Nama Wajib Pajak'),
                         TextInput::make('kewarganegaraan')
-                            ->required()
-                            ->maxLength(20),
-                        TextInput::make('bank')
-                            ->maxLength(50),
+                            ->required(),
+                        TextInput::make('bank'),
                         TextInput::make('no_rekening')
-                            ->label('Nomor Rekening')
-                            ->maxLength(50),
+                            ->label('Nomor Rekening'),
                         TextInput::make('rekening_atas_nama')
-                            ->label('Rekening Atas Nama')
-                            ->maxLength(50),
+                            ->label('Rekening Atas Nama'),
                         TextInput::make('nik')
                             ->label('NIK')
-                            ->required()
-                            ->maxLength(20),
+                            ->required(),
                         TextInput::make('no_kk')
-                            ->label('Nomor KK')
-                            ->maxLength(20),
-                        TextInput::make('karpeg')
-                            ->maxLength(50),
+                            ->label('Nomor KK'),
+                        TextInput::make('karpeg'),
                         TextInput::make('karis_karsu')
-                            ->label('Karis / Karsu')
-                            ->maxLength(50),
-                        TextInput::make('lintang')
-                            ->maxLength(50),
-                        TextInput::make('bujur')
-                            ->maxLength(50),
+                            ->label('Karis / Karsu'),
+                        TextInput::make('lintang'),
+                        TextInput::make('bujur'),
                         TextInput::make('nuks')
                             ->label('NUKS')
-                            ->maxLength(50),
                     ])
             ]);
     }
@@ -245,6 +217,7 @@ class TenagaKependidikanResource extends Resource
             ->columns([
                 ImageColumn::make('foto')
                     ->circular()
+                    ->defaultImageUrl(asset('assets/default-teacher.jpg'))
                     ->searchable(),
                 TextColumn::make('nama')
                     ->markdown(true)

@@ -34,17 +34,12 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->registration()
-            // ->passwordReset()
             ->login()
             ->profile()
             ->darkModeBrandLogo(asset('assets/Logo_new.png'))
             ->brandLogo(asset('assets/Logo.png'))
             ->favicon(asset('assets/Icon.png'))
             ->brandName('SDI NUFIS')
-            // ->defaultThemeMode(ThemeMode::Light)
-            // ->colors([
-            //     'primary' => Color::Cyan,
-            // ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path(path: 'Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -72,6 +67,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 'Kesiswaan',
+                'Peserta Didik',
                 'Kurikulum',
             ])
             ->authMiddleware([

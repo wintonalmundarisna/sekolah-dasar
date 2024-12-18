@@ -16,12 +16,16 @@ class Guru extends Model
     public static function booted()
     {
         static::deleted(function ($guru) {
-            Storage::disk('public')->delete($guru->foto);
+            if ($guru->foto) {
+                    Storage::disk('public')->delete($guru->foto);
+            }
         });
 
         static::updating(function ($guru) {
-            if ($guru->isDirty('foto')) {
-                Storage::disk('public')->delete($guru->getOriginal('foto'));
+            if ($guru->getOriginal('foto')) {
+                if ($guru->isDirty('foto')) {
+                    Storage::disk('public')->delete($guru->getOriginal('foto'));
+                }
             }
         });
     }

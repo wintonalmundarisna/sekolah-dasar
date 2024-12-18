@@ -173,6 +173,7 @@ return [
         'data.email' => [
             'unique' => 'Email sudah digunakan',
         ],
+        'required' => 'Tidak boleh kosong'
     ],
 
     /*

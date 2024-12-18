@@ -14,11 +14,13 @@ use Filament\Tables\Table;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 // use Filament\Infolists\Components\Section;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TextArea;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Illuminate\Support\Str;
 
 class GuruResource extends Resource
 {
@@ -39,8 +41,20 @@ class GuruResource extends Resource
                     ->schema([
                         FileUpload::make('foto')
                             ->image()
+                            ->disk('public')
                             ->directory('guru')
-                            ->required(),
+                            ->imageEditorAspectRatios([
+                                null, // ada button bebas crop
+                                '16:9',
+                                '4:3',
+                                '1:1',
+                            ])
+                            ->imageEditor()
+                            ->imageEditorMode(2)
+                            ->getUploadedFileNameForStorageUsing(
+                                fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
+                                    ->prepend(substr(Str::uuid(), 0, 5) . '_'),
+                            ),
                         TextInput::make('nama')
                             ->required()
                             ->maxLength(100),
@@ -128,6 +142,7 @@ class GuruResource extends Resource
                             ->label('SK Pengangkatan'),
                         TextInput::make('tmt-pengangkatan')
                             ->maxLength(255)
+                            ->required()
                             ->label('TMT Pengangkatan'),
                         TextInput::make('lembaga-pengangkatan')
                             ->required()
@@ -249,6 +264,7 @@ class GuruResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('foto')
+                    ->defaultImageUrl(asset('assets/default-teacher.jpg'))
                     ->circular(),
                 TextColumn::make('nama')
                     ->sortable()
@@ -264,7 +280,7 @@ class GuruResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make()
-                ->color('warning'),
+                    ->color('warning'),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([

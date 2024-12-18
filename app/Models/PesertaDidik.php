@@ -12,14 +12,19 @@ class PesertaDidik extends Model
     protected $guarded = ['id'];
     public static function booted()
     {
-        static::updating(function (Model $pesertaDidik) {
-            if ($pesertaDidik->isDirty('foto')) {
-                Storage::disk('public')->delete($pesertaDidik->getOriginal('foto'));
+        static::deleted(function ($guru) {
+            if ($guru->foto) {
+                Storage::disk('public')->delete($guru->foto);
             }
         });
 
-        static::deleted(function (Model $pesertaDidik) {
-            Storage::disk('public')->delete($pesertaDidik->foto);
+        // cek, jika ada foto di request, maka ganti, jika tak ada maka hiraukan
+        static::updating(function ($guru) {
+            if ($guru->getOriginal('foto')) {
+                if ($guru->isDirty('foto')) {
+                    Storage::disk('public')->delete($guru->getOriginal('foto'));
+                }
+            }
         });
     }
 }
