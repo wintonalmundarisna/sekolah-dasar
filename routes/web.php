@@ -1,6 +1,10 @@
 <?php
 
+use App\Models\SkPenerimaanPpdb;
 use Illuminate\Support\Facades\Route;
+use Barryvdh\DomPDF\Facade\PDF;
+use Illuminate\Http\Request;
+// use PDF;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,5 +94,17 @@ Route::get('/form-online', function () {
 });
 
 Route::get('/pengumuman', function () {
-    return view('pengumuman');
+    return view('pengumuman', [
+        'data' => SkPenerimaanPpdb::get()
+    ]);
+});
+
+Route::get('/show-pdf/{id}', function (Request $request, $id) {
+    $data = SkPenerimaanPpdb::find($id);
+    // dd($data);
+    $pdf = PDF::loadView('pdf_view', compact('data'));
+    $pdf->setPaper('A4', 'potrait');
+    // Check if 'surat_keputusan' key exists
+    // $suratKeputusan = $data['surat_keputusan'] ?? 'default_value';
+    return response($pdf->stream($data->surat_keputusan))->header('Content-Type', 'application/pdf')->header('Content-Disposition', 'inline; filename="' . $data->surat_keputusan . '"');
 });
