@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\SkPenerimaanPpdb;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -90,5 +91,7 @@ Route::get('/form-online', function () {
 });
 
 Route::get('/pengumuman', function () {
-    return view('pengumuman');
+    return view('pengumuman', [
+        'data' => SkPenerimaanPpdb::get()
+    ]);
 });

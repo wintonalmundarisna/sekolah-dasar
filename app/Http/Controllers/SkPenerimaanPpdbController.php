@@ -14,7 +14,7 @@ class SkPenerimaanPpdbController extends Controller
      */
     public function index()
     {
-        //
+        SkPenerimaanPPdb::get();
     }
 
     /**
