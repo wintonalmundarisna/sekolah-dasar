@@ -554,16 +554,16 @@
         </div>
         {{-- Kurikulum --}}
         <div class="w-full mx-auto mt-4 md:w-4/5">
-          <div tabindex="0" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondorangemuda">
+          <div tabindex="0" class="mb-2 bg-white border collapse border-base-300 collapse-arrow">
             <div class="text-sm font-medium md:text-xl collapse-title font-outfit text-colorprimaryorange">Semester 1 Tahun Ajaran 2024/2025</div>
             <div class="collapse-content font-outfit text-colorprimaryblack">
-              <p>tabindex="0" attribute is necessary to make the div focusable</p>
+              <img src="/assets/kurikulum-semester-1.png" alt="kurikulum-semester-1" class="w-full mx-auto">
             </div>
           </div>
-          <div tabindex="1" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondtoscamuda">
+          <div tabindex="1" class="mb-2 bg-white border collapse border-base-300 collapse-arrow">
             <div class="text-sm font-medium md:text-xl collapse-title font-outfit text-colorprimarytosca">Semester 2 Tahun Ajaran 2024/2025</div>
             <div class="collapse-content font-outfit text-colorprimaryblack">
-              <p>tabindex="0" attribute is necessary to make the div focusable</p>
+              <img src="/assets/kurikulum-semester-2.png" alt="kurikulum-semester-1" class="w-full mx-auto">
             </div>
           </div>
         </div>
