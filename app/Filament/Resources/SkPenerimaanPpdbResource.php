@@ -40,8 +40,7 @@ class SkPenerimaanPpdbResource extends Resource
                     ->schema([
                         TextInput::make('judul')
                             ->required()
-                            ->columnSpanFull()
-                            ->maxLength(100),
+                            ->columnSpanFull(),
                         FileUpload::make('surat_keputusan')
                             ->disk('public')
                             ->directory('sk_ppdb')
@@ -56,18 +55,18 @@ class SkPenerimaanPpdbResource extends Resource
                             ->downloadable()
                             ->required()
                             ->columnSpanFull()
-                            // ->appendFiles()
+                            ->appendFiles()
                             ->label('File Surat Keputusan')
-                            ->acceptedFileTypes([
-                                'application/pdf', // PDF
-                                'application/msword', // Microsoft Word
-                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // Microsoft Word (OpenXML/DOCX) 
-                                'application/vnd.ms-excel', // Microsoft Excel 
-                                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Microsoft Excel (OpenXML) 
-                                'application/vnd.ms-powerpoint', // Microsoft PowerPoint 
-                                'application/vnd.openxmlformats-officedocument.presentationml.presentation', // Microsoft PowerPoint (OpenXML) 
-                                'text/plain', // Plain Text
-                            ])
+                        ->acceptedFileTypes([
+                            'application/pdf', // PDF
+                            'application/msword', // Microsoft Word
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // Microsoft Word (OpenXML/DOCX) 
+                            'application/vnd.ms-excel', // Microsoft Excel 
+                            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Microsoft Excel (OpenXML) 
+                            'application/vnd.ms-powerpoint', // Microsoft PowerPoint 
+                            'application/vnd.openxmlformats-officedocument.presentationml.presentation', // Microsoft PowerPoint (OpenXML) 
+                            'text/plain', // Plain Text
+                        ])
                     ])
             ]);
     }
