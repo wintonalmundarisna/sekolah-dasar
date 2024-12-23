@@ -77,8 +77,22 @@
                 Panitia Penerimaan Peserta Didik Baru (PPDB) Sekolah Dasar Islam Terpadu SD ISLAM NURUL FIRDAUS Tahun Ajaran 2024-2025, berdasarkan hasil Tes Kemampuan Dasar, Tes Kematangan Belajar dan Wawancara Orang Tua/Wali dengan sekolah yang diselenggarakan pada setiap periode pendaftaran menghasilkan keputusan sebagai berikut :
               </p>
               <div class="card-actions">
-                <button class="w-full text-sm text-white btn bg-colorsecondgreen hover:bg-green-700 md:text-base font-outfit"><a href="/storage/sk_ppdb/SK-PPDB-24-25.pdf" target="_blank">PENGUMUMAN PPDB KELAS I</a> <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                <button class="w-full text-sm text-white btn bg-colorsecondyellowtua hover:bg-yellow-700 md:text-base font-outfit"><a href="https://www.sditaliman.sch.id/wp-content/uploads/2023/12/SK-Pindahan-Ke-Kelas-3-TP-24-25.pdf" target="_blank">PENGUMUMAN SISWA PINDAHAN</a> <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                @php
+                  $count = 1;
+                @endphp
+                @foreach ($data as $d)
+                {{-- @php
+                  dd($count);
+                @endphp --}}
+                @if ($count % 2 == 0)
+                  <button class="w-full text-sm text-white btn bg-colorsecondyellowtua hover:bg-yellow-500 md:text-base font-outfit"><a href={{ url('/show-pdf/'.$d->id) }} >{{ $d->judul }}</a> <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                @else
+                  <button class="w-full text-sm text-white btn bg-colorsecondgreen hover:bg-green-700 md:text-base font-outfit"><a href="{{ url('/show-pdf/'.$d->id) }}">{{ $d->judul }}</a> <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                @endif
+                @php
+                  $count++;
+                @endphp
+                @endforeach
               </div>
               <p class="text-lg font-normal leading-7 tracking-tight text-colorprimaryblack font-outfit">
                 Keputusan Panitia PPDB dan Dewan Guru SD ISLAM NURUL FIRDAUS ini tidak dapat diganggu gugat.

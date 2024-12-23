@@ -2,6 +2,10 @@
 
 use App\Models\SkPenerimaanPpdb;
 use Illuminate\Support\Facades\Route;
+use Barryvdh\DomPDF\Facade\PDF;
+use Illuminate\Http\Request;
+// use PDF;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,4 +98,19 @@ Route::get('/pengumuman', function () {
     return view('pengumuman', [
         'data' => SkPenerimaanPpdb::get()
     ]);
+});
+
+Route::get('/show-pdf/{id}', function (Request $request, $id) {
+    dd($id);
+    $data = SkPenerimaanPpdb::find($id);
+    if (!$data) {
+        abort(404, 'Data not found');
+    }
+    $pdf = PDF::loadView('pdf_view', compact('data'));
+    $pdf->setPaper('A4', 'portrait'); // Ganti karakter yang tidak diizinkan dalam nama file 
+    $filename = str_replace(['/', '\\'], '_', $data->surat_keputusan); // Buat URL untuk file PDF 
+    // $path = Storage::url('public/' . $data->surat_keputusan);
+    return response($pdf->stream($filename))
+    ->header('Content-Type', 'application/pdf')
+    ->header('Content-Disposition', 'inline; filename="' . $filename . '"');
 });

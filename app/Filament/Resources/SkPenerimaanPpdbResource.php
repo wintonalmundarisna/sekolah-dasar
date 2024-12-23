@@ -44,11 +44,11 @@ class SkPenerimaanPpdbResource extends Resource
                         FileUpload::make('surat_keputusan')
                             ->disk('public')
                             ->directory('sk_ppdb')
-                            ->unique()
                             ->getUploadedFileNameForStorageUsing(
                                 fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
                                     ->prepend(substr(Str::uuid(), 0, 5) . '_'),
                             )
+                            ->unique()
                             ->openable()
                             ->previewable(true)
                             ->preserveFilenames() // ambil nama file ori
@@ -57,16 +57,9 @@ class SkPenerimaanPpdbResource extends Resource
                             ->columnSpanFull()
                             ->appendFiles()
                             ->label('File Surat Keputusan')
-                        ->acceptedFileTypes([
-                            'application/pdf', // PDF
-                            'application/msword', // Microsoft Word
-                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // Microsoft Word (OpenXML/DOCX) 
-                            'application/vnd.ms-excel', // Microsoft Excel 
-                            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Microsoft Excel (OpenXML) 
-                            'application/vnd.ms-powerpoint', // Microsoft PowerPoint 
-                            'application/vnd.openxmlformats-officedocument.presentationml.presentation', // Microsoft PowerPoint (OpenXML) 
-                            'text/plain', // Plain Text
-                        ])
+                            ->acceptedFileTypes([
+                                'application/pdf', // PDF
+                            ])
                     ])
             ]);
     }

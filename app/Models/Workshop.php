@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Storage;
 class Workshop extends Model
 {
     use HasFactory;
+    protected $table = 'workshops';
     protected $guarded = ['id'];
-
     public static function booted()
     {
         static::deleted(function ($guru) {
