@@ -1,9 +1,19 @@
 <?php
 
 use App\Models\SkPenerimaanPpdb;
+use App\Models\Guru;
+use App\Models\KurikulumKelasSatu;
+use App\Models\KurikulumKelasDua;
+use App\Models\KurikulumKelasTiga;
+use App\Models\KurikulumKelasEmpat;
+use App\Models\KurikulumKelasLima;
+use App\Models\KurikulumKelasEnam;
+use App\Models\TenagaKependidikan;
 use Illuminate\Support\Facades\Route;
 use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Storage;
+
 // use PDF;
 use Illuminate\Support\Facades\Storage;
 
@@ -31,11 +41,15 @@ Route::get('/data-sekolah', function () {
 });
 
 Route::get('/info-pendidik', function () {
-    return view('info-pendidik');
+    return view('info-pendidik', [
+        'data' => Guru::get()
+    ]);
 });
 
 Route::get('/info-tenaga-pendidik', function () {
-    return view('info-tenaga-pendidik');
+    return view('info-tenaga-pendidik', [
+        'data' => TenagaKependidikan::get()
+    ]);
 });
 
 Route::get('/komite-sekolah', function () {
@@ -74,8 +88,43 @@ Route::get('/alumni', function () {
     return view('alumni');
 });
 
-Route::get('/kurikulum', function () {
-    return view('kurikulum');
+Route::get('/kurikulum-kelas-1', function () {
+    return view('kurikulum-kelas-1', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kurikulum-kelas-2', function () {
+    return view('kurikulum-kelas-2', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kurikulum-kelas-3', function () {
+    return view('kurikulum-kelas-3', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kurikulum-kelas-4', function () {
+    return view('kurikulum-kelas-4', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+Route::get('/kurikulum-kelas-5', function () {
+    return view('kurikulum-kelas-5', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kurikulum-kelas-6', function () {
+    return view('kurikulum-kelas-6', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kalender-akademik', function () {
+    return view('kalender-akademik');
 });
 
 Route::get('/gallery', function () {
@@ -103,14 +152,11 @@ Route::get('/pengumuman', function () {
 Route::get('/show-pdf/{id}', function (Request $request, $id) {
     dd($id);
     $data = SkPenerimaanPpdb::find($id);
-    if (!$data) {
-        abort(404, 'Data not found');
-    }
+    // dd($data);
     $pdf = PDF::loadView('pdf_view', compact('data'));
-    $pdf->setPaper('A4', 'portrait'); // Ganti karakter yang tidak diizinkan dalam nama file 
-    $filename = str_replace(['/', '\\'], '_', $data->surat_keputusan); // Buat URL untuk file PDF 
-    // $path = Storage::url('public/' . $data->surat_keputusan);
-    return response($pdf->stream($filename))
-    ->header('Content-Type', 'application/pdf')
-    ->header('Content-Disposition', 'inline; filename="' . $filename . '"');
+    $pdf->setPaper('A4', 'potrait');
+    // Check if 'surat_keputusan' key exists
+    // $suratKeputusan = $data['surat_keputusan'] ?? 'default_value';
+    return response($pdf->stream($data->surat_keputusan))->header('Content-Type', 'application/pdf')->header('Content-Disposition', 'inline; filename="' . $data->surat_keputusan . '"');
 });
+

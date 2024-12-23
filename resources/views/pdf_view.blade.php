@@ -4,6 +4,6 @@
     <title>PDF Document</title>
 </head>
 <body>
-    {{-- {{ $data['surat_keputusan'] ?? 'No data available' }} --}}
+    {{ $data['surat_keputusan'] ?? 'No data available' }}
 </body>
 </html>

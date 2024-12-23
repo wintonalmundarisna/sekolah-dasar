@@ -210,8 +210,8 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // Tambahkan alias tambahan di sini 
+    Facade::defaultAliases()->merge([
+        'PDF' => \Barryvdh\DomPDF\Facade\Pdf::class,
     ])->toArray(),
 
 ];

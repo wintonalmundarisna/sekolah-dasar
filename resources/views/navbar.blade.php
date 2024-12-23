@@ -72,7 +72,20 @@
               </ul>
             </details>
           </li>
-          <li><a href="/kurikulum" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</a></li>
+          <li>
+            <details>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</summary>
+              <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
+                <li><a href="/kurikulum-kelas-1" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 1</a></li>
+                <li><a href="/kurikulum-kelas-2" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 2</a></li>
+                <li><a href="/kurikulum-kelas-3" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 3</a></li>
+                <li><a href="/kurikulum-kelas-4" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 4</a></li>
+                <li><a href="/kurikulum-kelas-5" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 5</a></li>
+                <li><a href="/kurikulum-kelas-6" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 6</a></li>
+                <li><a href="/kalender-akademik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kalender Akademik</a></li>
+              </ul>
+            </details>
+          </li>
           <li>
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kesiswaan</summary>
@@ -160,7 +173,20 @@
               </ul>
             </details>
           </li>
-          <li><a href="/kurikulum" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</a></li>
+          <li>
+            <details>
+              <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum</summary>
+              <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
+                <li><a href="/kurikulum-kelas-1" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 1</a></li>
+                <li><a href="/kurikulum-kelas-2" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 2</a></li>
+                <li><a href="/kurikulum-kelas-3" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 3</a></li>
+                <li><a href="/kurikulum-kelas-4" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 4</a></li>
+                <li><a href="/kurikulum-kelas-5" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 5</a></li>
+                <li><a href="/kurikulum-kelas-6" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kurikulum Kelas 6</a></li>
+                <li><a href="/kalender-akademik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kalender Akademik</a></li>
+              </ul>
+            </details>
+          </li>
           <li>
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kesiswaan</summary>
