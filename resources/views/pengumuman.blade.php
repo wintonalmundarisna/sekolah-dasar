@@ -85,9 +85,13 @@
                   dd($count);
                 @endphp --}}
                 @if ($count % 2 == 0)
-                  <button class="w-full text-sm text-white btn bg-colorsecondyellowtua hover:bg-yellow-500 md:text-base font-outfit"><a href={{ url('/show-pdf/'.$d->id) }} >{{ $d->judul }}</a> <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                  <a href={{ url('/show-pdf/'.$d->id) }} target="_blank" class="w-full text-sm text-white btn bg-colorsecondyellowtua hover:bg-yellow-500 md:text-base font-outfit"> 
+                    {{ $d->judul }} <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
                 @else
-                  <button class="w-full text-sm text-white btn bg-colorsecondgreen hover:bg-green-700 md:text-base font-outfit"><a href="{{ url('/show-pdf/'.$d->id) }}">{{ $d->judul }}</a> <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                  <a href={{ url('/show-pdf/'.$d->id) }} target="_blank" class="w-full text-sm text-white btn bg-colorsecondgreen hover:bg-green-700 md:text-base font-outfit">
+                    {{ $d->judul }} <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
                 @endif
                 @php
                   $count++;

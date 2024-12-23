@@ -1,9 +1,14 @@
 <?php
 
 use App\Models\SkPenerimaanPpdb;
+use App\Models\Guru;
+use App\Models\KurikulumKelasSatu;
+use App\Models\TenagaKependidikan;
 use Illuminate\Support\Facades\Route;
 use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Storage;
+
 // use PDF;
 
 /*
@@ -30,11 +35,15 @@ Route::get('/data-sekolah', function () {
 });
 
 Route::get('/info-pendidik', function () {
-    return view('info-pendidik');
+    return view('info-pendidik', [
+        'data' => Guru::get()
+    ]);
 });
 
 Route::get('/info-tenaga-pendidik', function () {
-    return view('info-tenaga-pendidik');
+    return view('info-tenaga-pendidik', [
+        'data' => TenagaKependidikan::get()
+    ]);
 });
 
 Route::get('/komite-sekolah', function () {
@@ -74,7 +83,9 @@ Route::get('/alumni', function () {
 });
 
 Route::get('/kurikulum', function () {
-    return view('kurikulum');
+    return view('kurikulum', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
 });
 
 Route::get('/gallery', function () {
@@ -102,9 +113,10 @@ Route::get('/pengumuman', function () {
 Route::get('/show-pdf/{id}', function (Request $request, $id) {
     $data = SkPenerimaanPpdb::find($id);
     // dd($data);
-    $pdf = PDF::loadView('pdf_view', compact('data'));
+    $pdf = Pdf::loadView('pdf_view', compact('data'));
     $pdf->setPaper('A4', 'potrait');
     // Check if 'surat_keputusan' key exists
     // $suratKeputusan = $data['surat_keputusan'] ?? 'default_value';
     return response($pdf->stream($data->surat_keputusan))->header('Content-Type', 'application/pdf')->header('Content-Disposition', 'inline; filename="' . $data->surat_keputusan . '"');
 });
+

@@ -66,88 +66,21 @@
         </div>
         {{-- Kurikulum --}}
         <div class="w-full mx-auto mt-4 md:w-4/5">
+          @foreach ($data as $d)
           <div tabindex="0" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondorangemuda">
             <div class="text-sm font-medium md:text-xl collapse-title font-outfit text-colorprimaryorange">Kurikulum PPK (Pendidikan Penguatan Karakter) Kelas 1</div>
             <div class="collapse-content font-outfit text-colorprimaryblack">
-              <ol class="space-y-2 text-sm list-decimal list-inside md:text-base">
+              <ul class="space-y-2 text-sm md:text-base">
                 <li>
-                  Tilawati
-                  <ol class="space-y-2 text-sm list-decimal list-inside ms-4 text-colorprimaryorange md:text-base">
-                    <li>Tilawati 1</li>
-                    <li>Tilawati 2</li>
-                  </ol>
-                </li>
-                <li>
-                  Hafalan Surat Pendek
-                  <ol class="space-y-2 text-sm list-decimal list-inside ms-4 text-colorprimaryorange md:text-base">
-                    <p>Semester 1</p>
-                    <li>An-Nass</li>
-                    <li>Al-Falaq</li>
-                    <li>Al-Ikhlas</li>
-                    <li>Al-Asr</li>
-                    <p>Semester 2</p>
-                    <li>An-Nashr</li>
-                    <li>Al-Kaafirun</li>
-                    <li>Al-Kautsar</li>
-                    <li>Al-Lahab</li>
-                  </ol>
-                </li>
-                <li>
-                  Hafalan Do’a Harian
-                  <ol class="space-y-2 text-sm list-decimal list-inside ms-4 text-colorprimaryorange md:text-base">
-                    <p>Semester 1</p>
-                    <li>Do’a kebaikan dunia akherat</li>
-                    <li>Do’a untuk kedua orang tua</li>
-                    <li>Do’a akan makan dan minum</li>
-                    <li>Do’a lupa membaca do’a makan</li>
-                    <li>Do’a sesudah minum susu</li>
-                    <li>Do’a sesudah makan dan minum</li>
-                    <li>Do’a berjabat tangan</li>
-                    <li>Do’a sebelum dan bangun tidur</li>
-                    <p>Semester 2</p>
-                    <li>Do’a minta ilham yang baik</li>
-                    <li>Do’a minta ilmu yang manfaat</li>
-                    <li>Doa masuk Rumah</li>
-                    <li>Doa keluar rumah</li>
-                    <li>Doa pagi dan sore</li>
-                    <li>Doa masuk Masjid</li>
-                    <li>Doa keluar masjid</li>
-                    <li>Doa memakai pakaian</li>
-                    <li>Doa Ketika berbuka puasa</li>
-                  </ol>
-                </li>
-                <li>
-                  Menulis Arab
-                  <ol class="space-y-2 text-sm list-decimal list-inside ms-4 text-colorprimaryorange md:text-base">
-                    <li>Menulis huruf hijaiyah dengan tanda fathah</li>
-                    <li>Membaca angka arab</li>
-                    <li>Menulis kata berharokat fathah, kasroh, dhomah, fathah tain, kasrotain, dhomatain</li>
-                    <li>Menulis angka arab</li>
-                    <li>Menulis huruf sambung (di depan, Tengah, belakang)</li>
-                  </ol>
-                </li>
-                <li>
-                  Akhlak
-                  <ol class="space-y-2 text-sm list-decimal list-inside ms-4 text-colorprimaryorange md:text-base">
-                    <li>Faham Surga neraka</li>
-                    <li>Faham al-qur’an dan al-hadist</li>
-                    <li>Ta’dzim dan berbuat baik pada Orangtua</li>
-                    <li>Menghormati saudara yang lebih tua dan sayangi yang muda</li>
-                    <li>Menghormati guru</li>
-                    <li>Bergaul dengan teman</li>
-                    <li>Ketika di masjid</li>
-                    <li>Ketika di tempat pengajian, rumah dan lingkungan</li>
-                  </ol>
-                </li>
-                <li>
-                  Asmaul husna
-                  <ol class="space-y-2 text-sm list-inside ms-4 text-colorprimaryorange md:text-base">
-                    <li>1 sampai 40</li>
-                  </ol>
-                </li>
-              </ol>
+                  {{ $d->materi }}
+                  <ul class="space-y-2 text-sm ms-4 text-colorprimaryorange md:text-base">
+                    <li class="inline-block">{!!$d->penjabaran_materi!!}</li>
+                  </ul>
+                </li> 
+              </ul>
             </div>
           </div>
+          @endforeach ()
           <div tabindex="1" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondtoscamuda">
             <div class="text-sm font-medium md:text-xl collapse-title font-outfit text-colorprimarytosca">Kurikulum PPK (Pendidikan Penguatan Karakter) Kelas 2</div>
             <div class="collapse-content font-outfit text-colorprimaryblack">

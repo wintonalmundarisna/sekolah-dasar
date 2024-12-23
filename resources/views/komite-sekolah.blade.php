@@ -64,128 +64,51 @@
               data-aos-anchor-placement="top-center" 
               src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
         </div>
-        {{-- modal --}}
-        <dialog id="my_modal_3" class="w-screen modal">
-          <div class="modal-box">
-            <form method="dialog">
-              <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
-            </form>
-            <h3 class="mb-5 text-lg font-bold text-center text-colorprimarytosca">Info Detail Tenaga Pendidik</h3>
-            <div class="space-y-2 text-base font-normal leading-7 tracking-tight text-colorprimaryblack font-outfit text-balance">
-              <p>Syukron Hidayatullah, S.Pd.</p>
-              <p>Kepala Sekolah</p>
-              <p>SD Islam Nurul Firdaus</p>
-            </div>
-          </div>
-        </dialog>
-        {{-- modal --}}
-
         {{-- grid --}}
         <div class="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
-          {{-- card-1 --}}
-          <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg">
-            <div class="rounded-md bg-colorsecondorangemuda pt-4">
-              <a href="#" class="flex items-center justify-center">
-                <img class="rounded-t-lg w-1/2" src="/assets/pendidik03.png" alt="info-pendidik"/>
-              </a>
-            </div>
-            <div class="py-3">
-              <div class="flex items-center justify-between">
-                <div>
-                  <h5 class="mb-1 text-sm font-bold tracking-tight md:text-md text-colorprimaryorange font-outfit ">Syukron Hidayatullah, S.Pd.</h5>
-                  <p class="text-sm font-normal tracking-tight md:text-md text-colorprimaryblack font-outfit">Kepala Sekolah</p>
-                </div>
-                <a onclick="my_modal_3.showModal()" class="px-4 py-2.5 text-md font-medium text-center text-white bg-colorprimaryorange rounded-md">
-                  <i class="fa-solid fa-address-card"></i>
+          {{-- card --}}
+          @foreach ($data as $d)
+            <div data-aos="fade-up"
+              data-aos-delay="40"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center"
+              class="max-w-sm py-4 rounded-lg">
+              <div class="pt-4 rounded-md bg-colorsecondyellowmuda">
+                <a href="#" class="flex items-center justify-center">
+                  <img class="w-1/2 rounded-t-lg" src="{{ asset('storage/'.$d->foto) }}" alt="info-pendidik"/>
                 </a>
               </div>
-            </div>
-          </div>
-          {{-- card-2 --}}
-          <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg">
-            <div class="rounded-md bg-colorsecondtoscamuda pt-4">
-              <a href="#" class="flex items-center justify-center">
-                <img class="rounded-t-lg w-1/2" src="/assets/pendidik03.png" alt="info-pendidik"/>
-              </a>
-            </div>
-            <div class="py-3">
-              <div class="flex items-center justify-between">
-                <div>
-                  <h5 class="mb-1 text-sm font-bold tracking-tight md:text-md text-colorprimarytosca font-outfit ">Syukron Hidayatullah, S.Pd.</h5>
-                  <p class="text-sm font-normal tracking-tight md:text-md text-colorprimaryblack font-outfit">Kepala Sekolah</p>
+              <div class="py-3">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h5 class="mb-0.5 text-sm font-bold tracking-tight md:text-base text-colorsecondyellowtua font-outfit ">{{ $d->nama }}</h5>
+                    <p class="text-sm font-normal tracking-tight md:text-md text-colorprimaryblack font-outfit">{{ $d->jenis_ptk }}</p>
+                  </div>
+                  <a onclick="my_modal_{{ $d->id }}.showModal()" class="px-4 py-2.5 text-md font-medium text-center text-white bg-colorsecondyellowtua rounded-md">
+                    <i class="cursor-pointer fa-solid fa-address-card"></i>
+                  </a>
+                  {{-- modal --}}
+                  <dialog id="my_modal_{{ $d->id }}" class="modal">
+                    <div class="modal-box">
+                      <form method="dialog">
+                        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+                      </form>
+                      <h3 class="mb-2 text-lg font-bold text-center border-b-2 font-outfit text-colorsecondyellowtua border-colorsecondyellowtua">Detail Pendidik</h3>
+                      <p class="py-1 font-bold border-b-2 font-outfit text-colorprimaryblack">{{ $d->nama }}</p>
+                      <p class="py-1 border-b-2 font-outfit text-colorprimaryblack">{{ $d->jenis_ptk }}</p>
+                      <p class="py-1 border-b-2 font-outfit text-colorprimaryblack">{{ $d->hp }}</p>
+                      <p class="py-1 border-b-2 font-outfit text-colorprimaryblack">{{ $d->email }}</p>
+                    </div>
+                  </dialog>
+                  {{-- modal --}}
                 </div>
-                <a onclick="my_modal_3.showModal()" class="px-4 py-2.5 text-md font-medium text-center text-white bg-colorprimarytosca rounded-md">
-                  <i class="fa-solid fa-address-card"></i>
-                </a>
               </div>
             </div>
-          </div>
-          {{-- card-3 --}}
-          <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg">
-            <div class="rounded-md bg-colorsecondyellowmuda pt-4">
-              <a href="#" class="flex items-center justify-center">
-                <img class="rounded-t-lg w-1/2" src="/assets/pendidik03.png" alt="info-pendidik"/>
-              </a>
-            </div>
-            <div class="py-3">
-              <div class="flex items-center justify-between">
-                <div>
-                  <h5 class="mb-1 text-sm font-bold tracking-tight md:text-md text-colorsecondyellowtua font-outfit ">Syukron Hidayatullah, S.Pd.</h5>
-                  <p class="text-sm font-normal tracking-tight md:text-md text-colorprimaryblack font-outfit">Kepala Sekolah</p>
-                </div>
-                <a onclick="my_modal_3.showModal()" class="px-4 py-2.5 text-md font-medium text-center text-white bg-colorsecondyellowtua rounded-md">
-                  <i class="fa-solid fa-address-card"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          {{-- card-4 --}}
-          <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center" 
-            class="max-w-sm py-4 rounded-lg">
-            <div class="rounded-md bg-colorsecondgreenmuda pt-4">
-              <a href="#" class="flex items-center justify-center">
-                <img class="rounded-t-lg w-1/2" src="/assets/pendidik03.png" alt="info-pendidik"/>
-              </a>
-            </div>
-            <div class="py-3">
-              <div class="flex items-center justify-between">
-                <div>
-                  <h5 class="mb-1 text-sm font-bold tracking-tight md:text-md text-colorsecondgreen font-outfit ">Syukron Hidayatullah, S.Pd.</h5>
-                  <p class="text-sm font-normal tracking-tight md:text-md text-colorprimaryblack font-outfit">Kepala Sekolah</p>
-                </div>
-                <a onclick="my_modal_3.showModal()" class="px-4 py-2.5 text-md font-medium text-center text-white bg-colorsecondgreen rounded-md">
-                  <i class="fa-solid fa-address-card"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+            @endforeach
+          {{-- card --}}
         </div>
       </div>
     </section>
