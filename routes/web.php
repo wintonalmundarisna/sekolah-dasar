@@ -3,6 +3,11 @@
 use App\Models\SkPenerimaanPpdb;
 use App\Models\Guru;
 use App\Models\KurikulumKelasSatu;
+use App\Models\KurikulumKelasDua;
+use App\Models\KurikulumKelasTiga;
+use App\Models\KurikulumKelasEmpat;
+use App\Models\KurikulumKelasLima;
+use App\Models\KurikulumKelasEnam;
 use App\Models\TenagaKependidikan;
 use Illuminate\Support\Facades\Route;
 use Barryvdh\DomPDF\Facade\PDF;
@@ -83,10 +88,43 @@ Route::get('/alumni', function () {
     return view('alumni');
 });
 
-Route::get('/kurikulum', function () {
-    return view('kurikulum', [
+Route::get('/kurikulum-kelas-1', function () {
+    return view('kurikulum-kelas-1', [
         'data' => KurikulumKelasSatu::get()
     ]);
+});
+
+Route::get('/kurikulum-kelas-2', function () {
+    return view('kurikulum-kelas-2', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kurikulum-kelas-3', function () {
+    return view('kurikulum-kelas-3', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kurikulum-kelas-4', function () {
+    return view('kurikulum-kelas-4', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+Route::get('/kurikulum-kelas-5', function () {
+    return view('kurikulum-kelas-5', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kurikulum-kelas-6', function () {
+    return view('kurikulum-kelas-6', [
+        'data' => KurikulumKelasSatu::get()
+    ]);
+});
+
+Route::get('/kalender-akademik', function () {
+    return view('kalender-akademik');
 });
 
 Route::get('/gallery', function () {
