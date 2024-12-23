@@ -16,10 +16,10 @@ class EditWorkshop extends EditRecord
         return $this->getResource()::getUrl('index');
     }
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            Actions\DeleteAction::make(),
-        ];
-    }
+    // protected function getHeaderActions(): array
+    // {
+    //     return [
+    //         Actions\DeleteAction::make(),
+    //     ];
+    // }
 }

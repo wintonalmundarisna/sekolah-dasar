@@ -2,34 +2,31 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\WorkshopResource\Pages;
-use App\Filament\Resources\WorkshopResource\RelationManagers;
-use App\Models\Workshop;
+use App\Filament\Resources\FieldTripResource\Pages;
+use App\Filament\Resources\FieldTripResource\RelationManagers;
+use App\Models\FieldTrip;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Section;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Illuminate\Support\Str;
-use Filament\Forms\Components\TextInput;
-use Filament\Tables\Actions\ViewAction;
 
-class WorkshopResource extends Resource
+class FieldTripResource extends Resource
 {
-    protected static ?string $model = Workshop::class;
+    protected static ?string $model = FieldTrip::class;
 
-    protected static ?string $slug = 'workshop';
-    protected static ?string $label = 'Data Workshop Guru';
-    protected static ?string $navigationLabel = 'Workshop';
-    protected static ?int $navigationSort = 1;
-    protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-bar';
+    protected static ?string $slug = 'field-trip';
+    protected static ?string $label = 'Data Field Trip';
+    protected static ?string $navigationLabel = 'Field Trip';
+    protected static ?int $navigationSort = 10;
+    protected static ?string $navigationIcon = 'heroicon-o-truck';
     protected static ?string $navigationGroup = 'Galeri';
-    protected static ?string $panel = 'Galeri';
+    protected static ?string $panel = 'Field Trip';
 
 
     public static function form(Form $form): Form
@@ -47,7 +44,7 @@ class WorkshopResource extends Resource
                             ->previewable(true)
                             ->openable(true)
                             ->disk('public')
-                            ->directory('galeri/workshop')
+                            ->directory('galeri/field-trip')
                             ->maxSize(512000)
                             ->preserveFilenames() // ambil nama file ori
                             ->getUploadedFileNameForStorageUsing(
@@ -61,7 +58,6 @@ class WorkshopResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->query(Workshop::query())
             ->columns([
                 Tables\Columns\TextColumn::make('judul')
                     ->sortable()
@@ -87,7 +83,6 @@ class WorkshopResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ])
             ]);
-        // ->recordUrl(null);
     }
 
     public static function getRelations(): array
@@ -100,9 +95,9 @@ class WorkshopResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListWorkshops::route('/'),
-            'create' => Pages\CreateWorkshop::route('/create'),
-            'edit' => Pages\EditWorkshop::route('/{record}/edit'),
+            'index' => Pages\ListFieldTrips::route('/'),
+            'create' => Pages\CreateFieldTrip::route('/create'),
+            'edit' => Pages\EditFieldTrip::route('/{record}/edit'),
         ];
     }
 }
