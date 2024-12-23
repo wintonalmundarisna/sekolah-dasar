@@ -10,11 +10,16 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+// use Filament\Resources\Table;
+// use Filament\Tables;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Section;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Illuminate\Support\Str;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\ViewAction;
 
 class WorkshopResource extends Resource
 {
@@ -42,20 +47,14 @@ class WorkshopResource extends Resource
                             ->required()
                             ->downloadable()
                             ->previewable(true)
-                            ->openable()
+                            ->openable(true)
                             ->disk('public')
                             ->directory('galeri/workshop')
                             ->maxSize(512000)
-                            ->acceptedFileTypes([
-                                'video/mp4',
-                                'video/avi',
-                                'video/mov',
-                                'video/wmv'
-                            ])
-                            ->getUploadedFileNameForStorageUsing(
-                                fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
-                                    ->prepend(substr(Str::uuid(), 0, 5) . '_'),
-                            ),
+                        ->getUploadedFileNameForStorageUsing(
+                            fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
+                                ->prepend(substr(Str::uuid(), 0, 5) . '_'),
+                        )
                     ])
             ]);
     }
@@ -63,6 +62,7 @@ class WorkshopResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->query(Workshop::query())
             ->columns([
                 Tables\Columns\TextColumn::make('judul')
                     ->sortable()
@@ -83,8 +83,9 @@ class WorkshopResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                ])
             ]);
+        // ->recordUrl(null);
     }
 
     public static function getRelations(): array

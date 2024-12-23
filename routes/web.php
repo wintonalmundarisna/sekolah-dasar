@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Storage;
 
 // use PDF;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,9 +112,10 @@ Route::get('/pengumuman', function () {
 });
 
 Route::get('/show-pdf/{id}', function (Request $request, $id) {
+    dd($id);
     $data = SkPenerimaanPpdb::find($id);
     // dd($data);
-    $pdf = Pdf::loadView('pdf_view', compact('data'));
+    $pdf = PDF::loadView('pdf_view', compact('data'));
     $pdf->setPaper('A4', 'potrait');
     // Check if 'surat_keputusan' key exists
     // $suratKeputusan = $data['surat_keputusan'] ?? 'default_value';
