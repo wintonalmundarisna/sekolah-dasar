@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\FieldTrip;
 use App\Models\SkPenerimaanPpdb;
 use App\Models\Guru;
+use App\Models\Workshop;
+use App\Models\Parenting;
 use App\Models\KurikulumKelasSatu;
 use App\Models\KurikulumKelasDua;
 use App\Models\KurikulumKelasTiga;
@@ -12,6 +15,8 @@ use App\Models\TenagaKependidikan;
 use Illuminate\Support\Facades\Route;
 use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\FieldTripController;
 // use Illuminate\Support\Facades\Storage;
 
 // use PDF;
@@ -127,9 +132,7 @@ Route::get('/kalender-akademik', function () {
     return view('kalender-akademik');
 });
 
-Route::get('/gallery', function () {
-    return view('gallery');
-});
+Route::get('/gallery', [FieldTripController::class, 'index']);
 
 Route::get('/kontak', function () {
     return view('kontak');
@@ -159,4 +162,3 @@ Route::get('/show-pdf/{id}', function (Request $request, $id) {
     // $suratKeputusan = $data['surat_keputusan'] ?? 'default_value';
     return response($pdf->stream($data->surat_keputusan))->header('Content-Type', 'application/pdf')->header('Content-Disposition', 'inline; filename="' . $data->surat_keputusan . '"');
 });
-
