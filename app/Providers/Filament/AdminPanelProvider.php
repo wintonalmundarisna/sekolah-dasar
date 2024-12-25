@@ -33,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->registration()
+            // ->registration()
             ->login(\Filament\Pages\Auth\Login::class)
             ->profile()
             ->darkModeBrandLogo(asset('assets/Logo_new.png'))
@@ -66,9 +66,12 @@ class AdminPanelProvider extends PanelProvider
                 SetTheme::class
             ])
             ->navigationGroups([
-                'Kesiswaan',
-                'Peserta Didik',
                 'Kurikulum',
+                'Kesiswaan',
+                'Informasi',
+                'Galeri',
+                'PPDB',
+                // 'Peserta Didik',
             ])
             ->authMiddleware([
                 Authenticate::class,

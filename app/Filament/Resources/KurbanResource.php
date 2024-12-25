@@ -43,9 +43,9 @@ class KurbanResource extends Resource
                             ->downloadable()
                             ->previewable(true)
                             ->openable(true)
+                            ->maxSize(512000)
                             ->disk('public')
                             ->directory('galeri/qurban')
-                            ->maxSize(512000)
                             ->preserveFilenames() // ambil nama file ori
                             ->getUploadedFileNameForStorageUsing(
                                 fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
@@ -62,10 +62,10 @@ class KurbanResource extends Resource
                 Tables\Columns\TextColumn::make('judul')
                     ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('dokumentasi')
-                    ->formatStateUsing(function ($state) {
-                        return basename($state);
-                    })
+                Tables\Columns\ImageColumn::make('dokumentasi')
+                    // ->formatStateUsing(function ($state) {
+                    //     return basename($state);
+                    // })
                     ->sortable()
                     ->searchable(),
             ])

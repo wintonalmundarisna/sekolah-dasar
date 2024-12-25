@@ -3,25 +3,25 @@
 namespace App\Policies;
 
 use Illuminate\Auth\Access\Response;
-use App\Models\KegiatanTerdekat;
+use App\Models\KegiatanLuar;
 use App\Models\User;
 
-class KegiatanTerdekatPolicy
+class KegiatanLuarPolicy
 {
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return true;
+       return true;
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, KegiatanTerdekat $kegiatanTerdekat): bool
+    public function view(User $user, KegiatanLuar $kegiatanLuar): bool
     {
-        return true;
+       return true;
     }
 
     /**
@@ -29,38 +29,38 @@ class KegiatanTerdekatPolicy
      */
     public function create(User $user): bool
     {
-        return true;
+       return true;
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, KegiatanTerdekat $kegiatanTerdekat): bool
+    public function update(User $user, KegiatanLuar $kegiatanLuar): bool
     {
-        return true;
+       return true;
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, KegiatanTerdekat $kegiatanTerdekat): bool
+    public function delete(User $user, KegiatanLuar $kegiatanLuar): bool
     {
-        return true;
+       return true;
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, KegiatanTerdekat $kegiatanTerdekat): bool
+    public function restore(User $user, KegiatanLuar $kegiatanLuar): bool
     {
-        return true;
+       return true;
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, KegiatanTerdekat $kegiatanTerdekat): bool
+    public function forceDelete(User $user, KegiatanLuar $kegiatanLuar): bool
     {
-        return true;
+       return true;
     }
 }

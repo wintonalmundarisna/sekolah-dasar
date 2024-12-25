@@ -61,10 +61,10 @@ class ParentingResource extends Resource
                 Tables\Columns\TextColumn::make('judul')
                     ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('dokumentasi')
-                    ->formatStateUsing(function ($state) {
-                        return basename($state);
-                    })
+                Tables\Columns\ImageColumn::make('dokumentasi')
+                    // ->formatStateUsing(function ($state) {
+                    //     return basename($state);
+                    // })
                     ->sortable()
                     ->searchable(),
             ])
