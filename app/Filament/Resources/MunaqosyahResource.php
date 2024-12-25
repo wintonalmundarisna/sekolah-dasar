@@ -40,6 +40,7 @@ class MunaqosyahResource extends Resource
                             ->maxLength(100),
                         Forms\Components\FileUpload::make('dokumentasi')
                             ->required()
+                            ->acceptedFileTypes(['image/*', 'video/*'])
                             ->downloadable()
                             ->previewable(true)
                             ->openable(true)
