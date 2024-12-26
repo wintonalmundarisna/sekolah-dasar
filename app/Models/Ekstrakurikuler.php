@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-class Alumni extends Model
+class Ekstrakurikuler extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];

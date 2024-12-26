@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\AlumniResource\Pages;
+namespace App\Filament\Resources\ProgramUnggulanResource\Pages;
 
-use App\Filament\Resources\AlumniResource;
+use App\Filament\Resources\ProgramUnggulanResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditAlumni extends EditRecord
+class EditProgramUnggulan extends EditRecord
 {
-    protected static string $resource = AlumniResource::class;
+    protected static string $resource = ProgramUnggulanResource::class;
 
     protected static bool $canCreateAnother = false;
 

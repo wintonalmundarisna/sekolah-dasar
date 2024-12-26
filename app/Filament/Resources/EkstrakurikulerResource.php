@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AlumniResource\Pages;
-use App\Filament\Resources\AlumniResource\RelationManagers;
-use App\Models\Alumni;
+use App\Filament\Resources\EkstrakurikulerResource\Pages;
+use App\Filament\Resources\EkstrakurikulerResource\RelationManagers;
+use App\Models\Ekstrakurikuler;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,19 +15,19 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Section;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Illuminate\Support\Str;
+use Illuminate\Support\HtmlString;
 
-class AlumniResource extends Resource
+class EkstrakurikulerResource extends Resource
 {
-    protected static ?string $model = Alumni::class;
+    protected static ?string $model = Ekstrakurikuler::class;
 
-    protected static ?string $slug = 'alumni';
-    protected static ?string $label = 'Data Alumni';
-    protected static ?string $navigationLabel = 'Alumni';
+    protected static ?string $slug = 'ekstrakurikuler';
+    protected static ?string $label = 'Data Ekstrakurikuler';
+    protected static ?string $navigationLabel = 'Ekstrakurikuler';
     protected static ?int $navigationSort = 4;
-    protected static ?string $navigationIcon = 'heroicon-o-user-group';
-    protected static ?string $navigationGroup = 'Informasi';
-    protected static ?string $panel = 'Alumni';
-
+    protected static ?string $navigationIcon = 'heroicon-o-puzzle-piece';
+    protected static ?string $navigationGroup = 'Program Sekolah';
+    protected static ?string $panel = 'Ekstrakurikuler';
 
     public static function form(Form $form): Form
     {
@@ -35,7 +35,12 @@ class AlumniResource extends Resource
             ->schema([
                 Section::make()
                     ->schema([
+                        Forms\Components\TextInput::make('nama_ekstrakurikuler')
+                            ->label('Nama Ekstrakurikuler')
+                            ->required()
+                            ->maxLength(255),
                         Forms\Components\FileUpload::make('foto')
+                            ->label('Dokumentasi Ekstrakurikuler')
                             ->required()
                             ->acceptedFileTypes(['image/*', 'video/*'])
                             ->downloadable()
@@ -43,24 +48,12 @@ class AlumniResource extends Resource
                             ->openable(true)
                             ->maxSize(512000)
                             ->disk('public')
-                            ->directory('informasi/alumni')
+                            ->directory('program-skolah/ekstrakurikuler')
                             ->preserveFilenames() // ambil nama file ori
-                            ->imageEditorAspectRatios([
-                                null, // ada button bebas crop
-                                '16:9',
-                                '4:3',
-                                '1:1',
-                            ])
-                            ->imageEditor()
-                            ->imageEditorMode(2)
                             ->getUploadedFileNameForStorageUsing(
                                 fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
                                     ->prepend(substr(Str::uuid(), 0, 5) . '_'),
                             ),
-                        Forms\Components\TextInput::make('angkatan')
-                            ->required()
-                            ->numeric()
-                            ->maxLength(100),
                     ])
             ]);
     }
@@ -69,13 +62,20 @@ class AlumniResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('foto')
+                Tables\Columns\TextColumn::make('nama_ekstrakurikuler')
+                    ->label('Nama Ekstrakurikuler')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('angkatan')
-                    ->searchable(),
-            ])
-            ->filters([
-                //
+                Tables\Columns\TextColumn::make('foto')
+                    ->formatStateUsing(function ($state) {
+                        $mime = mime_content_type(storage_path('app/public/' . $state));
+                        if (str_starts_with($mime, 'image/')) {
+                            return new HtmlString('<img src="' . asset('storage/' . $state) . '" width="150" height="150" />');
+                        } elseif (str_starts_with($mime, 'video/')) {
+                            return new HtmlString('<video width="150" height="150" controls> <source src="' . asset('storage/' . $state) . '" type="video/mp4"> Your browser does not support the video tag. </video>');
+                        }
+                        return $state;
+                    })
+                    ->maxSize(204800)
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -100,9 +100,9 @@ class AlumniResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAlumnis::route('/'),
-            'create' => Pages\CreateAlumni::route('/create'),
-            'edit' => Pages\EditAlumni::route('/{record}/edit'),
+            'index' => Pages\ListEkstrakurikulers::route('/'),
+            'create' => Pages\CreateEkstrakurikuler::route('/create'),
+            'edit' => Pages\EditEkstrakurikuler::route('/{record}/edit'),
         ];
     }
 }

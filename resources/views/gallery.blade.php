@@ -60,62 +60,62 @@
                 {{-- gallery --}}
                 <div class="flex items-center justify-center w-full py-4 md:py-8">
                     <div class="flex gap-3 overflow-y-auto no-scrollbar">
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="field_trips">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="filed-trip" value="field_trips">Field Trip</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="rakers">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="rakers" value="rakers">Kegiatan Raker</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="market_days">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="market-day" value="market_days">Market Day</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="mpls">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="mpls-peserta-didik-baru" value="mpls">MPLS Peserta Didik Baru</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="munaqosyahs">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="munaqosyah" value="munaqosyahs">Munaqosyah</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="parentings">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="parenting" value="parentings">Parenting</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="perkajum_persaris">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="perkajum-dan-persari" value="perkajum_persaris">Perkajum Dan
                                 Persari</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="pesantren_kilats">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="pesantren-kilat" value="pesantren_kilats">Pesantren Kilat</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="kurbans">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
                                 data-category="qurban" value="kurbans">Qurban</button>
                         </form>
-                        <form action="/gallery" action="get">
+                        <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="workshops">
                             <button
                                 class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"

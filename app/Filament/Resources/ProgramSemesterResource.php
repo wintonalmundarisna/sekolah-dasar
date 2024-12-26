@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\KurbanResource\Pages;
-use App\Filament\Resources\KurbanResource\RelationManagers;
-use App\Models\Kurban;
+use App\Filament\Resources\ProgramSemesterResource\Pages;
+use App\Filament\Resources\ProgramSemesterResource\RelationManagers;
+use App\Models\ProgramSemester;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -16,17 +16,17 @@ use Filament\Forms\Components\Section;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Illuminate\Support\Str;
 
-class KurbanResource extends Resource
+class ProgramSemesterResource extends Resource
 {
-    protected static ?string $model = Kurban::class;
-    protected static ?string $slug = 'qurban';
-    protected static ?string $label = 'Data Qurban';
-    protected static ?string $navigationLabel = 'Qurban';
-    protected static ?int $navigationSort = 2;
-    protected static ?string $navigationIcon = 'heroicon-o-bell';
-    protected static ?string $navigationGroup = 'Galeri';
-    protected static ?string $panel = 'Qurban';
+    protected static ?string $model = ProgramSemester::class;
 
+    protected static ?string $slug = 'program-semester';
+    protected static ?string $label = 'Data Program Semester';
+    protected static ?string $navigationLabel = 'Program Semester';
+    protected static ?int $navigationSort = 3;
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard';
+    protected static ?string $navigationGroup = 'Program Sekolah';
+    protected static ?string $panel = 'Program Semester';
 
     public static function form(Form $form): Form
     {
@@ -37,20 +37,20 @@ class KurbanResource extends Resource
                         Forms\Components\TextInput::make('judul')
                             ->required()
                             ->maxLength(100),
-                        Forms\Components\FileUpload::make('dokumentasi')
+                        Forms\Components\FileUpload::make('foto')
                             ->required()
-                            ->acceptedFileTypes(['image/*', 'video/*'])
+                            ->image()
                             ->downloadable()
                             ->previewable(true)
                             ->openable(true)
                             ->maxSize(512000)
                             ->disk('public')
-                            ->directory('galeri/qurban')
+                            ->directory('program-skolah/program-semester')
                             ->preserveFilenames() // ambil nama file ori
                             ->getUploadedFileNameForStorageUsing(
                                 fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
                                     ->prepend(substr(Str::uuid(), 0, 5) . '_'),
-                            )
+                            ),
                     ])
             ]);
     }
@@ -60,13 +60,8 @@ class KurbanResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('judul')
-                    ->sortable()
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('dokumentasi')
-                    // ->formatStateUsing(function ($state) {
-                    //     return basename($state);
-                    // })
-                    ->sortable()
+                Tables\Columns\ImageColumn::make('foto')
                     ->searchable(),
             ])
             ->filters([
@@ -81,7 +76,7 @@ class KurbanResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                ])
+                ]),
             ]);
     }
 
@@ -95,9 +90,9 @@ class KurbanResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListKurbans::route('/'),
-            'create' => Pages\CreateKurban::route('/create'),
-            'edit' => Pages\EditKurban::route('/{record}/edit'),
+            'index' => Pages\ListProgramSemesters::route('/'),
+            'create' => Pages\CreateProgramSemester::route('/create'),
+            'edit' => Pages\EditProgramSemester::route('/{record}/edit'),
         ];
     }
 }
