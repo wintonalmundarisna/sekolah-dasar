@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\FieldTripController;
 use App\Models\Ekstrakurikuler;
 // use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 
 // use PDF;
 use Illuminate\Support\Facades\Storage;
@@ -97,9 +98,9 @@ Route::get('/ekskul', function () {
 
 Route::get('/fasilitas-sekolah', function (Request $request) {
     $kategori = $request->kategori;
-    if($request->kategori) {
+    if ($request->kategori) {
         $data = Fasilitas::where('kategori', $kategori)->get();
-    }else {
+    } else {
         $data = Fasilitas::get();
     }
     return view('fasilitas-sekolah', [
@@ -206,12 +207,12 @@ Route::get('/pengumuman', function () {
 });
 
 Route::get('/show-pdf/{id}', function (Request $request, $id) {
-    dd($id);
     $data = SkPenerimaanPpdb::find($id);
-    // dd($data);
-    $pdf = PDF::loadView('pdf_view', compact('data'));
-    $pdf->setPaper('A4', 'potrait');
-    // Check if 'surat_keputusan' key exists
-    // $suratKeputusan = $data['surat_keputusan'] ?? 'default_value';
-    return response($pdf->stream($data->surat_keputusan))->header('Content-Type', 'application/pdf')->header('Content-Disposition', 'inline; filename="' . $data->surat_keputusan . '"');
+    $filename = $data->surat_keputusan;
+    $path = storage_path('app/public/' . $filename);
+
+    return Response::make(file_get_contents($path), 200, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="' . basename($path) . '"'
+    ]);
 });
