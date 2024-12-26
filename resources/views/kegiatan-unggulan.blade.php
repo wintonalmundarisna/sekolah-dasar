@@ -66,48 +66,13 @@
         </div>
         {{-- accordion --}}
         <div class="w-full mx-auto mt-4 md:w-4/5">
-          <div tabindex="0" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondorangemuda">
-            <div class="text-xl font-medium collapse-title font-outfit text-colorprimaryorange">Kegiatan Tahunan</div>
-            <div class="collapse-content">
-              <ol class="space-y-2 font-normal list-decimal list-inside text-colorprimaryblack font-outfit">
-                  <li>MPLS (Masa Pengenalan Lingkungan Sekolah)</li>
-                  <li>MOK (Masa Orientasi Kepramukaan)</li>
-                  <li>Lomba HUT RI</li>
-                  <li>Field Trip</li>
-                  <li>Project Class</li>
-                  <li>Parenting</li>
-                  <li>Class Meeting</li>
-                  <li>Manasaik Haji</li>
-                  <li>Pentas Seni</li>
-                  <li>Market Day</li>
-                  <li>Sapta Lomba</li>
-                  <li>Kegiatan Ramadhan</li>
-                  <li>Pesantren Kilat</li>
-                  <li>Penyembelihan hewan Qurban</li>
-                  <li>Persari (Perkemahan Satu hari)</li>
-                  <li>Persera (Perkemahan selasa rabu)</li>
-                  <li>Orientasi Pembina Pramuka</li>
-                  <li>Rihlah</li>
-                  <li>ASTS (Asesmen Sumatif Tengah Semester)</li>
-                  <li>ASAS (Asesmen Sumatif Akhir Semester)</li>
-                  <li>ASAT (Asesmen Sumatif Akhir Tahun)</li>
-                  <li>ANBK</li>
-                  <li>ASAJ</li>
-                  <li>Wisuda</li>
-                </ol>
-            </div>
-          </div>
-          <div tabindex="1" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondtoscamuda">
+          <div tabindex="0" class="mb-2 border collapse border-base-300 collapse-arrow bg-colorsecondtoscamuda">
             <div class="text-xl font-medium collapse-title font-outfit text-colorprimarytosca">Kegiatan Unggulan</div>
             <div class="collapse-content">
               <ol class="space-y-2 font-normal list-decimal list-inside text-colorprimaryblack font-outfit">
-                  <li>Tahfidz dan Tahsin al-quran metode Tilawati</li>
-                  <li>Pembinaan ibadah harian</li>
-                  <li>Pembinaan akhlak sehari-hari</li>
-                  <li>Disiplin waktu</li>
-                  <li>Kelas 1 sampai kelas 2 dibimbing oleh 2 guru</li>
-                  <li>Latihan kepemimpinan siswa</li>
-                  <li>Ekskul yang bervariasi</li>
+                  @foreach ($data as $d)
+                    <li>{{ $d->nama_program }}</li>
+                  @endforeach
                 </ol>
             </div>
           </div>

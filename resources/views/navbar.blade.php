@@ -38,9 +38,6 @@
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-64 p-2 shadow">
                 <li><a href="/visi-misi-tujuan" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi, Misi, dan Tujuan</a></li>
                 <li><a href="/data-sekolah" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
-                <li><a href="/visi-misi-tujuan" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Visi dan Misi</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tujuan</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Data Sekolah</a></li>
                 <li>
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">SDM</summary>
@@ -90,9 +87,9 @@
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kesiswaan</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-80 p-2 shadow">
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tata Tertib Peserta Didik</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Kesiswaan</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
+                <li><a href="/tata-tertib-peserta-didik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tata Tertib Peserta Didik</a></li>
+                <li><a href="/program-kesiswaan" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Kesiswaan</a></li>
+                <li><a href="/inpresik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
                 <li><a href="/daftar-peserta-didik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Daftar Peserta Didik</a></li>
               </ul>
             </details>
@@ -191,9 +188,9 @@
             <details>
               <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Kesiswaan</summary>
               <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-80 p-2 shadow">
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tata Tertib Peserta Didik</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Kesiswaan</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
+                <li><a href="/tata-tertib-peserta-didik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tata Tertib Peserta Didik</a></li>
+                <li><a href="/program-kesiswaan" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Kesiswaan</a></li>
+                <li><a href="/inpresik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
                 <li><a href="/daftar-peserta-didik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Daftar Peserta Didik</a></li>
               </ul>
             </details>
