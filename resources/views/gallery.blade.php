@@ -58,15 +58,9 @@
                         src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
                 </div>
                 {{-- gallery --}}
-<<<<<<< HEAD
                 <div class="flex items-center justify-between w-full py-4 md:py-8">
                     <div class="flex w-full gap-3 overflow-y-auto no-scrollbar">
-                        <form action="/gallery" action="get">
-=======
-                <div class="flex items-center justify-center w-full py-4 md:py-8">
-                    <div class="flex gap-3 overflow-y-auto no-scrollbar">
                         <form action="/gallery" method="get">
->>>>>>> a1effb26e3c3ef06f18e33143115ea7d0b661dd3
                             <input type="hidden" name="kategori" value="field_trips">
                             <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap" data-category="filed-trip" value="field_trips">Field Trip</button>
                         </form>
@@ -139,7 +133,7 @@
                                 alt="foto {{ $d->judul }}" />
                             <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                         </a>
-                        <h1 class="text-sm font-semibold tracking-tight text-center md:text-lg text-colorprimaryblack font-outfit">{{ $d->judul }}</h1>
+                        <h1 class="text-sm font-semibold tracking-tight text-start md:text-lg text-colorprimaryblack font-outfit">{{ $d->judul }}</h1>
                     </div>
                 </div>
                 {{-- card all --}}
