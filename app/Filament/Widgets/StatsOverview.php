@@ -11,6 +11,7 @@ use Filament\Support\Enums\IconPosition;
 
 class StatsOverview extends BaseWidget
 {
+    protected static ?int $sort = 1;
 
     protected function getStats(): array
     {

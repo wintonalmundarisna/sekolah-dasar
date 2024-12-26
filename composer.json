@@ -10,6 +10,7 @@
         "barryvdh/laravel-dompdf": "^3.0",
         "filament/actions": "3.2",
         "filament/filament": "^3.2",
+        "flowframe/laravel-trend": "^0.3.0",
         "guzzlehttp/guzzle": "^7.2",
         "hasnayeen/themes": "^3.0",
         "laravel/framework": "^10.0",
