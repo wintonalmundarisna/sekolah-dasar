@@ -46,7 +46,7 @@ class EkstrakurikulerResource extends Resource
                             ->downloadable()
                             ->previewable(true)
                             ->openable(true)
-                            ->maxSize(512000)
+                            ->maxSize(204800)
                             ->disk('public')
                             ->directory('program-skolah/ekstrakurikuler')
                             ->preserveFilenames() // ambil nama file ori
@@ -75,7 +75,6 @@ class EkstrakurikulerResource extends Resource
                         }
                         return $state;
                     })
-                    ->maxSize(204800)
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),

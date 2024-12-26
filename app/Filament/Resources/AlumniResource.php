@@ -37,7 +37,8 @@ class AlumniResource extends Resource
                     ->schema([
                         Forms\Components\FileUpload::make('foto')
                             ->required()
-                            ->acceptedFileTypes(['image/*', 'video/*'])
+                            ->image()
+                            // ->acceptedFileTypes(['image/*', 'video/*'])
                             ->downloadable()
                             ->previewable(true)
                             ->openable(true)

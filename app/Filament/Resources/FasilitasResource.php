@@ -39,6 +39,10 @@ class FasilitasResource extends Resource
                             ->label('Nama Fasilitas')
                             ->required()
                             ->maxLength(100),
+                        Forms\Components\TextInput::make('jumlah')
+                            ->label('Jumlah Fasilitas')
+                            ->required()
+                            ->numeric(),
                         Forms\Components\FileUpload::make('foto_fasilitas')
                             ->required()
                             ->image()
@@ -77,6 +81,9 @@ class FasilitasResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama_fasilitas')
                     ->label('Nama Fasilitas')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('jumlah')
+                    ->label('Jumlah Fasilitas')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('foto_fasilitas')
                     ->label('Foto Fasilitas')

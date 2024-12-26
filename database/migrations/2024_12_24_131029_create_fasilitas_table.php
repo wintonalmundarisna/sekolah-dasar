@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('fasilitas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_fasilitas', 100);
+            $table->integer('jumlah');
             $table->string('foto_fasilitas', 100);
             $table->string('kategori', 100);
             $table->timestamps();

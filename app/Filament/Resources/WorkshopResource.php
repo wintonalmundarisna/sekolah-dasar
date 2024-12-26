@@ -18,6 +18,7 @@ use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Illuminate\Support\Str;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Actions\ViewAction;
+use Illuminate\Support\HtmlString;
 
 class WorkshopResource extends Resource
 {
@@ -67,10 +68,16 @@ class WorkshopResource extends Resource
                 Tables\Columns\TextColumn::make('judul')
                     ->sortable()
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('dokumentasi')
-                    // ->formatStateUsing(function ($state) {
-                    //     return basename($state);
-                    // })
+                Tables\Columns\TextColumn::make('dokumentasi')
+                    ->formatStateUsing(function ($state) {
+                        $mime = mime_content_type(storage_path('app/public/' . $state));
+                        if (str_starts_with($mime, 'image/')) {
+                            return new HtmlString('<img src="' . asset('storage/' . $state) . '" width="150" height="150" />');
+                        } elseif (str_starts_with($mime, 'video/')) {
+                            return new HtmlString('<video width="150" height="150" controls> <source src="' . asset('storage/' . $state) . '" type="video/mp4"> Your browser does not support the video tag. </video>');
+                        }
+                        return $state;
+                    })
                     ->sortable()
                     ->searchable(),
             ])
