@@ -67,6 +67,7 @@
         {{-- Kegitan luar --}}
         <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
             {{-- card --}}
+            @foreach ($data as $d)  
             <div data-aos="fade-up"
             data-aos-delay="40"
             data-aos-duration="500"
@@ -75,33 +76,17 @@
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
             class="max-w-sm py-4 rounded-lg card">
-              <div class="rounded-md bg-colorsecondorangemuda">
+              <div class="bg-white rounded-md">
                 <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
+                  <img class="w-full rounded-t-lg" src="{{ asset('storage/'. $d->foto_kegiatan) }}" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Sapta lomba</h3>
+              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">{{ $d->nama_kegiatan }}</h3>
+              <p class="text-sm text-gray-500 font-outfit">{{ $d->tanggal_kegiatan }}</p>
             </div>
             {{-- card --}}
-            {{-- card --}}
-            <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg card">
-              <div class="rounded-md bg-colorsecondorangemuda">
-                <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                </a>
-              </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Futsal GPS</h3>
-            </div>
-            {{-- card --}}
+            @endforeach
         </div>
         {{-- kegiatan luar --}}
       </div>

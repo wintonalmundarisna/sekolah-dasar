@@ -93,7 +93,7 @@
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tata Tertib Peserta Didik</a></li>
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Kesiswaan</a></li>
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Daftar Peserta Didik</a></li>
+                <li><a href="/daftar-peserta-didik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Daftar Peserta Didik</a></li>
               </ul>
             </details>
           </li>
@@ -194,7 +194,7 @@
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Tata Tertib Peserta Didik</a></li>
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Program Kesiswaan</a></li>
                 <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Inpresik (Informasi Prestasi Peserta Didik)</a></li>
-                <li><a class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Daftar Peserta Didik</a></li>
+                <li><a href="/daftar-peserta-didik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Daftar Peserta Didik</a></li>
               </ul>
             </details>
           </li>
