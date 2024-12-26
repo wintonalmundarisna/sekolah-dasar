@@ -66,74 +66,26 @@
         </div>
         {{-- Grid --}}
         <div class="grid grid-cols-2 gap-5 lg:grid-cols-4 md:grid-cols-3">
-          {{-- card-1 --}}
-          <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg">
-            <div class="rounded-md bg-colorsecondorangemuda">
-              <a href="#" class="relative flex items-center justify-center">
-                <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-              </a>
-            </div>
-            <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">ASTS (Asesmen Sumatif Tengah Semester)</h3>
-          </div>
-          {{-- card-2 --}}
-          <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg">
-            <div class="rounded-md bg-colorsecondorangemuda">
-              <a href="#" class="relative flex items-center justify-center">
-                <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-              </a>
-            </div>
-            <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">ASAS (Asesmen Sumatif Akhir Semester)</h3>
-          </div>
-          {{-- card-3 --}}
-          <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg">
-            <div class="rounded-md bg-colorsecondorangemuda">
-              <a href="#" class="relative flex items-center justify-center">
-                <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-              </a>
-            </div>
-            <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Rapot</h3>
-          </div>
-          {{-- card-4 --}}
-          <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg">
-            <div class="rounded-md bg-colorsecondorangemuda">
-              <a href="#" class="relative flex items-center justify-center">
-                <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-              </a>
-            </div>
-            <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Munaqosah</h3>
-          </div>
+          @foreach ($data as $d)
+            {{-- card --}}
+            <div data-aos="fade-up"
+                data-aos-delay="40"
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center"
+                class="max-w-sm py-4 rounded-lg">
+                <div class="rounded-md bg-colorsecondorangemuda">
+                  <a href="#" class="relative flex items-center justify-center">
+                    <img class="w-full rounded-t-lg" src="{{ asset('storage/'.$d->foto) }}" alt="foto-ujian"/>
+                    <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
+                  </a>
+                </div>
+                <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">{{ $d->judul }}</h3>
+              </div>
+              {{-- card --}}
+          @endforeach
         </div>
         {{-- grid --}}
       </div>

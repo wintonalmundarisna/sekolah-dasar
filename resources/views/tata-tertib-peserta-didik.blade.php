@@ -3,7 +3,7 @@
   <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kegiatan Luar Sekolah | SD ISLAM NURUL FIRDAUS</title>
+        <title>Tata Tertib Peserta Didik | SD ISLAM NURUL FIRDAUS</title>
 
         {{-- font outfit --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
     @include('navbar')
     {{-- navbar --}}
 
-    {{-- Kegitan luar --}}
+    {{-- Tata Tertib Peserta Didik --}}
     <section class="mt-6 !overflow-hidden lg:mt-10">
       <div class="container">
         <div class="flex items-center justify-center gap-2 py-4">
@@ -54,7 +54,7 @@
               data-aos-mirror="true"
               data-aos-once="false"
               data-aos-anchor-placement="top-center" 
-              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Kegiatan Luar Sekolah</h1>
+              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Tata Tertib Peserta Didik</h1>
           <img data-aos="fade-left"
               data-aos-delay="30"
               data-aos-duration="500"
@@ -64,34 +64,12 @@
               data-aos-anchor-placement="top-center" 
               src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
         </div>
-        {{-- Kegitan luar --}}
-        <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
-            {{-- card --}}
-            @foreach ($data as $d)  
-            <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg card">
-              <div class="bg-white rounded-md">
-                <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="{{ asset('storage/'. $d->foto_kegiatan) }}" alt="foto-ujian"/>
-                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                </a>
-              </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">{{ $d->nama_kegiatan }}</h3>
-              <p class="text-sm text-gray-500 font-outfit">{{ $d->tanggal_kegiatan }}</p>
-            </div>
-            {{-- card --}}
-            @endforeach
-        </div>
-        {{-- kegiatan luar --}}
+
+        {{-- comming soon --}}
+        <h1 class="w-full mt-6 mb-6 text-3xl font-bold text-center font-outfit text-colorprimaryorange">comming soon</h1>
       </div>
     </section>
-    {{-- Kegiatan luar --}}
+    {{-- Tata Tertib Peserta Didik --}}
 
     {{-- footer --}}
       @include('footer')

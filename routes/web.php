@@ -3,6 +3,7 @@
 use App\Models\FieldTrip;
 use App\Models\SkPenerimaanPpdb;
 use App\Models\Guru;
+use App\Models\InformasiPpdb;
 use App\Models\Workshop;
 use App\Models\Parenting;
 use App\Models\KurikulumKelasSatu;
@@ -12,6 +13,14 @@ use App\Models\KurikulumKelasEmpat;
 use App\Models\KurikulumKelasLima;
 use App\Models\KurikulumKelasEnam;
 use App\Models\TenagaKependidikan;
+use App\Models\Fasilitas;
+use App\Models\KegiatanLuar;
+use App\Models\KegiatanTerdekat;
+use App\Models\Alumni;
+use App\Models\PesertaDidik;
+use App\Models\KegiatanTahunan;
+use App\Models\ProgramUnggulan;
+use App\Models\ProgramSemester;
 use Illuminate\Support\Facades\Route;
 use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
@@ -62,35 +71,56 @@ Route::get('/komite-sekolah', function () {
 });
 
 Route::get('/kegiatan-tahunan', function () {
-    return view('kegiatan-tahunan');
+    return view('kegiatan-tahunan', [
+        'data' => KegiatanTahunan::get()
+    ]);
 });
 
 Route::get('/kegiatan-unggulan', function () {
-    return view('kegiatan-unggulan');
+    return view('kegiatan-unggulan', [
+        'data' => ProgramUnggulan::get()
+    ]);
 });
 
 Route::get('/program-semester', function () {
-    return view('program-semester');
+    return view('program-semester', [
+        'data' => ProgramSemester::get()
+    ]);
 });
 
 Route::get('/ekskul', function () {
     return view('ekskul');
 });
 
-Route::get('/fasilitas-sekolah', function () {
-    return view('fasilitas-sekolah');
+Route::get('/fasilitas-sekolah', function (Request $request) {
+    $kategori = $request->kategori;
+    if($request->kategori) {
+        $data = Fasilitas::where('kategori', $kategori)->get();
+    }else {
+        $data = Fasilitas::get();
+    }
+    return view('fasilitas-sekolah', [
+        'data' => $data,
+        'kategori' => $kategori,
+    ]);
 });
 
 Route::get('/kegiatan-terdekat', function () {
-    return view('kegiatan-terdekat');
+    return view('kegiatan-terdekat', [
+        'data' => KegiatanTerdekat::get()
+    ]);
 });
 
 Route::get('/kegiatan-luar', function () {
-    return view('kegiatan-luar');
+    return view('kegiatan-luar', [
+        'data' => KegiatanLuar::get()
+    ]);
 });
 
 Route::get('/alumni', function () {
-    return view('alumni');
+    return view('alumni', [
+        'data' => Alumni::get()
+    ]);
 });
 
 Route::get('/kurikulum-kelas-1', function () {
@@ -101,35 +131,47 @@ Route::get('/kurikulum-kelas-1', function () {
 
 Route::get('/kurikulum-kelas-2', function () {
     return view('kurikulum-kelas-2', [
-        'data' => KurikulumKelasSatu::get()
+        'data' => KurikulumKelasDua::get()
     ]);
 });
 
 Route::get('/kurikulum-kelas-3', function () {
     return view('kurikulum-kelas-3', [
-        'data' => KurikulumKelasSatu::get()
+        'data' => KurikulumKelasTiga::get()
     ]);
 });
 
 Route::get('/kurikulum-kelas-4', function () {
     return view('kurikulum-kelas-4', [
-        'data' => KurikulumKelasSatu::get()
+        'data' => KurikulumKelasEmpat::get()
     ]);
 });
 Route::get('/kurikulum-kelas-5', function () {
     return view('kurikulum-kelas-5', [
-        'data' => KurikulumKelasSatu::get()
+        'data' => KurikulumKelasLima::get()
     ]);
 });
 
 Route::get('/kurikulum-kelas-6', function () {
     return view('kurikulum-kelas-6', [
-        'data' => KurikulumKelasSatu::get()
+        'data' => KurikulumKelasEnam::get()
     ]);
 });
 
 Route::get('/kalender-akademik', function () {
     return view('kalender-akademik');
+});
+
+Route::get('/tata-tertib-peserta-didik', function () {
+    return view('tata-tertib-peserta-didik');
+});
+
+Route::get('/program-kesiswaan', function () {
+    return view('program-kesiswaan');
+});
+
+Route::get('/inpresik', function () {
+    return view('inpresik');
 });
 
 Route::get('/gallery', [FieldTripController::class, 'index']);
@@ -139,11 +181,19 @@ Route::get('/kontak', function () {
 });
 
 Route::get('/informasi', function () {
-    return view('informasi');
+    return view('informasi', [
+        'data' => InformasiPpdb::get()
+    ]);
 });
 
 Route::get('/form-online', function () {
     return view('form-online');
+});
+
+Route::get('/daftar-peserta-didik', function () {
+    return view('daftar-peserta-didik', [
+        'data' => PesertaDidik::get()
+    ]);
 });
 
 Route::get('/pengumuman', function () {

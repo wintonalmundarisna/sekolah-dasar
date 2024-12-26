@@ -58,325 +58,92 @@
                         src="/assets/illustrasi02.png" alt="illustrasi"class="w-6">
                 </div>
                 {{-- gallery --}}
+<<<<<<< HEAD
+                <div class="flex items-center justify-between w-full py-4 md:py-8">
+                    <div class="flex w-full gap-3 overflow-y-auto no-scrollbar">
+                        <form action="/gallery" action="get">
+=======
                 <div class="flex items-center justify-center w-full py-4 md:py-8">
                     <div class="flex gap-3 overflow-y-auto no-scrollbar">
                         <form action="/gallery" method="get">
+>>>>>>> a1effb26e3c3ef06f18e33143115ea7d0b661dd3
                             <input type="hidden" name="kategori" value="field_trips">
-                            <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
-                                data-category="filed-trip" value="field_trips">Field Trip</button>
+                            <button class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap" data-category="filed-trip" value="field_trips">Field Trip</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="rakers">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="rakers" value="rakers">Kegiatan Raker</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="market_days">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="market-day" value="market_days">Market Day</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="mpls">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="mpls-peserta-didik-baru" value="mpls">MPLS Peserta Didik Baru</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="munaqosyahs">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="munaqosyah" value="munaqosyahs">Munaqosyah</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="parentings">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="parenting" value="parentings">Parenting</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="perkajum_persaris">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="perkajum-dan-persari" value="perkajum_persaris">Perkajum Dan
                                 Persari</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="pesantren_kilats">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="pesantren-kilat" value="pesantren_kilats">Pesantren Kilat</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="kurbans">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="qurban" value="kurbans">Qurban</button>
                         </form>
                         <form action="/gallery" method="get">
                             <input type="hidden" name="kategori" value="workshops">
                             <button
-                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active"
+                                class="text-white hover:text-colorprimarytosca btn font-outfit bg-colorprimarytosca category-link active whitespace-nowrap"
                                 data-category="upgrading-dan-workshop-guru" value="workshops">Upgrading Dan Workshop
                                 Guru</button>
                         </form>
+                    </div>
+                </div>
             @endif
-        </div>
-        </div>
         <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
             @foreach ($data as $d)
                 {{-- card all --}}
                 <div class="max-w-sm py-4 rounded-lg card" data-category="filed-trip">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="{{ asset('storage/' . $d->dokumentasi) }}"
+                    <div class="bg-white rounded-md">
+                        <a class="relative flex items-center justify-center cursor-default">
+                            <img class="w-full bg-auto bg-no-repeat bg-center rounded-t-lg max-h-[200px]" src="{{ asset('storage/' . $d->dokumentasi) }}"
                                 alt="foto {{ $d->judul }}" />
                             <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                         </a>
-                        <h1>{{ $d->judul }}</h1>
+                        <h1 class="text-sm font-semibold tracking-tight text-center md:text-lg text-colorprimaryblack font-outfit">{{ $d->judul }}</h1>
                     </div>
                 </div>
                 {{-- card all --}}
             @endforeach
-
-
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="filed-trip">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="filed-trip">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card field trip --}}
-            {{-- card kegiatan raker --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="kegiatan-raker">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="kegiatan-raker">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="kegiatan-raker">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card kegiatan raker --}}
-            {{-- card market day --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="market-day">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="market-day">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card market day --}}
-            {{-- card mpls peserta didik baru --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="mpls-peserta-didik-baru">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="mpls-peserta-didik-baru">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="mpls-peserta-didik-baru">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="mpls-peserta-didik-baru">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card mpls peserta didik baru --}}
-            {{-- card munaqosyah --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="munaqosyah">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card munaqosyah --}}
-            {{-- card parenting --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="parenting">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="parenting">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card parenting --}}
-            {{-- card perkajum dan persari --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="perkajum-dan-persari">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="perkajum-dan-persari">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="perkajum-dan-persari">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card perkajum dan persari --}}
-            {{-- card pesantren kilat --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="pesantren-kilat">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="pesantren-kilat">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="pesantren-kilat">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="pesantren-kilat">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card pesantren kilat --}}
-            {{-- card qurban --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="qurban">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="qurban">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="qurban">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card qurban --}}
-            {{-- card upgrading dan workshop guru --}}
-            {{-- <div class="max-w-sm py-4 rounded-lg card" data-category="upgrading-dan-workshop-guru">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="upgrading-dan-workshop-guru">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm py-4 rounded-lg card" data-category="upgrading-dan-workshop-guru">
-                    <div class="rounded-md bg-colorsecondorangemuda">
-                        <a href="#" class="relative flex items-center justify-center">
-                            <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                        </a>
-                    </div>
-                </div> --}}
-            {{-- card upgrading dan workshop guru --}}
         </div>
         {{-- gallerty --}}
         </div>

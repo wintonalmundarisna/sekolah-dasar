@@ -66,6 +66,7 @@
         </div>
         {{-- Alumni --}}
         <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
+          @foreach ($data as $d)
             {{-- card --}}
             <div data-aos="fade-up"
             data-aos-delay="40"
@@ -77,121 +78,14 @@
             class="max-w-sm py-4 rounded-lg card">
               <div class="rounded-md bg-colorsecondorangemuda">
                 <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
+                  <img class="w-full rounded-t-lg" src="{{ asset('storage/'. $d->foto) }}" alt="foto-ujian"/>
                   <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
                 </a>
               </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Angkatan 4</h3>
+              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Angkatan {{ $d->angkatan }}</h3>
             </div>
             {{-- card --}}
-            {{-- card --}}
-            <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg card">
-              <div class="rounded-md bg-colorsecondorangemuda">
-                <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                </a>
-              </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Angkatan 5</h3>
-            </div>
-            {{-- card --}}
-            {{-- card --}}
-            <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg card">
-              <div class="rounded-md bg-colorsecondorangemuda">
-                <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                </a>
-              </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Angkatan 6</h3>
-            </div>
-            {{-- card --}}
-            {{-- card --}}
-            <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg card">
-              <div class="rounded-md bg-colorsecondorangemuda">
-                <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                </a>
-              </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Angkatan 6</h3>
-            </div>
-            {{-- card --}}
-            {{-- card --}}
-            <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg card">
-              <div class="rounded-md bg-colorsecondorangemuda">
-                <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                </a>
-              </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Hari Angkatan 7</h3>
-            </div>
-            {{-- card --}}
-            {{-- card --}}
-            <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg card">
-              <div class="rounded-md bg-colorsecondorangemuda">
-                <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                </a>
-              </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Angkatan 7</h3>
-            </div>
-            {{-- card --}}
-            {{-- card --}}
-            <div data-aos="fade-up"
-            data-aos-delay="40"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-            class="max-w-sm py-4 rounded-lg card">
-              <div class="rounded-md bg-colorsecondorangemuda">
-                <a href="#" class="relative flex items-center justify-center">
-                  <img class="w-full rounded-t-lg" src="/assets/foto-ujian.png" alt="foto-ujian"/>
-                  <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
-                </a>
-              </div>
-              <h3 class="text-sm font-bold tracking-tight md:text-lg text-colorprimaryblack font-outfit ">Angkatan 8</h3>
-            </div>
-            {{-- card --}}
+          @endforeach
         </div>
         {{-- Alumni --}}
       </div>
