@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Filament\Resources\AlumniResource\Pages;
+namespace App\Filament\Resources\ProgramUnggulanResource\Pages;
 
-use App\Filament\Resources\AlumniResource;
+use App\Filament\Resources\ProgramUnggulanResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
-use Filament\Tables\Table;
 use Filament\Tables\Actions\CreateAction;
+use Filament\Tables\Table;
 
-class CreateAlumni extends CreateRecord
+class CreateProgramUnggulan extends CreateRecord
 {
-    protected static string $resource = AlumniResource::class;
+    protected static string $resource = ProgramUnggulanResource::class;
     protected static bool $canCreateAnother = false;
 
     public function table(Table $table): Table
     {
         return $table->headerActions([
             CreateAction::make()->cancelAction(
-                fn() => redirect('/alumni')
+                fn() => redirect('/program-unggulan')
             ),
         ]);
     }

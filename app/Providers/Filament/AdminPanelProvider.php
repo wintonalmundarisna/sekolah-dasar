@@ -66,6 +66,7 @@ class AdminPanelProvider extends PanelProvider
                 SetTheme::class
             ])
             ->navigationGroups([
+                'Program Sekolah',
                 'Kurikulum',
                 'Kesiswaan',
                 'Informasi',
