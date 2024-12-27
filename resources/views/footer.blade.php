@@ -14,10 +14,10 @@
             </aside>
             <nav>
                 <h6 class="footer-title font-outfit">Akses Cepat</h6>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Profile</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Program Sekolah</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">PPDB</a>
-                <a class="link link-hover text-colorprimaryblack font-outfit">Informasi</a>
+                <a href="/data-sekolah" class="link link-hover text-colorprimaryblack font-outfit">Data Sekolah</a>
+                <a href="/fasilitas-sekolah" class="link link-hover text-colorprimaryblack font-outfit">Fasilitas Sekolah</a>
+                <a href="/informasi" class="link link-hover text-colorprimaryblack font-outfit">Informasi PPDB</a>
+                <a href="/gallery" class="link link-hover text-colorprimaryblack font-outfit">Gallery</a>
               </nav>
               <nav>
                 <i class="text-lg fa-solid fa-map-location-dot text-colorprimaryblack"></i><a class="link link-hover font-outfit">Komplek Puri Idaman, Jl. Bintara Jaya Raya No. 354 Rt 005/Rw 003, Kel. Bintara Jaya, Kec. Bekasi Barat 17136. Telp : 021-8694 2175</a>
@@ -27,22 +27,22 @@
               <nav>
                 <h6 class="footer-title">Ikuti Kami</h6>
                 <div class="flex gap-3">
-                  <a href="#">
+                  <a href="https://www.youtube.com/@nufistv2658" target="_blank">
                     <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimaryorange">
                       <i class="text-white fa-brands fa-youtube"></i>
                     </button>
                   </a>
-                  <a href="#">
+                  <a href="#" target="_blank">
                     <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondyellowtua">
                       <i class="text-white fa-brands fa-tiktok"></i>
                     </button>
                   </a>
-                  <a href="#">
+                  <a href="https://www.instagram.com/nfc.sdnufis/" target="_blank">
                     <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondgreen">
                       <i class="text-white fa-brands fa-instagram"></i>
                     </button>
                   </a>
-                  <a href="#">
+                  <a href="#" target="_blank">
                     <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimarytosca">
                       <i class="text-white fa-brands fa-facebook"></i>
                     </button>

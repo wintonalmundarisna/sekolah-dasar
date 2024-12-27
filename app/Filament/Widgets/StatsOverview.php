@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\Fasilitas;
 use App\Models\Guru;
 use App\Models\PesertaDidik;
 use App\Models\TenagaKependidikan;
@@ -43,7 +44,6 @@ class StatsOverview extends BaseWidget
                 ->icon('heroicon-o-user-group')
                 ->chart([1, 1])
                 ->color('danger'),
-            
         ];
     }
 }

@@ -53,7 +53,9 @@ Route::get('/visi-misi-tujuan', function () {
 });
 
 Route::get('/data-sekolah', function () {
-    return view('data-sekolah');
+    return view('data-sekolah', [
+        'data' => Fasilitas::get()
+    ]);
 });
 
 Route::get('/info-pendidik', function () {
