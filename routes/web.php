@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FasilitasController;
 use App\Models\FieldTrip;
 use App\Models\SkPenerimaanPpdb;
 use App\Models\Guru;
@@ -52,11 +53,7 @@ Route::get('/visi-misi-tujuan', function () {
     return view('visi-misi-tujuan');
 });
 
-Route::get('/data-sekolah', function () {
-    return view('data-sekolah', [
-        'data' => Fasilitas::get()
-    ]);
-});
+Route::get('/data-sekolah', [FasilitasController::class, 'index']);
 
 Route::get('/info-pendidik', function () {
     return view('info-pendidik', [

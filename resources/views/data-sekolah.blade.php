@@ -93,9 +93,15 @@
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
             class="block p-4 border rounded-lg border-colorsecondpurple bg-colorsecondpurplemuda max-w-auto">
+<<<<<<< HEAD
             <div class="flex items-center justify-between w-full gap-5">
               <img src="/assets/illustrasi07.png" alt="illustrasi" class="w-1/4 lg:w-1/2">
               <h5 class="font-bold tracking-tight text-7xl text-colorsecondpurple font-outfit">13</h5>
+=======
+            <div class="flex justify-between items-center gap-5 w-full">
+              <img src="/assets/illustrasi07.png" alt="illustrasi" class="lg:w-1/2 w-1/4">
+              <h5 class="text-7xl font-bold tracking-tight text-colorsecondpurple font-outfit">{{ $staff }}</h5>
+>>>>>>> a21206c23e4c0f716eb320f149c4384807f7edc0
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorsecondpurple font-outfit">Data Guru dan Tata Usaha</h5>
           </div>
@@ -146,7 +152,11 @@
             class="block p-4 border rounded-lg border-colorsecondyellowtua bg-colorsecondyellowmuda max-w-auto">
             <div class="flex items-center justify-between w-full gap-5">
               <img src="/assets/illustrasi08.png" alt="illustrasi" class="w-1/12">
+<<<<<<< HEAD
               <h5 class="font-bold tracking-tight text-7xl text-colorsecondyellowtua font-outfit">51</h5>
+=======
+              <h5 class="text-7xl font-bold tracking-tight text-colorsecondyellowtua font-outfit">{{ $siswa_laki }}</h5>
+>>>>>>> a21206c23e4c0f716eb320f149c4384807f7edc0
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorsecondyellowtua font-outfit">Jumlah Siswa Laki-laki</h5>
           </div>
@@ -161,7 +171,11 @@
             class="block p-4 border rounded-lg border-colorprimarytosca bg-colorsecondtoscamuda max-w-auto">
             <div class="flex items-center justify-between w-full gap-5">
               <img src="/assets/illustrasi09.png" alt="illustrasi" class="w-1/12">
+<<<<<<< HEAD
               <h5 class="font-bold tracking-tight text-7xl text-colorprimarytosca font-outfit">34</h5>
+=======
+              <h5 class="text-7xl font-bold tracking-tight text-colorprimarytosca font-outfit">{{ $siswa_perempuan }}</h5>
+>>>>>>> a21206c23e4c0f716eb320f149c4384807f7edc0
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorprimarytosca font-outfit">Jumlah Siswa Perempuan</h5>
           </div>
@@ -176,7 +190,11 @@
             class="block p-4 border rounded-lg border-colorprimaryorange bg-colorsecondorangemuda max-w-auto">
             <div class="flex items-center justify-between w-full gap-5">
               <img src="/assets/illustrasi10.png" alt="illustrasi" class="w-1/6">
+<<<<<<< HEAD
               <h5 class="font-bold tracking-tight text-7xl text-colorprimaryorange font-outfit">85</h5>
+=======
+              <h5 class="text-7xl font-bold tracking-tight text-colorprimaryorange font-outfit">{{ $semua_siswa }}</h5>
+>>>>>>> a21206c23e4c0f716eb320f149c4384807f7edc0
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorprimaryorange font-outfit">Total Seluruh Siswa</h5>
           </div>
@@ -227,7 +245,11 @@
             class="block p-4 border rounded-lg border-colorprimaryorange bg-colorsecondorangemuda max-w-auto">
             <div class="flex items-center justify-between w-full gap-5">
               <img src="/assets/illustrasi11.png" alt="illustrasi" class="w-1/6">
+<<<<<<< HEAD
               <h5 class="font-bold tracking-tight text-7xl text-colorprimaryorange font-outfit">6</h5>
+=======
+              <h5 class="text-7xl font-bold tracking-tight text-colorprimaryorange font-outfit">{{ $ruang_belajar }}</h5>
+>>>>>>> a21206c23e4c0f716eb320f149c4384807f7edc0
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorprimaryorange font-outfit">Jumlah Ruang Belajar</h5>
           </div>
@@ -242,7 +264,11 @@
             class="block p-4 border rounded-lg border-colorsecondyellowtua bg-colorsecondyellowmuda max-w-auto">
             <div class="flex items-center justify-between w-full gap-5">
               <img src="/assets/illustrasi12.png" alt="illustrasi" class="w-1/6">
+<<<<<<< HEAD
               <h5 class="font-bold tracking-tight text-7xl text-colorsecondyellowtua font-outfit">1</h5>
+=======
+              <h5 class="text-7xl font-bold tracking-tight text-colorsecondyellowtua font-outfit">{{ $ruang_perpus }}</h5>
+>>>>>>> a21206c23e4c0f716eb320f149c4384807f7edc0
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorsecondyellowtua font-outfit">Jumlah Ruang Perpustakaan</h5>
           </div>
@@ -257,7 +283,11 @@
             class="block p-4 border rounded-lg border-colorprimarytosca bg-colorsecondtoscamuda max-w-auto">
             <div class="flex items-center justify-between w-full gap-5">
               <img src="/assets/illustrasi13.png" alt="illustrasi" class="w-1/6">
+<<<<<<< HEAD
               <h5 class="font-bold tracking-tight text-7xl text-colorprimarytosca font-outfit">7</h5>
+=======
+              <h5 class="text-7xl font-bold tracking-tight text-colorprimarytosca font-outfit">{{ $total_ruangan }}</h5>
+>>>>>>> a21206c23e4c0f716eb320f149c4384807f7edc0
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorprimarytosca font-outfit">Total Jumlah Ruangan</h5>
           </div>

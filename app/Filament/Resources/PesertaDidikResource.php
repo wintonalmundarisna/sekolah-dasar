@@ -77,6 +77,9 @@ class PesertaDidikResource extends Resource
                                 'Laki-Laki' => 'Laki-Laki',
                                 'Perempuan' => 'Perempuan',
                             ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
+                            ])
                             ->inline()
                             ->inlineLabel(false)
                             ->required()
@@ -91,6 +94,12 @@ class PesertaDidikResource extends Resource
                             ->label('Tanggal Lahir')
                             ->required(),
                         TextInput::make('nik')
+                            ->afterStateUpdated(fn($state, $set) => $set('nik', '@ ' . $state))
+                            ->unique()
+                            ->validationMessages([
+                                'unique' => 'NIK sudah ada',
+                                'max_digits' => 'Tidak boleh lebih dari 30 angka'
+                            ])
                             ->label('NIK')
                             ->required(),
                         TextInput::make('agama')
@@ -134,6 +143,9 @@ class PesertaDidikResource extends Resource
                                 'Ya' => 'Ya',
                                 'Tidak' => 'Tidak',
                             ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
+                            ])
                             ->inline()
                             ->inlineLabel(false)
                             ->required()
@@ -170,6 +182,12 @@ class PesertaDidikResource extends Resource
                                     ->label('Penghasilan Ayah')
                                     ->prefix('Rp'),
                                 TextInput::make('nik-ayah')
+                                    ->afterStateUpdated(fn($state, $set) => $set('nik-ayah', '@ ' . $state))
+                                    ->unique()
+                                    ->validationMessages([
+                                        'unique' => 'NIK sudah ada',
+                                        'max_digits' => 'Tidak boleh lebih dari 30 angka'
+                                    ])
                                     ->label('NIK Ayah')
                             ]),
                         Section::make('Data Ibu')
@@ -202,6 +220,12 @@ class PesertaDidikResource extends Resource
                                     ->numeric()
                                     ->prefix('Rp'),
                                 TextInput::make('nik-ibu')
+                                    ->afterStateUpdated(fn($state, $set) => $set('nik-ibu', '@ ' . $state))
+                                    ->unique()
+                                    ->validationMessages([
+                                        'unique' => 'NIK sudah ada',
+                                        'max_digits' => 'Tidak boleh lebih dari 30 angka'
+                                    ])
                                     ->label('NIK Ibu')
                             ]),
                         Section::make('Data Wali')
@@ -229,6 +253,12 @@ class PesertaDidikResource extends Resource
                                     ->numeric()
                                     ->prefix('Rp'),
                                 TextInput::make('nik-wali')
+                                    ->afterStateUpdated(fn($state, $set) => $set('nik-wali', '@ ' . $state))
+                                    ->unique()
+                                    ->validationMessages([
+                                        'unique' => 'NIK sudah ada',
+                                        'max_digits' => 'Tidak boleh lebih dari 30 angka'
+                                    ])
                                     ->label('NIK Wali')
                             ]),
                         Select::make('rombel-saat-ini')
@@ -250,6 +280,9 @@ class PesertaDidikResource extends Resource
                             ->options([
                                 'Ya' => 'Ya',
                                 'Tidak' => 'Tidak',
+                            ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
                             ])
                             ->inline()
                             ->inlineLabel(false)
@@ -273,6 +306,9 @@ class PesertaDidikResource extends Resource
                                 'Ya' => 'Ya',
                                 'Tidak' => 'Tidak',
                             ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
+                            ])
                             ->inline()
                             ->inlineLabel(false)
                             ->required()
@@ -288,6 +324,9 @@ class PesertaDidikResource extends Resource
                                 'Ada' => 'Ada',
                                 'Tidak Ada' => 'Tidak Ada',
                             ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
+                            ])
                             ->inline()
                             ->inlineLabel(false)
                             ->required()
@@ -301,6 +340,12 @@ class PesertaDidikResource extends Resource
                         TextInput::make('lintang'),
                         TextInput::make('bujur'),
                         TextInput::make('no-kk')
+                            ->afterStateUpdated(fn($state, $set) => $set('no-kk', '@ ' . $state))
+                            ->unique()
+                            ->validationMessages([
+                                'unique' => 'Nomor KK sudah ada',
+                                'max_digits' => 'Tidak boleh lebih dari 30 angka'
+                            ])
                             ->label('Nomor KK'),
                         TextInput::make('berat-badan')
                             ->label('Berat Badan')
@@ -358,6 +403,8 @@ class PesertaDidikResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     ExportBulkAction::make()
+                        ->label('Export Data')
+                        ->icon('heroicon-o-document-text') // Menambahkan ikon 
                         ->exports([
                             ExcelExport::make()
                                 ->askForFilename()
@@ -367,7 +414,7 @@ class PesertaDidikResource extends Resource
                         ]),
                     BulkAction::make('exportImages')
                         ->label('Export Gambar')
-                        ->icon('heroicon-o-users') // Menambahkan ikon 
+                        ->icon('heroicon-o-photo') // Menambahkan ikon 
                         ->requiresConfirmation()
                         ->action(function ($records, $action) {
                             $zip = new \ZipArchive();
