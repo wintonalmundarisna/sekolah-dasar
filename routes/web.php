@@ -26,6 +26,7 @@ use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\FieldTripController;
+use App\Models\Ekstrakurikuler;
 // use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
 
@@ -90,7 +91,9 @@ Route::get('/program-semester', function () {
 });
 
 Route::get('/ekskul', function () {
-    return view('ekskul');
+    return view('ekskul', [
+        'data' => Ekstrakurikuler::get()
+    ]);
 });
 
 Route::get('/fasilitas-sekolah', function (Request $request) {
