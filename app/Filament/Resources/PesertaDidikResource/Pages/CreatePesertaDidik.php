@@ -16,7 +16,6 @@ class CreatePesertaDidik extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        // dd($data);
         $data['nik'] = "@ " . $data['nik'];
         $data['telepon'] = "@ " . $data['telepon'];
         $data['hp'] = "@ " . $data['hp'];

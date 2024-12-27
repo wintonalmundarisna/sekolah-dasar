@@ -16,6 +16,17 @@ use Filament\Forms\Components\Section;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Illuminate\Support\HtmlString;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\ViewAction;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Actions\BulkAction;
+use ZipStream\ZipStream;
+use ZipStream\Option\Archive as ZipStreamOptions;
+use Filament\Notifications\Notification;
+
 
 class KegiatanTerdekatResource extends Resource
 {
@@ -90,6 +101,78 @@ class KegiatanTerdekatResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
+                    ExportBulkAction::make()
+                        ->label('Export Data')
+                        ->icon('heroicon-o-document-text') // Menambahkan ikon 
+                        ->exports([
+                            ExcelExport::make()
+                                ->askForFilename()
+                                // ->askForWriterType()
+                                ->fromModel(KegiatanTerdekat::class)
+                                ->except(['id', 'created_at', 'updated_at']),
+                        ]),
+                    BulkAction::make('exportImages')
+                        ->label('Export Foto')
+                        ->icon('heroicon-o-photo') // Menambahkan ikon 
+                        ->requiresConfirmation()
+                        ->action(function ($records, $action) {
+                            $zip = new \ZipArchive();
+                            $zipFileName = tempnam(sys_get_temp_dir(), 'images') . '.zip';
+                            $missingFiles = [];
+                            if ($zip->open($zipFileName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) === TRUE) {
+                                foreach ($records as $record) {
+                                    if (!empty($record->foto_kegiatan)) { // Memeriksa apakah kolom foto_kegiatan tidak null atau kosong 
+                                        $imagePath = storage_path('app/public/' . $record->foto_kegiatan);
+                                        if (file_exists($imagePath)) {
+                                            $zip->addFile($imagePath, basename($imagePath));
+                                        } else { // Tangani kasus di mana file tidak ditemukan 
+                                            $notification = Notification::make()
+                                                ->title('File tidak ditemukan')
+                                                ->body('File tidak ditemukan: ')
+                                                ->danger();
+                                            $action->failureNotification($notification);
+                                            return;
+                                            // throw new \Exception('File tidak ditemukan: ' . $record->foto_kegiatan);
+                                        }
+                                    }
+                                }
+                                $zip->close();
+                                // Periksa apakah file ZIP ada sebelum mengirimkannya 
+                                if (file_exists($zipFileName)) {
+                                    // Mengirim file ZIP ke browser untuk diunduh 
+                                    return response()->download($zipFileName)->deleteFileAfterSend(true);
+                                } else {
+                                    // Tangani kasus di mana file ZIP tidak ada
+                                    $notification = Notification::make()
+                                        ->title('File ZIP tidak ditemukan')
+                                        ->body('File ZIP tidak ditemukan: ')
+                                        ->danger();
+                                    $action->failureNotification($notification);
+                                    return;
+
+                                    // throw new \Exception('File ZIP tidak ditemukan.');
+                                }
+                            } else {
+                                // Tangani kasus di mana file ZIP tidak bisa dibuka 
+                                $notification = Notification::make()
+                                    ->title('Tidak dapat menemukan file ZIP')
+                                    ->body('Tidak dapat menemukan file ZIP')
+                                    ->danger();
+                                $action->failureNotification($notification);
+                                return;
+
+                                // throw new \Exception('Tidak dapat membuka file ZIP.');
+                            }
+                            // Tampilkan pesan jika ada file yang tidak ditemukan 
+                            if (!empty($missingFiles)) {
+                                $missingFilesList = implode(', ', $missingFiles);
+                                $notification = Notification::make()
+                                    ->title('File ZIP tidak ditemukan')
+                                    ->body('File ZIP tidak ditemukan: ')
+                                    ->danger();
+                                $action->failureNotification($notification);
+                            }
+                        }),
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);

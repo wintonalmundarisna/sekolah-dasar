@@ -14,6 +14,19 @@ class CreateTenagaKependidikan extends CreateRecord
 
     protected static bool $canCreateAnother = false;
 
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        $data['nuptk'] = "@ " . $data['nuptk'];
+        $data['hp'] = "@ " . $data['hp'];
+        $data['telepon'] = "@ " . $data['telepon'];
+        $data['nip'] = "@ " . $data['nip'];
+        $data['nip_suami_istri'] = "@ " . $data['nip_suami_istri'];
+        $data['nik'] = "@ " . $data['nik'];
+        $data['no_kk'] = "@ " . $data['no_kk'];
+
+        return $data;
+    }
+
     public function table(Table $table): Table
     {
         return $table->headerActions([

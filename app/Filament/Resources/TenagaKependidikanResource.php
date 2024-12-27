@@ -22,6 +22,13 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Illuminate\Support\Str;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Actions\BulkAction;
+use ZipStream\ZipStream;
+use ZipStream\Option\Archive as ZipStreamOptions;
+use Filament\Notifications\Notification;
 
 class TenagaKependidikanResource extends Resource
 {
@@ -59,11 +66,20 @@ class TenagaKependidikanResource extends Resource
                         TextInput::make('nama')
                             ->required(),
                         TextInput::make('nuptk')
+                            ->afterStateUpdated(fn($state, $set) => $set('nuptk', '@ ' . $state))
+                            ->unique()
+                            ->validationMessages([
+                                'unique' => 'NUPTK sudah ada',
+                                'max_digits' => 'Tidak boleh lebih dari 30 angka'
+                            ])
                             ->label('NUPTK'),
                         Radio::make('jk')
                             ->options([
                                 'Laki-Laki' => 'Laki-Laki',
                                 'Perempuan' => 'Perempuan',
+                            ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
                             ])
                             ->inline()
                             ->inlineLabel(false)
@@ -76,6 +92,12 @@ class TenagaKependidikanResource extends Resource
                             ->label('Tanggal Lahir')
                             ->required(),
                         TextInput::make('nip')
+                            ->afterStateUpdated(fn($state, $set) => $set('nip', '@ ' . $state))
+                            ->unique()
+                            ->validationMessages([
+                                'unique' => 'NIP sudah ada',
+                                'max_digits' => 'Tidak boleh lebih dari 20 angka'
+                            ])
                             ->label('NIP'),
                         TextInput::make('status_kepegawaian')
                             ->required()
@@ -135,6 +157,9 @@ class TenagaKependidikanResource extends Resource
                                 'Kawin' => 'Kawin',
                                 'Belum Kawin' => 'Belum Kawin',
                             ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
+                            ])
                             ->inline()
                             ->inlineLabel(false)
                             ->required()
@@ -142,6 +167,12 @@ class TenagaKependidikanResource extends Resource
                         TextInput::make('nama_suami_istri')
                             ->label('Nama Suami / Istri'),
                         TextInput::make('nip_suami_istri')
+                            ->afterStateUpdated(fn($state, $set) => $set('nip_suami_istri', '@ ' . $state))
+                            ->unique()
+                            ->validationMessages([
+                                'unique' => 'NIP sudah ada',
+                                'max_digits' => 'Tidak boleh lebih dari 100 angka'
+                            ])
                             ->label('NIP Suami / Istri'),
                         TextInput::make('pekerjaan_suami_istri')
                             ->label('Pekerjaan Suami / Istri')
@@ -153,6 +184,9 @@ class TenagaKependidikanResource extends Resource
                                 'Ya' => 'Ya',
                                 'Tidak' => 'Tidak',
                             ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
+                            ])
                             ->inline()
                             ->inlineLabel(false)
                             ->required()
@@ -161,6 +195,9 @@ class TenagaKependidikanResource extends Resource
                             ->options([
                                 'Ya' => 'Ya',
                                 'Tidak' => 'Tidak',
+                            ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
                             ])
                             ->inline()
                             ->inlineLabel(false)
@@ -171,6 +208,9 @@ class TenagaKependidikanResource extends Resource
                                 'Ya' => 'Ya',
                                 'Tidak' => 'Tidak',
                             ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
+                            ])
                             ->inline()
                             ->inlineLabel(false)
                             ->required()
@@ -179,6 +219,9 @@ class TenagaKependidikanResource extends Resource
                             ->options([
                                 'Ya' => 'Ya',
                                 'Tidak' => 'Tidak',
+                            ])
+                            ->validationMessages([
+                                'required' => 'Pilih salah satu !'
                             ])
                             ->inline()
                             ->inlineLabel(false)
@@ -196,9 +239,21 @@ class TenagaKependidikanResource extends Resource
                         TextInput::make('rekening_atas_nama')
                             ->label('Rekening Atas Nama'),
                         TextInput::make('nik')
+                            ->afterStateUpdated(fn($state, $set) => $set('nik', '@ ' . $state))
+                            ->unique()
+                            ->validationMessages([
+                                'unique' => 'NIK sudah ada',
+                                'max_digits' => 'Tidak boleh lebih dari 30 angka'
+                            ])
                             ->label('NIK')
                             ->required(),
                         TextInput::make('no_kk')
+                            ->afterStateUpdated(fn($state, $set) => $set('no_kk', '@ ' . $state))
+                            ->unique()
+                            ->validationMessages([
+                                'unique' => 'Nomor KK sudah ada',
+                                'max_digits' => 'Tidak boleh lebih dari 30 angka'
+                            ])
                             ->label('Nomor KK'),
                         TextInput::make('karpeg'),
                         TextInput::make('karis_karsu')
@@ -238,6 +293,78 @@ class TenagaKependidikanResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
+                    ExportBulkAction::make()
+                        ->label('Export Data')
+                        ->icon('heroicon-o-document-text') // Menambahkan ikon 
+                        ->exports([
+                            ExcelExport::make()
+                                ->askForFilename()
+                                // ->askForWriterType()
+                                ->fromModel(TenagaKependidikan::class)
+                                ->except(['id', 'created_at', 'updated_at']),
+                        ]),
+                    BulkAction::make('exportImages')
+                        ->label('Export Gambar')
+                        ->icon('heroicon-o-photo') // Menambahkan ikon 
+                        ->requiresConfirmation()
+                        ->action(function ($records, $action) {
+                            $zip = new \ZipArchive();
+                            $zipFileName = tempnam(sys_get_temp_dir(), 'images') . '.zip';
+                            $missingFiles = [];
+                            if ($zip->open($zipFileName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) === TRUE) {
+                                foreach ($records as $record) {
+                                    if (!empty($record->foto)) { // Memeriksa apakah kolom foto tidak null atau kosong 
+                                        $imagePath = storage_path('app/public/' . $record->foto);
+                                        if (file_exists($imagePath)) {
+                                            $zip->addFile($imagePath, basename($imagePath));
+                                        } else { // Tangani kasus di mana file tidak ditemukan 
+                                            $notification = Notification::make()
+                                                ->title('File tidak ditemukan')
+                                                ->body('File tidak ditemukan: ')
+                                                ->danger();
+                                            $action->failureNotification($notification);
+                                            return;
+                                            // throw new \Exception('File tidak ditemukan: ' . $record->foto);
+                                        }
+                                    }
+                                }
+                                $zip->close();
+                                // Periksa apakah file ZIP ada sebelum mengirimkannya 
+                                if (file_exists($zipFileName)) {
+                                    // Mengirim file ZIP ke browser untuk diunduh 
+                                    return response()->download($zipFileName)->deleteFileAfterSend(true);
+                                } else {
+                                    // Tangani kasus di mana file ZIP tidak ada
+                                    $notification = Notification::make()
+                                        ->title('File ZIP tidak ditemukan')
+                                        ->body('File ZIP tidak ditemukan: ')
+                                        ->danger();
+                                    $action->failureNotification($notification);
+                                    return;
+
+                                    // throw new \Exception('File ZIP tidak ditemukan.');
+                                }
+                            } else {
+                                // Tangani kasus di mana file ZIP tidak bisa dibuka 
+                                $notification = Notification::make()
+                                    ->title('Tidak dapat menemukan file ZIP')
+                                    ->body('Tidak dapat menemukan file ZIP')
+                                    ->danger();
+                                $action->failureNotification($notification);
+                                return;
+
+                                // throw new \Exception('Tidak dapat membuka file ZIP.');
+                            }
+                            // Tampilkan pesan jika ada file yang tidak ditemukan 
+                            if (!empty($missingFiles)) {
+                                $missingFilesList = implode(', ', $missingFiles);
+                                $notification = Notification::make()
+                                    ->title('File ZIP tidak ditemukan')
+                                    ->body('File ZIP tidak ditemukan: ')
+                                    ->danger();
+                                $action->failureNotification($notification);
+                            }
+                        }),
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
