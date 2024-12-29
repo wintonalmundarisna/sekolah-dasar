@@ -28,6 +28,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\FieldTripController;
 use App\Models\Ekstrakurikuler;
+// use App\Models\KomiteSekolah;
 // use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
 
@@ -68,7 +69,9 @@ Route::get('/info-tenaga-pendidik', function () {
 });
 
 Route::get('/komite-sekolah', function () {
-    return view('komite-sekolah');
+    return view('komite-sekolah', [
+        // 'data' => KomiteSekolah::get()
+    ]);
 });
 
 Route::get('/kegiatan-tahunan', function () {
