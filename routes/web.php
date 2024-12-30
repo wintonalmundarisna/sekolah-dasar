@@ -4,6 +4,7 @@ use App\Http\Controllers\FasilitasController;
 use App\Models\FieldTrip;
 use App\Models\SkPenerimaanPpdb;
 use App\Models\Guru;
+use App\Models\KalenderAkademik;
 use App\Models\InformasiPpdb;
 use App\Models\Workshop;
 use App\Models\Parenting;
@@ -156,7 +157,15 @@ Route::get('/kurikulum-kelas-6', function () {
 });
 
 Route::get('/kalender-akademik', function () {
-    return view('kalender-akademik');
+    $data = KalenderAkademik::where('is_active', 1)->first();
+    // dd($data);
+    $filename = $data->kalender;
+    $path = storage_path('app/public/' . $filename);
+
+    return Response::make(file_get_contents($path), 200, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="' . basename($path) . '"'
+    ]);
 });
 
 Route::get('/tata-tertib-peserta-didik', function () {
