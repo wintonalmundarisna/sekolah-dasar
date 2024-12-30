@@ -54,7 +54,7 @@
               data-aos-mirror="true"
               data-aos-once="false"
               data-aos-anchor-placement="top-center" 
-              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Info Tenaga Pendidik</h1>
+              class="text-2xl font-bold text-center lg:text-3xl text-colorprimarytosca font-outfit">Info Pendidik</h1>
           <img data-aos="fade-left"
               data-aos-delay="30"
               data-aos-duration="500"
@@ -76,15 +76,15 @@
               data-aos-once="false"
               data-aos-anchor-placement="top-center"
               class="max-w-sm py-4 rounded-lg">
-              <div class="pt-4 rounded-md bg-colorsecondtoscamuda">
-                <a href="#" class="flex items-center justify-center">
-                  <img class="w-1/2 rounded-t-lg" src="{{ asset('storage/'.$d->foto) }}" alt="info-pendidik"/>
+              <div class="rounded-md bg-colorsecondtoscamuda overflow-hidden">
+                <a class="flex items-center justify-center cursor-default bg-cover bg-no-repeat bg-center overflow-hidden h-[200px]">
+                  <img class="w-full bg-cover bg-no-repeat bg-center rounded-t-lg overflow-hidden" src="{{ asset('storage/'.$d->foto) }}" alt="info-pendidik"/>
                 </a>
               </div>
               <div class="py-3">
                 <div class="flex items-center justify-between">
                   <div>
-                    <h5 class="mb-0.5 text-sm font-bold tracking-tight md:text-base text-colorprimarytosca font-outfit ">{{ $d->nama }}</h5>
+                    <h5 class="mb-0.5 text-sm font-bold tracking-tight md:text-base text-colorprimarytosca font-outfit line-clamp-1">{{ $d->nama }}</h5>
                     <p class="text-sm font-normal tracking-tight md:text-md text-colorprimaryblack font-outfit">{{ $d->jenis_ptk }}</p>
                   </div>
                   <a onclick="my_modal_{{ $d->id }}.showModal()" class="px-4 py-2.5 text-md font-medium text-center text-white bg-colorprimarytosca rounded-md">
@@ -97,10 +97,9 @@
                         <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
                       </form>
                       <h3 class="mb-2 text-lg font-bold text-center border-b-2 font-outfit text-colorprimarytosca border-colorprimarytosca">Detail Pendidik</h3>
-                      <p class="py-1 font-bold border-b-2 font-outfit text-colorprimaryblack">{{ $d->nama }}</p>
-                      <p class="py-1 border-b-2 font-outfit text-colorprimaryblack">{{ $d->jenis_ptk }}</p>
-                      <p class="py-1 border-b-2 font-outfit text-colorprimaryblack">{{ $d->hp }}</p>
-                      <p class="py-1 border-b-2 font-outfit text-colorprimaryblack">{{ $d->email }}</p>
+                      <p class="py-1 font-bold border-b-2 font-outfit text-colorprimaryblack">Nama : {{ $d->nama }}</p>
+                      <p class="py-1 border-b-2 font-outfit text-colorprimaryblack">Jabatan : {{ $d->jabatan }}</p>
+                      <p class="py-1 border-b-2 font-outfit text-colorprimaryblack">Jenis PTK : {{ $d['jenis_ptk'] }}</p>
                     </div>
                   </dialog>
                   {{-- modal --}}

@@ -100,17 +100,37 @@
               <div class="max-w-sm py-4 rounded-lg card" 
                   data-category="{{ $d->kategori }}">
                     <div class="bg-white rounded-md">
-                        <a class="relative flex items-center justify-center cursor-default">
-                            <img class="w-full bg-auto bg-no-repeat bg-center rounded-t-lg max-h-[200px]" src="{{ asset('storage/' . $d->foto_fasilitas) }}"
+                        <a class="relative flex items-center justify-center cursor-default bg-cover bg-no-repeat bg-center overflow-hidden h-[180px]">
+                            <img class="w-full bg-cover bg-no-repeat bg-center rounded-t-lg overflow-hidden" src="{{ asset('storage/' . $d->foto_fasilitas) }}"
                                 alt="foto {{ $d->nama_fasilitas }}" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
+                            <img class="absolute bottom-0 w-full" src="/assets/aksesoris-2.png" alt="wave">
+                            <img class="absolute top-0 w-full" src="/assets/aksesoris-1.png" alt="wave">
                         </a>
-                        <h1 class="text-sm font-semibold tracking-tight text-center md:text-lg text-colorprimaryblack font-outfit">{{ $d->nama_fasilitas }}</h1>
+                        <div class="flex justify-between items-center w-full mt-3">
+                          <h1 class="text-sm font-semibold tracking-tight text-star md:text-lg text-colorprimaryblack font-outfit line-clamp-1">{{ $d->nama_fasilitas }}</h1>
+                          <a onclick="my_modal_{{ $d->id }}.showModal()" class="px-4 py-2.5 text-sm text-center text-white bg-colorprimarytosca rounded-md cursor-pointer">
+                            <i class="fa-regular fa-eye"></i>
+                          </a>
+                        </div>
                     </div>
                 </div>
+                {{-- modal --}}
+                  <dialog id="my_modal_{{ $d->id }}" class="modal">
+                    <div class="modal-box">
+                      <form method="dialog">
+                        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+                      </form>
+                      <h3 class="mb-4 text-lg font-bold text-center border-b-2 font-outfit text-colorprimarytosca border-colorprimarytosca">Detail Fasilitas</h3>
+                      <img src="{{ asset('storage/' . $d->foto_fasilitas) }}"
+                                alt="foto {{ $d->nama_fasilitas }}" />
+                      <h4 class="mt-3 text-sm font-semibold tracking-tight text-star md:text-lg text-colorprimaryblack font-outfit">Nama Fasilitas : {{ $d->nama_fasilitas }}</h4>
+                      <p class="text-sm font-semibold tracking-tight text-star md:text-lg text-colorprimaryblack font-outfit">Jumlah Fasilitas : {{ $d->jumlah }}</p>
+                      <p class="text-sm font-semibold tracking-tight text-star md:text-lg text-colorprimaryblack font-outfit">Kategori Fasilitas : {{ $d->kategori }}</p>
+                    </div>
+                  </dialog>
+                  {{-- modal --}}
             @endforeach
             {{-- card all --}}
-
           @endif
 
         </div>
