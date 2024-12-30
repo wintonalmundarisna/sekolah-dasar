@@ -40,7 +40,16 @@ class FasilitasController extends Controller
         $totalRuangBelajar = $ruangBelajar ? $ruangBelajar->jumlah : 0;
         $ruangPerpus = Fasilitas::where('nama_fasilitas', 'Ruang Perpustakaan')->first();
         $totalRuangPerpus = $ruangPerpus ? $ruangPerpus->jumlah : 0;
-        $totalRuangan = $totalRuangBelajar + $totalRuangPerpus;
+        $ruangGuru = Fasilitas::where('nama_fasilitas', 'Ruang Guru')->first();
+        $totalRuangGuru = $ruangGuru ? $ruangGuru->jumlah : 0;
+        $ruangKepalaSekolah = Fasilitas::where('nama_fasilitas', 'Ruang Kepala Sekolah')->first();
+        $totalRuangKepalaSekolah = $ruangKepalaSekolah ? $ruangKepalaSekolah->jumlah : 0;
+        $ruangUks = Fasilitas::where('nama_fasilitas', 'Ruang UKS')->first();
+        $totalRuangUks = $ruangUks ? $ruangUks->jumlah : 0;
+        $ruangKamarMandi = Fasilitas::where('nama_fasilitas', 'Ruang Kamar Mandi')->first();
+        $totalRuangKamarMandi = $ruangKamarMandi ? $ruangKamarMandi->jumlah : 0;
+        
+        $totalRuangan = $totalRuangBelajar + $totalRuangPerpus + $totalRuangGuru + $totalRuangKepalaSekolah + $totalRuangUks + $totalRuangKamarMandi;
 
         $jmlGuru = Guru::count();
         $jmlTendik = TenagaKependidikan::count();
@@ -53,6 +62,10 @@ class FasilitasController extends Controller
             'semua_siswa' => $jmlSiswa,
             'ruang_belajar' => $totalRuangBelajar,
             'ruang_perpus' => $totalRuangPerpus,
+            'ruang_guru' => $totalRuangGuru,
+            'ruang_kepala_sekolah' => $totalRuangKepalaSekolah,
+            'ruang_uks' => $totalRuangUks,
+            'ruang_kamar_mandi' => $totalRuangKamarMandi,
             'total_ruangan' => $totalRuangan,
         ]);
     }

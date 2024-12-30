@@ -32,19 +32,19 @@
                       <i class="text-white fa-brands fa-youtube"></i>
                     </button>
                   </a>
-                  <a href="#" target="_blank">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondyellowtua">
-                      <i class="text-white fa-brands fa-tiktok"></i>
+                  <a href="https://wa.me/6289637411029" target="_blank">
+                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondgreen">
+                      <i class="text-white fa-brands fa-whatsapp"></i>
                     </button>
                   </a>
                   <a href="https://www.instagram.com/nfc.sdnufis/" target="_blank">
-                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondgreen">
+                    <button class="px-4 rounded-sm py-2.5 text-cream bg-colorsecondyellowtua">
                       <i class="text-white fa-brands fa-instagram"></i>
                     </button>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="mailto:nurulfirdaus@gmail" target="_blank">
                     <button class="px-4 rounded-sm py-2.5 text-cream bg-colorprimarytosca">
-                      <i class="text-white fa-brands fa-facebook"></i>
+                      <i class="text-white fa-regular fa-envelope"></i>
                     </button>
                   </a>
                 </div>

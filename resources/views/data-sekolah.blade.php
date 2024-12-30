@@ -226,7 +226,7 @@
             data-aos-anchor-placement="top-center" 
             class="block p-4 border rounded-lg border-colorprimaryorange bg-colorsecondorangemuda max-w-auto">
             <div class="flex items-center justify-between w-full gap-5">
-              <img src="/assets/illustrasi11.png" alt="illustrasi" class="w-1/6">
+              <img src="/assets/illustrasi13.png" alt="illustrasi" class="w-1/6">
               <h5 class="font-bold tracking-tight text-7xl text-colorprimaryorange font-outfit">{{ $ruang_belajar }}</h5>
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorprimaryorange font-outfit">Jumlah Ruang Belajar</h5>
@@ -239,14 +239,74 @@
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center" 
+            class="block p-4 border rounded-lg border-colorsecondgreen bg-colorsecondgreenmuda max-w-auto">
+            <div class="flex items-center justify-between w-full gap-5">
+              <img src="/assets/illustrasi13.png" alt="illustrasi" class="w-1/6">
+              <h5 class="font-bold tracking-tight text-7xl text-colorsecondgreen font-outfit">{{ $ruang_guru }}</h5>
+            </div>
+            <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorsecondgreen font-outfit">Jumlah Ruang Guru</h5>
+          </div>
+          {{-- card-3 --}}
+          <div data-aos="fade-up"
+            data-aos-delay="40"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center" 
             class="block p-4 border rounded-lg border-colorsecondyellowtua bg-colorsecondyellowmuda max-w-auto">
             <div class="flex items-center justify-between w-full gap-5">
-              <img src="/assets/illustrasi12.png" alt="illustrasi" class="w-1/6">
+              <img src="/assets/illustrasi13.png" alt="illustrasi" class="w-1/6">
               <h5 class="font-bold tracking-tight text-7xl text-colorsecondyellowtua font-outfit">{{ $ruang_perpus }}</h5>
             </div>
             <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorsecondyellowtua font-outfit">Jumlah Ruang Perpustakaan</h5>
           </div>
-          {{-- card-3 --}}
+          {{-- card-4 --}}
+          <div data-aos="fade-up"
+            data-aos-delay="40"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center" 
+            class="block p-4 border rounded-lg border-colorsecondyellowtua bg-colorsecondyellowmuda max-w-auto">
+            <div class="flex items-center justify-between w-full gap-5">
+              <img src="/assets/illustrasi13.png" alt="illustrasi" class="w-1/6">
+              <h5 class="font-bold tracking-tight text-7xl text-colorsecondyellowtua font-outfit">{{ $ruang_kepala_sekolah }}</h5>
+            </div>
+            <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorsecondyellowtua font-outfit">Jumlah Ruang Kepala Sekolah</h5>
+          </div>
+          {{-- card-5 --}}
+          <div data-aos="fade-up"
+            data-aos-delay="40"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center" 
+            class="block p-4 border rounded-lg border-colorprimaryorange bg-colorsecondorangemuda max-w-auto">
+            <div class="flex items-center justify-between w-full gap-5">
+              <img src="/assets/illustrasi13.png" alt="illustrasi" class="w-1/6">
+              <h5 class="font-bold tracking-tight text-7xl text-colorprimaryorange font-outfit">{{ $ruang_uks }}</h5>
+            </div>
+            <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorprimaryorange font-outfit">Jumlah Ruang UKS</h5>
+          </div>
+          {{-- card-6 --}}
+          <div data-aos="fade-up"
+            data-aos-delay="40"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center" 
+            class="block p-4 border rounded-lg border-colorsecondgreen bg-colorsecondgreenmuda max-w-auto">
+            <div class="flex items-center justify-between w-full gap-5">
+              <img src="/assets/illustrasi13.png" alt="illustrasi" class="w-1/6">
+              <h5 class="font-bold tracking-tight text-7xl text-colorsecondgreen font-outfit">{{ $ruang_kamar_mandi }}</h5>
+            </div>
+            <h5 class="mt-2 text-2xl font-bold tracking-tight text-center text-colorsecondgreen font-outfit">Jumlah Ruang Kamar Mandi</h5>
+          </div>
+          {{-- card-7 --}}
           <div data-aos="fade-up"
             data-aos-delay="40"
             data-aos-duration="500"

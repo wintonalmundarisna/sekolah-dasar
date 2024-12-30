@@ -79,7 +79,12 @@
               class="max-w-sm py-4 rounded-lg">
               <div class="rounded-md bg-colorsecondorangemuda overflow-hidden">
                 <a class="flex items-center justify-center cursor-default bg-cover bg-no-repeat bg-center overflow-hidden h-[200px]">
-                  <img class="w-full bg-cover bg-no-repeat bg-center rounded-t-lg overflow-hidden" src="{{ asset('storage/'.$d->foto) }}" alt="info-pendidik"/>
+                  @if (@isset($d->foto))
+                    <img class="w-full bg-cover bg-no-repeat bg-center rounded-t-lg overflow-hidden" src="{{ asset('storage/'.$d->foto) }}" alt="info-pendidik"/>
+                  @else
+                    <img src="{{ asset('assets/default-teacher.jpg') }}"
+                      class="w-full bg-cover bg-no-repeat bg-center rounded-t-lg overflow-hidden" alt="foto-guru">
+                  @endif
                 </a>
               </div>
               <div class="py-3">
