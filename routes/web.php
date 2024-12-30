@@ -6,6 +6,7 @@ use App\Models\SkPenerimaanPpdb;
 use App\Models\Guru;
 use App\Models\KalenderAkademik;
 use App\Models\InformasiPpdb;
+use App\Models\TataTertib;
 use App\Models\Workshop;
 use App\Models\Parenting;
 use App\Models\KurikulumKelasSatu;
@@ -169,7 +170,14 @@ Route::get('/kalender-akademik', function () {
 });
 
 Route::get('/tata-tertib-peserta-didik', function () {
-    return view('tata-tertib-peserta-didik');
+    $data = TataTertib::get()->first();
+    $filename = $data->dokumen;
+    $path = storage_path('app/public/' . $filename);
+
+    return Response::make(file_get_contents($path), 200, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="' . basename($path) . '"'
+    ]);
 });
 
 Route::get('/program-kesiswaan', function () {
