@@ -70,7 +70,9 @@
             <div class="card-body">
               <h2 class="card-title text-lg py-2 font-outfit text-colorprimarytosca">Formulir Pendaftaran PPDB SD ISLAM NURUL FIRDAUS Online bisa diakses melalui link di bawah ini.</h2>
               <div class="card-actions justify-start">
-                <button class="btn bg-colorsecondgreen hover:bg-green-700 text-white w-full text-base font-outfit"><a href="https://docs.google.com/forms/d/e/1FAIpQLScBWtq6WvsSDI1-h_zRex5o4nKOiKnJ1LkRt0Him1qvmc4qsg/viewform?usp=sf_link" target="_blank">Daftar Sekarang</a></button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScBWtq6WvsSDI1-h_zRex5o4nKOiKnJ1LkRt0Him1qvmc4qsg/viewform?usp=sf_link" target="_blank" class="w-full">
+                  <button class="btn bg-colorsecondgreen hover:bg-green-700 text-white w-full text-base font-outfit">Daftar Sekarang</button>
+                </a>
               </div>
             </div>
             <img src="/assets/illustrasi04.png" alt="illustrasi" class="absolute -top-7 right-0 w-10">

@@ -20,9 +20,9 @@
                 <a href="/gallery" class="link link-hover text-colorprimaryblack font-outfit">Gallery</a>
               </nav>
               <nav>
-                <i class="text-lg fa-solid fa-map-location-dot text-colorprimaryblack"></i><a class="link link-hover font-outfit">Komplek Puri Idaman, Jl. Bintara Jaya Raya No. 354 Rt 005/Rw 003, Kel. Bintara Jaya, Kec. Bekasi Barat 17136. Telp : 021-8694 2175</a>
-                <a class="link link-hover font-outfit"><i class="text-lg fa-brands fa-whatsapp text-colorprimaryblack"></i> 0896-3741-1029</a>
-                <a class="link link-hover font-outfit"><i class="text-lg fa-regular fa-envelope text-colorprimaryblack"></i> nurulfirdaus@gmail.com</a>
+                <i class="text-lg fa-solid fa-map-location-dot text-colorprimaryblack"></i><a class="cursor-default font-outfit">Komplek Puri Idaman, Jl. Bintara Jaya Raya No. 354 Rt 005/Rw 003, Kel. Bintara Jaya, Kec. Bekasi Barat 17136. Telp : 021-8694 2175</a>
+                <a class="font-outfit cursor-default"><i class="text-lg fa-brands fa-whatsapp text-colorprimaryblack"></i> 0896-3741-1029</a>
+                <a class="font-outfit cursor-default"><i class="text-lg fa-regular fa-envelope text-colorprimaryblack"></i> nurulfirdaus@gmail.com</a>
               </nav>
               <nav>
                 <h6 class="footer-title">Ikuti Kami</h6>

@@ -106,7 +106,9 @@
               <i class="fa-solid fa-square-envelope text-colorsecondgreen text-2xl"></i>
               <p class="text-colorprimaryblack font-outfit text-normal">thenurulfirdaus@gmail.com</p>
             </div>
-            <button class="btn btn-md w-full bg-colorsecondgreen text-white hover:bg-green-700"><i class="fa-solid fa-location-dot text-white"></i> <a href="https://maps.app.goo.gl/47vDGkmN68tkfDux9" target="_blank">Maps</a></button>
+            <a href="https://maps.app.goo.gl/47vDGkmN68tkfDux9" target="_blank" class="w-full">
+              <button class="btn btn-md w-full bg-colorsecondgreen text-white hover:bg-green-700"><i class="fa-solid fa-location-dot text-white"></i> Maps</button>
+            </a>
           </div>
       </div>
     </section>
