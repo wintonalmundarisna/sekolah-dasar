@@ -42,8 +42,8 @@
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">SDM</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a href="/info-pendidik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
-                      <li><a href="info-tenaga-pendidik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Tenaga Pendidik</a></li>
+                      <li><a href="/info-pendidik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info guru</a></li>
+                      <li><a href="info-tenaga-pendidik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
                     </ul>
                   </details>
                 </li>
@@ -143,8 +143,8 @@
                   <details>
                     <summary class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">SDM</summary>
                     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                      <li><a href="/info-pendidik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
-                      <li><a href="info-tenaga-pendidik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Tenaga Pendidik</a></li>
+                      <li><a href="/info-pendidik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Guru</a></li>
+                      <li><a href="info-tenaga-pendidik" class="font-outfit hover:text-colorprimaryorange text-colorprimaryblack">Info Pendidik</a></li>
                     </ul>
                   </details>
                 </li>

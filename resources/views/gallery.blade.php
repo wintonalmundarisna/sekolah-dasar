@@ -128,16 +128,18 @@
                 {{-- card all --}}
                 <div class="max-w-sm py-4 rounded-lg card" data-category="filed-trip">
                     <div class="bg-white rounded-md">
-                        <a class="relative flex items-center justify-center cursor-default">
-                            <img class="w-full bg-auto bg-no-repeat bg-center rounded-t-lg max-h-[200px]" src="{{ asset('storage/' . $d->dokumentasi) }}"
+                        <a class="relative flex items-center justify-center cursor-default bg-cover bg-no-repeat bg-center overflow-hidden h-[150px]">
+                            <img class="w-full bg-cover bg-no-repeat bg-center rounded-t-lg overflow-hidden" src="{{ asset('storage/' . $d->dokumentasi) }}"
                                 alt="foto {{ $d->judul }}" />
-                            <img class="absolute bottom-0 w-full" src="/assets/wave-card.png" alt="wave">
+                            <img class="absolute bottom-0 w-full" src="/assets/aksesoris-2.png" alt="wave">
+                            <img class="absolute top-0 w-full" src="/assets/aksesoris-1.png" alt="wave">
                         </a>
                         <h1 class="text-sm font-semibold tracking-tight text-start md:text-lg text-colorprimaryblack font-outfit">{{ $d->judul }}</h1>
                     </div>
                 </div>
                 {{-- card all --}}
             @endforeach
+            
         </div>
         {{-- gallerty --}}
         </div>
