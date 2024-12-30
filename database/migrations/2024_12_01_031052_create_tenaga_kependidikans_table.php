@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('nip', 50)->nullable();
             $table->string('status_kepegawaian', 10);
             $table->string('jenis_ptk', 50);
+            $table->string('jabatan', 150)->nullable();
             $table->string('agama', 15);
             $table->text('alamat');
             $table->string('rt', 2)->nullable();

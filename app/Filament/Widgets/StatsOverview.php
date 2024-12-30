@@ -17,30 +17,30 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         $jmlTendik = TenagaKependidikan::count();
-        $tendikLaki = TenagaKependidikan::where('jk', 'Laki-Laki')->count();
-        $tendikPerempuan = TenagaKependidikan::where('jk', 'Perempuan')->count();
+        $tendikLaki = TenagaKependidikan::where('jk', 'L')->count();
+        $tendikP = TenagaKependidikan::where('jk', 'P')->count();
 
         $jmlGuru = Guru::count();
-        $guruLaki = Guru::where('jk', 'Laki-Laki')->count();
-        $guruPerempuan = Guru::where('jk', 'Perempuan')->count();
+        $guruLaki = Guru::where('jk', 'L')->count();
+        $guruP = Guru::where('jk', 'P')->count();
 
         $jmlSiswa = PesertaDidik::count();
-        $laki = PesertaDidik::where('jk', 'Laki-Laki')->count();
-        $perempuan = PesertaDidik::where('jk', 'Perempuan')->count();
+        $siswaLaki = PesertaDidik::where('jk', 'L')->count();
+        $siswaP = PesertaDidik::where('jk', 'P')->count();
 
         return [
             Stat::make('Jumlah Tenaga Pendidik', $jmlTendik)
-                ->description('Laki-laki: ' . $tendikLaki . ' | Perempuan: ' . $tendikPerempuan)
+                ->description('Laki-Laki: ' . $tendikLaki . ' | Perempuan: ' . $tendikP)
                 ->icon('heroicon-o-academic-cap')
                 ->chart([1, 1])
                 ->color('primary'),
             Stat::make('Jumlah Guru', $jmlGuru)
-                ->description('Laki-laki: ' . $guruLaki . ' | Perempuan: ' . $guruPerempuan)
+                ->description('Laki-Laki: ' . $guruLaki . ' | Perempuan: ' . $guruP)
                 ->icon('heroicon-o-users')
                 ->chart([1, 1])
                 ->color('success'),
             Stat::make('Jumlah Peserta Didik', $jmlSiswa)
-                ->description('Laki-laki: ' . $laki . ' | Perempuan: ' . $perempuan)
+                ->description('Laki-Laki: ' . $siswaLaki . ' | Perempuan: ' . $siswaP)
                 ->icon('heroicon-o-user-group')
                 ->chart([1, 1])
                 ->color('danger'),

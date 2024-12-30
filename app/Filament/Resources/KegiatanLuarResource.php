@@ -50,6 +50,9 @@ class KegiatanLuarResource extends Resource
                             ->maxLength(150),
                         Forms\Components\FileUpload::make('foto_kegiatan')
                             ->label('Foto Kegiatan')
+                            ->validationMessages([
+                                'required' => 'Tidak boleh kosong'
+                            ])
                             ->required()
                             ->image()
                             ->disk('public')

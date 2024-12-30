@@ -9,17 +9,32 @@ use App\Http\Requests\UpdateFasilitasRequest;
 use App\Models\PesertaDidik;
 use App\Models\Guru;
 use App\Models\TenagaKependidikan;
+use Illuminate\Http\Request;
+
 
 class FasilitasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
+    {
+        $kategori = $request->kategori;
+        if ($request->kategori) {
+            $data = Fasilitas::where('kategori', $kategori)->get();
+        } else {
+            $data = Fasilitas::get();
+        }
+        return view('fasilitas-sekolah', [
+            'data' => $data,
+            'kategori' => $kategori,
+        ]);
+    }
+    public function data()
     {
         $jmlSiswa = PesertaDidik::count();
-        $laki = PesertaDidik::where('jk', 'Laki-Laki')->count();
-        $perempuan = PesertaDidik::where('jk', 'Perempuan')->count();
+        $laki = PesertaDidik::where('jk', 'L')->count();
+        $perempuan = PesertaDidik::where('jk', 'P')->count();
 
         $ruangBelajar = Fasilitas::where('nama_fasilitas', 'Ruang Belajar')->first();
         $totalRuangBelajar = $ruangBelajar ? $ruangBelajar->jumlah : 0;

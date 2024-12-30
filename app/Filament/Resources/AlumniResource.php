@@ -48,6 +48,9 @@ class AlumniResource extends Resource
                         Forms\Components\FileUpload::make('foto')
                             ->required()
                             ->image()
+                            ->validationMessages([
+                                'required' => 'Tidak boleh kosong'
+                            ])
                             // ->acceptedFileTypes(['image/*', 'video/*'])
                             ->downloadable()
                             ->previewable(true)

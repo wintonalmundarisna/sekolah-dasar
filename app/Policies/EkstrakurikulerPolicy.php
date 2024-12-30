@@ -5,6 +5,7 @@ namespace App\Policies;
 use Illuminate\Auth\Access\Response;
 use App\Models\Ekstrakurikuler;
 use App\Models\User;
+// use Illuminate\Auth\Access\HandlesAuthorization;
 
 class EkstrakurikulerPolicy
 {
@@ -61,6 +62,13 @@ class EkstrakurikulerPolicy
      */
     public function forceDelete(User $user, Ekstrakurikuler $ekstrakurikuler): bool
     {
+        return true;
+    }
+
+    // use HandlesAuthorization;
+    public function deleteAny(User $user): bool
+    {
+        // Logika untuk memeriksa apakah pengguna diizinkan untuk melakukan bulk delete
         return true;
     }
 }

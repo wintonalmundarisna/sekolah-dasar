@@ -63,4 +63,9 @@ class ParentingPolicy
     {
         return true;
     }
+    public function deleteAny(User $user): bool
+    {
+        // Logika untuk memeriksa apakah pengguna diizinkan untuk melakukan bulk delete
+        return true;
+    }
 }

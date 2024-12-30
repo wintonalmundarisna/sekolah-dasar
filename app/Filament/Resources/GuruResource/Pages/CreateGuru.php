@@ -17,13 +17,29 @@ class CreateGuru extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['nuptk'] = "@ " . $data['nuptk'];
-        $data['telepon'] = "@ " . $data['telepon'];
-        $data['nip'] = "@ " . $data['nip'];
-        $data['nip-suami-istri'] = "@ " . $data['nip-suami-istri'];
-        $data['hp'] = "@ " . $data['hp'];
-        $data['nik'] = "@ " . $data['nik'];
-        $data['no-kk'] = "@ " . $data['no-kk'];
+        if ($data) {
+            if ($data['nuptk']) {
+                $data['nuptk'] = "@ " . $data['nuptk'];
+            }
+            if ($data['hp']) {
+                $data['hp'] = "@ " . $data['hp'];
+            }
+            if ($data['telepon']) {
+                $data['telepon'] = "@ " . $data['telepon'];
+            }
+            if ($data['nip']) {
+                $data['nip'] = "@ " . $data['nip'];
+            }
+            if ($data['nip-suami-istri']) {
+                $data['nip-suami-istri'] = "@ " . $data['nip-suami-istri'];
+            }
+            if ($data['nik']) {
+                $data['nik'] = "@ " . $data['nik'];
+            }
+            if ($data['no-kk']) {
+                $data['no-kk'] = "@ " . $data['no-kk'];
+            }
+        }
 
         return $data;
     }

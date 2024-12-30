@@ -55,6 +55,9 @@ class FasilitasResource extends Resource
                             ->numeric(),
                         Forms\Components\FileUpload::make('foto_fasilitas')
                             ->required()
+                            ->validationMessages([
+                                'required' => 'Tidak boleh kosong'
+                            ])
                             ->image()
                             ->disk('public')
                             ->directory('informasi/fasilitas')

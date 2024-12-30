@@ -45,6 +45,8 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
+Route::redirect('/laravel/login', '/admin/login')->name('login');
+
 Route::get('/', function () {
     return view('index');
 });
@@ -53,7 +55,7 @@ Route::get('/visi-misi-tujuan', function () {
     return view('visi-misi-tujuan');
 });
 
-Route::get('/data-sekolah', [FasilitasController::class, 'index']);
+Route::get('/data-sekolah', [FasilitasController::class, 'data']);
 
 Route::get('/info-pendidik', function () {
     return view('info-pendidik', [
@@ -95,18 +97,7 @@ Route::get('/ekskul', function () {
     ]);
 });
 
-Route::get('/fasilitas-sekolah', function (Request $request) {
-    $kategori = $request->kategori;
-    if ($request->kategori) {
-        $data = Fasilitas::where('kategori', $kategori)->get();
-    } else {
-        $data = Fasilitas::get();
-    }
-    return view('fasilitas-sekolah', [
-        'data' => $data,
-        'kategori' => $kategori,
-    ]);
-});
+Route::get('/fasilitas-sekolah',  [FasilitasController::class, 'index']);
 
 Route::get('/kegiatan-terdekat', function () {
     return view('kegiatan-terdekat', [

@@ -66,20 +66,18 @@ class GuruResource extends Resource
                             ->required()
                             ->maxLength(100),
                         TextInput::make('nuptk')
-                            ->required()
-                            ->afterStateUpdated(fn ($state, $set) => $set('nuptk', '@ ' . $state))
-                            ->unique()
+                            // ->required()
+                            // ->afterStateUpdated(fn ($state, $set) => $set('nuptk', '@ ' . $state))
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NUPTK sudah ada',
+                                // 'unique' => 'NUPTK sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 30 angka'
                             ])
-                            ->maxLength(255)
-                            ->numeric()
-                            ->label('NUPTK'),
+                            ->label('NUPTK (Jangan hapus tanda @, bila ada)'),
                         Radio::make('jk')
                             ->options([
-                                'Laki-Laki' => 'Laki-Laki',
-                                'Perempuan' => 'Perempuan',
+                                'L' => 'L',
+                                'P' => 'P',
                             ])
                             ->validationMessages([
                                 'required' => 'Pilih salah satu !'
@@ -90,20 +88,20 @@ class GuruResource extends Resource
                             ->label('Jenis Kelamin'),
                         TextInput::make('tempat-lahir')
                             ->required()
-                            ->maxLength(20)
+                            ->maxLength(50)
                             ->label('Tempat Lahir'),
                         DatePicker::make('tanggal-lahir')
                             ->required()
                             ->label('Tanggal Lahir'),
                         TextInput::make('nip')
-                            ->label('NIP')
-                            ->afterStateUpdated(fn ($state, $set) => $set('nip', '@ ' . $state))
-                            ->unique()
+                            ->label('NIP (Jangan hapus tanda @, bila ada)')
+                            // ->afterStateUpdated(fn ($state, $set) => $set('nip', '@ ' . $state))
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NIP sudah ada',
+                                // 'unique' => 'NIP sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 20 angka'
                             ])
-                            ->maxLength(255),
+                            ->maxLength(20),
                         TextInput::make('status-kepegawaian')
                             ->required()
                             ->maxLength(10)
@@ -112,39 +110,41 @@ class GuruResource extends Resource
                             ->required()
                             ->maxLength(50)
                             ->label('Jenis PTK'),
+                        TextInput::make('jabatan')
+                            ->maxLength(150)
+                            ->label('Jabatan'),
                         TextInput::make('agama')
                             ->required()
-                            ->maxLength(10),
+                            ->maxLength(30),
                         TextArea::make('alamat')
                             ->required()
                             ->maxLength(65535),
                         TextInput::make('rt')
-                            ->maxLength(2)
+                            ->maxLength(5)
                             ->label('RT'),
                         TextInput::make('rw')
-                            ->maxLength(2)
+                            ->maxLength(5)
                             ->label('RW'),
                         TextInput::make('nama-dusun')
                             ->maxLength(50)
                             ->label('Nama Dusun'),
                         TextInput::make('desa-kelurahan')
                             ->required()
-                            ->maxLength(30)
+                            ->maxLength(50)
                             ->label('Desa / Kelurahan'),
                         TextInput::make('kecamatan')
                             ->required()
-                            ->maxLength(30),
+                            ->maxLength(100),
                         TextInput::make('kode-pos')
                             ->maxLength(5)
                             ->label('Kode Pos'),
                         TextInput::make('telepon')
-                            ->numeric()
+                            ->label('Telepon (Jangan hapus tanda @, bila ada)')
                             ->maxLength(20),
                         TextInput::make('hp')
                             ->required()
-                            ->numeric()
-                            ->label('Nomor HP')
-                            ->maxLength(50),
+                            ->label('Nomor HP (Jangan hapus tanda @, bila ada)')
+                            ->maxLength(20),
                         TextInput::make('email')
                             ->email()
                             ->required()
@@ -153,17 +153,17 @@ class GuruResource extends Resource
                             ->maxLength(100)
                             ->label('Tugas Tambahan'),
                         TextInput::make('sk-cpns')
-                            ->maxLength(255)
+                            ->maxLength(105)
                             ->label('SK CPNS'),
                         TextInput::make('tanggal-cpns')
-                            ->maxLength(255)
+                            ->maxLength(105)
                             ->label('Tanggal CPNS'),
                         TextInput::make('sk-pengangkatan')
                             ->required()
                             ->maxLength(100)
                             ->label('SK Pengangkatan'),
                         TextInput::make('tmt-pengangkatan')
-                            ->maxLength(255)
+                            ->maxLength(105)
                             ->required()
                             ->label('TMT Pengangkatan'),
                         TextInput::make('lembaga-pengangkatan')
@@ -171,7 +171,7 @@ class GuruResource extends Resource
                             ->maxLength(100)
                             ->label('Lembaga Pengangkatan'),
                         TextInput::make('pangkat-golongan')
-                            ->maxLength(255)
+                            ->maxLength(105)
                             ->label('Pangkat Golongan'),
                         TextInput::make('sumber-gaji')
                             ->required()
@@ -179,7 +179,7 @@ class GuruResource extends Resource
                             ->label('Sumber Gaji'),
                         TextInput::make('nama-ibu-kandung')
                             ->required()
-                            ->maxLength(50)
+                            ->maxLength(100)
                             ->label('Nama Ibu Kandung'),
                         Radio::make('status-perkawinan')
                             ->options([
@@ -194,22 +194,22 @@ class GuruResource extends Resource
                             ->required()
                             ->label('Status Perkawinan'),
                         TextInput::make('nama-suami-istri')
-                            ->maxLength(length: 20)
+                            ->maxLength(length: 100)
                             ->label('Nama Suami / Istri'),
                         TextInput::make('nip-suami-istri')
-                            ->afterStateUpdated(fn ($state, $set) => $set('nip-suami-istri', '@ ' . $state))
-                            ->unique()
+                            // ->afterStateUpdated(fn ($state, $set) => $set('nip-suami-istri', '@ ' . $state))
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NIP sudah ada',
+                                // 'unique' => 'NIP sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 100 angka'
                             ])
-                            ->label('NIP Suami / Istri'),
+                            ->label('NIP Suami / Istri (Jangan hapus tanda @, bila ada)'),
                         TextInput::make('pekerjaan-suami-istri')
                             ->required()
-                            ->maxLength(50)
+                            ->maxLength(30)
                             ->label('Pekerjaan Suami / Istri'),
                         TextInput::make('tmt-pns')
-                            ->maxLength(255)
+                            ->maxLength(100)
                             ->label('TMT PNS'),
                         Radio::make('lisensi-kepala-sekolah')
                             ->options([
@@ -260,55 +260,53 @@ class GuruResource extends Resource
                             ->required()
                             ->label('Keahlian Bahasa Isyarat'),
                         TextInput::make('npwp')
-                            ->maxLength(255)
+                            ->maxLength(100)
                             ->label('NPWP'),
                         TextInput::make('nama-wajib-pajak')
-                            ->maxLength(50)
+                            ->maxLength(100)
                             ->label('Nama Wajib Pajak'),
                         TextInput::make('kewarganegaraan')
                             ->required()
-                            ->maxLength(30),
+                            ->maxLength(50),
                         TextInput::make('bank')
-                            ->maxLength(255),
+                            ->maxLength(100),
                         TextInput::make('no-rekening-bank')
                             ->label('Nomor Rekening Bank')
-                            ->maxLength(255),
+                            ->maxLength(100),
                         TextInput::make('rekening-atas-nama')
                             ->label('Rekening Atas Nama')
-                            ->maxLength(255),
+                            ->maxLength(100),
                         TextInput::make('nik')
-                            ->label('NIK')
-                            ->afterStateUpdated(fn ($state, $set) => $set('nik', '@ ' . $state))
-                            ->unique()
+                            ->label('NIK (Jangan hapus tanda @, bila ada)')
+                            // ->afterStateUpdated(fn ($state, $set) => $set('nik', '@ ' . $state))
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NIk sudah ada',
+                                // 'unique' => 'NIk sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 20 angka'
                             ])
                             ->required()
-                            ->numeric()
-                            ->maxLength(20),
+                            ->maxLength(50),
                         TextInput::make('no-kk')
-                            ->label('No KK')
-                            ->afterStateUpdated(fn ($state, $set) => $set('no-kk', '@ ' . $state))
-                            ->unique()
+                            ->label('No KK (Jangan hapus tanda @, bila ada)')
+                            // ->afterStateUpdated(fn ($state, $set) => $set('no-kk', '@ ' . $state))
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'Nomor KK sudah ada',
+                                // 'unique' => 'Nomor KK sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 20 angka'
                             ])
-                            ->numeric()
-                            ->maxLength(20),
+                            ->maxLength(50),
                         TextInput::make('karpeg')
-                            ->maxLength(255),
+                            ->maxLength(100),
                         TextInput::make('karis-karsu')
                             ->label('Karis / Karsu')
-                            ->maxLength(255),
+                            ->maxLength(100),
                         TextInput::make('lintang')
-                            ->maxLength(255),
+                            ->maxLength(100),
                         TextInput::make('bujur')
-                            ->maxLength(255),
+                            ->maxLength(100),
                         TextInput::make('nuks')
                             ->label('NUKS')
-                            ->maxLength(255),
+                            ->maxLength(100),
                     ]),
             ]);
     }
@@ -326,6 +324,10 @@ class GuruResource extends Resource
                     ->searchable(),
                 TextColumn::make('jenis-ptk')
                     ->label('Jenis PTK')
+                    ->searchable(),
+                TextColumn::make('jabatan')
+                    ->label('Jabatan')
+                    ->limit(20)
                     ->searchable(),
             ])
             ->filters([

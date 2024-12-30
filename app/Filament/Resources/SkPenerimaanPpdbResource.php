@@ -22,7 +22,6 @@ use Illuminate\Support\Str;
 class SkPenerimaanPpdbResource extends Resource
 {
     protected static ?string $model = SkPenerimaanPpdb::class;
-
     protected static ?string $slug = 'sk-penerimaan-ppdb';
     protected static ?string $label = 'Data SK PPDB';
     protected static ?string $navigationLabel = 'SK PPDB';
@@ -30,7 +29,6 @@ class SkPenerimaanPpdbResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationGroup = 'PPDB';
     protected static ?string $panel = 'Guru';
-
 
     public static function form(Form $form): Form
     {
@@ -43,6 +41,9 @@ class SkPenerimaanPpdbResource extends Resource
                             ->columnSpanFull(),
                         FileUpload::make('surat_keputusan')
                             ->disk('public')
+                            ->validationMessages([
+                                'required' => 'Tidak boleh kosong'
+                            ])
                             ->directory('sk_ppdb')
                             ->getUploadedFileNameForStorageUsing(
                                 fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())

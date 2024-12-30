@@ -66,6 +66,7 @@ class EkstrakurikulerResource extends Resource
                     ->label('Nama Ekstrakurikuler')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('foto')
+                    ->label('Dokumentasi')
                     ->formatStateUsing(function ($state) {
                         $mime = mime_content_type(storage_path('app/public/' . $state));
                         if (str_starts_with($mime, 'image/')) {

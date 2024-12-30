@@ -52,6 +52,9 @@ class KegiatanTerdekatResource extends Resource
                         Forms\Components\FileUpload::make('foto_kegiatan')
                             ->label('Foto Kegiatan')
                             ->required()
+                            ->validationMessages([
+                                'required' => 'Tidak boleh kosong'
+                            ])
                             ->image()
                             ->disk('public')
                             ->directory('informasi/kegiatan-terdekat')

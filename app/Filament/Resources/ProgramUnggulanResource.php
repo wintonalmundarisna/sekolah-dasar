@@ -31,10 +31,13 @@ class ProgramUnggulanResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nama_program')
-                    ->label('Nama Program Unggulan')
-                    ->required()
-                    ->maxLength(255),
+                Section::make()
+                    ->schema([
+                        Forms\Components\TextInput::make('nama_program')
+                            ->label('Nama Program Unggulan')
+                            ->required()
+                            ->maxLength(255),
+                    ])
             ]);
     }
 

@@ -51,6 +51,9 @@ class PerkajumPersariResource extends Resource
                             ->maxLength(100),
                         Forms\Components\FileUpload::make('dokumentasi')
                             ->required()
+                            ->validationMessages([
+                                'required' => 'Tidak boleh kosong'
+                            ])
                             ->acceptedFileTypes(['image/*', 'video/*'])
                             ->downloadable()
                             ->previewable(true)

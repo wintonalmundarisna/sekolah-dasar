@@ -33,7 +33,6 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            // ->registration()
             ->login(\Filament\Pages\Auth\Login::class)
             ->profile()
             ->darkModeBrandLogo(asset('assets/Logo_new.png'))

@@ -11,3 +11,5 @@ Ini adalah projek nyata untuk membuat aplikasi website sekolah dasar menggunakan
 7. Jika ada error key generate, copas perintah key generate tsb lalu paste di terminal
 8. Ketik "npm run dev"
 9. Buka terminal baru, lalu ketik "php artisan serve" (Buka localhost yang ditampilkan di terminal pada pencarian browser)
+
+        // "konnco/filament-import": "*",

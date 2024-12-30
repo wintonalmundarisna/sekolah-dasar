@@ -48,6 +48,9 @@ class ParentingResource extends Resource
                             ->required()
                             ->maxLength(100),
                         Forms\Components\FileUpload::make('dokumentasi')
+                            ->validationMessages([
+                                'required' => 'Tidak boleh kosong'
+                            ])
                             ->required()
                             ->acceptedFileTypes(['image/*', 'video/*'])
                             ->downloadable()

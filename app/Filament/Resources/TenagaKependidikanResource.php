@@ -66,17 +66,16 @@ class TenagaKependidikanResource extends Resource
                         TextInput::make('nama')
                             ->required(),
                         TextInput::make('nuptk')
-                            ->afterStateUpdated(fn($state, $set) => $set('nuptk', '@ ' . $state))
-                            ->unique()
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NUPTK sudah ada',
+                                // 'unique' => 'NUPTK sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 30 angka'
                             ])
-                            ->label('NUPTK'),
+                            ->label('NUPTK (Jangan hapus tanda @, bila ada)'),
                         Radio::make('jk')
                             ->options([
-                                'Laki-Laki' => 'Laki-Laki',
-                                'Perempuan' => 'Perempuan',
+                                'L' => 'L',
+                                'P' => 'P',
                             ])
                             ->validationMessages([
                                 'required' => 'Pilih salah satu !'
@@ -92,19 +91,20 @@ class TenagaKependidikanResource extends Resource
                             ->label('Tanggal Lahir')
                             ->required(),
                         TextInput::make('nip')
-                            ->afterStateUpdated(fn($state, $set) => $set('nip', '@ ' . $state))
-                            ->unique()
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NIP sudah ada',
+                                // 'unique' => 'NIP sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 20 angka'
                             ])
-                            ->label('NIP'),
+                            ->label('NIP (Jangan hapus tanda @, bila ada)'),
                         TextInput::make('status_kepegawaian')
                             ->required()
                             ->label('Status Kepegawaian'),
                         TextInput::make('jenis_ptk')
                             ->label('Jenis PTK')
                             ->required(),
+                        TextInput::make('jabatan')
+                            ->label('Jabatan'),
                         TextInput::make('agama')
                             ->required(),
                         Textarea::make('alamat')
@@ -123,9 +123,9 @@ class TenagaKependidikanResource extends Resource
                         TextInput::make('kode_pos')
                             ->label('Kode POS'),
                         TextInput::make('telepon')
-                            ->tel(),
+                            ->label('Telepon (Jangan hapus tanda @, bila ada)'),
                         TextInput::make('hp')
-                            ->label('Nomor Handphone')
+                            ->label('Nomor Handphone (Jangan hapus tanda @, bila ada)')
                             ->required(),
                         TextInput::make('email')
                             ->email()
@@ -167,13 +167,12 @@ class TenagaKependidikanResource extends Resource
                         TextInput::make('nama_suami_istri')
                             ->label('Nama Suami / Istri'),
                         TextInput::make('nip_suami_istri')
-                            ->afterStateUpdated(fn($state, $set) => $set('nip_suami_istri', '@ ' . $state))
-                            ->unique()
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NIP sudah ada',
+                                // 'unique' => 'NIP sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 100 angka'
                             ])
-                            ->label('NIP Suami / Istri'),
+                            ->label('NIP Suami / Istri (Jangan hapus tanda @, bila ada)'),
                         TextInput::make('pekerjaan_suami_istri')
                             ->label('Pekerjaan Suami / Istri')
                             ->required(),
@@ -239,22 +238,20 @@ class TenagaKependidikanResource extends Resource
                         TextInput::make('rekening_atas_nama')
                             ->label('Rekening Atas Nama'),
                         TextInput::make('nik')
-                            ->afterStateUpdated(fn($state, $set) => $set('nik', '@ ' . $state))
-                            ->unique()
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NIK sudah ada',
+                                // 'unique' => 'NIK sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 30 angka'
                             ])
-                            ->label('NIK')
+                            ->label('NIK (Jangan hapus tanda @, bila ada)')
                             ->required(),
                         TextInput::make('no_kk')
-                            ->afterStateUpdated(fn($state, $set) => $set('no_kk', '@ ' . $state))
-                            ->unique()
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'Nomor KK sudah ada',
+                                // 'unique' => 'Nomor KK sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 30 angka'
                             ])
-                            ->label('Nomor KK'),
+                            ->label('Nomor KK (Jangan hapus tanda @, bila ada)'),
                         TextInput::make('karpeg'),
                         TextInput::make('karis_karsu')
                             ->label('Karis / Karsu'),
@@ -280,6 +277,9 @@ class TenagaKependidikanResource extends Resource
                     ->searchable(),
                 TextColumn::make('jenis_ptk')
                     ->label('Jenis PTK')
+                    ->searchable(),
+                TextColumn::make('jabatan')
+                    ->label('Jabatan')
                     ->searchable(),
             ])
             ->filters([

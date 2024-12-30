@@ -59,7 +59,7 @@ class KurikulumKelasLimaResource extends Resource
                     ->label('Penjabaran Materi')
                     ->formatStateUsing(fn(string $state): string => strip_tags($state))
                     ->sortable()
-                    ->limit(50)
+                    ->limit(15)
                     ->searchable(),
             ])
             ->filters([

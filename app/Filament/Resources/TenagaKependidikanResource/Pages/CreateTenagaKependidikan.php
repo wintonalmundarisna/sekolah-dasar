@@ -16,13 +16,29 @@ class CreateTenagaKependidikan extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['nuptk'] = "@ " . $data['nuptk'];
-        $data['hp'] = "@ " . $data['hp'];
-        $data['telepon'] = "@ " . $data['telepon'];
-        $data['nip'] = "@ " . $data['nip'];
-        $data['nip_suami_istri'] = "@ " . $data['nip_suami_istri'];
-        $data['nik'] = "@ " . $data['nik'];
-        $data['no_kk'] = "@ " . $data['no_kk'];
+        if ($data) {
+            if ($data['nuptk']) {
+                $data['nuptk'] = "@ " . $data['nuptk'];
+            }
+            if ($data['hp']) {
+                $data['hp'] = "@ " . $data['hp'];
+            }
+            if ($data['telepon']) {
+                $data['telepon'] = "@ " . $data['telepon'];
+            }
+            if ($data['nip']) {
+                $data['nip'] = "@ " . $data['nip'];
+            }
+            if ($data['nip_suami_istri']) {
+                $data['nip_suami_istri'] = "@ " . $data['nip_suami_istri'];
+            }
+            if ($data['nik']) {
+                $data['nik'] = "@ " . $data['nik'];
+            }
+            if ($data['no_kk']) {
+                $data['no_kk'] = "@ " . $data['no_kk'];
+            }
+        }
 
         return $data;
     }

@@ -74,8 +74,8 @@ class PesertaDidikResource extends Resource
                             ->label('NIPD'),
                         Radio::make('jk')
                             ->options([
-                                'Laki-Laki' => 'Laki-Laki',
-                                'Perempuan' => 'Perempuan',
+                                'L' => 'L',
+                                'P' => 'P',
                             ])
                             ->validationMessages([
                                 'required' => 'Pilih salah satu !'
@@ -94,25 +94,25 @@ class PesertaDidikResource extends Resource
                             ->label('Tanggal Lahir')
                             ->required(),
                         TextInput::make('nik')
-                            ->afterStateUpdated(fn($state, $set) => $set('nik', '@ ' . $state))
-                            ->unique()
+                            // ->afterStateUpdated(fn($state, $set) => $set('nik', '@ ' . $state))
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'NIK sudah ada',
+                                // 'unique' => 'NIK sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 30 angka'
                             ])
-                            ->label('NIK')
-                            ->required(),
+                            ->label('NIK (Jangan hapus tanda @, bila ada)'),
+                            // ->required(),
                         TextInput::make('agama')
                             ->required(),
                         Textarea::make('alamat')
                             ->required()
                             ->columnSpanFull(),
                         TextInput::make('rt')
-                            ->required()
+                            // ->required()
                             ->label('RT')
                             ->numeric(),
                         TextInput::make('rw')
-                            ->required()
+                            // ->required()
                             ->label('RW')
                             ->numeric(),
                         TextInput::make('dusun'),
@@ -129,11 +129,9 @@ class PesertaDidikResource extends Resource
                             ->required()
                             ->label('Alat Transportasi'),
                         TextInput::make('telepon')
-                            ->tel()
-                            ->numeric(),
+                            ->label('Telepon (Jangan hapus tanda @, bila ada)'),
                         TextInput::make('hp')
-                            ->label('Nomor HP')
-                            ->numeric(),
+                            ->label('Nomor HP (Jangan hapus tanda @, bila ada)'),
                         TextInput::make('email')
                             ->email(),
                         TextInput::make('skhun')
@@ -155,8 +153,8 @@ class PesertaDidikResource extends Resource
                         Section::make('Data Ayah')
                             ->schema([
                                 TextInput::make('nama-ayah')
-                                    ->label('Nama Ayah')
-                                    ->required(),
+                                    ->label('Nama Ayah'),
+                                    // ->required(),
                                 TextInput::make('tahun-lahir-ayah')
                                     ->required()
                                     ->label('Tahun Lahir'),
@@ -166,29 +164,33 @@ class PesertaDidikResource extends Resource
                                         'SD' => 'SD',
                                         'SMP' => 'SMP',
                                         'SMA / Sederajat' => 'SMA / Sederajat',
+                                        'D1' => 'D1',
+                                        'D2' => 'D2',
+                                        'D3' => 'D3',
+                                        'D4' => 'D4',
                                         'S1' => 'S1',
                                         'S2' => 'S2',
                                         'S3' => 'S3',
                                     ])
-                                    ->label('Jenjang Pendidikan Ayah')
-                                    ->required(),
+                                    ->label('Jenjang Pendidikan Ayah'),
+                                    // ->required(),
                                 TextInput::make('pekerjaan-ayah')
-                                    ->label('Pekerjaan Ayah')
-                                    ->required(),
+                                    ->label('Pekerjaan Ayah'),
+                                    // ->required(),
                                 TextInput::make('penghasilan-ayah')
-                                    ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
-                                    ->numeric()
-                                    ->required()
-                                    ->label('Penghasilan Ayah')
-                                    ->prefix('Rp'),
+                                    // ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
+                                    // ->numeric()
+                                    // ->required()
+                                    ->label('Penghasilan Ayah'),
+                                // ->prefix('Rp'),
                                 TextInput::make('nik-ayah')
-                                    ->afterStateUpdated(fn($state, $set) => $set('nik-ayah', '@ ' . $state))
-                                    ->unique()
+                                    // ->afterStateUpdated(fn($state, $set) => $set('nik-ayah', '@ ' . $state))
+                                    // ->unique()
                                     ->validationMessages([
-                                        'unique' => 'NIK sudah ada',
+                                        // 'unique' => 'NIK sudah ada',
                                         'max_digits' => 'Tidak boleh lebih dari 30 angka'
                                     ])
-                                    ->label('NIK Ayah')
+                                    ->label('NIK Ayah (Jangan hapus tanda @, bila ada)')
                             ]),
                         Section::make('Data Ibu')
                             ->schema([
@@ -204,29 +206,33 @@ class PesertaDidikResource extends Resource
                                         'SD' => 'SD',
                                         'SMP' => 'SMP',
                                         'SMA / Sederajat' => 'SMA / Sederajat',
+                                        'D1' => 'D1',
+                                        'D2' => 'D2',
+                                        'D3' => 'D3',
+                                        'D4' => 'D4',
                                         'S1' => 'S1',
                                         'S2' => 'S2',
                                         'S3' => 'S3',
                                     ])
-                                    ->label('Jenjang Pendidikan Ibu')
-                                    ->required(),
+                                    ->label('Jenjang Pendidikan Ibu'),
+                                    // ->required(),
                                 TextInput::make('pekerjaan-ibu')
                                     ->required()
                                     ->label('Pekerjaan Ibu'),
                                 TextInput::make('penghasilan-ibu')
-                                    ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
+                                    // ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
                                     ->required()
-                                    ->label('Penghasilan Ibu')
-                                    ->numeric()
-                                    ->prefix('Rp'),
+                                    ->label('Penghasilan Ibu'),
+                                // ->numeric()
+                                // ->prefix('Rp'),
                                 TextInput::make('nik-ibu')
-                                    ->afterStateUpdated(fn($state, $set) => $set('nik-ibu', '@ ' . $state))
-                                    ->unique()
+                                    // ->afterStateUpdated(fn($state, $set) => $set('nik-ibu', '@ ' . $state))
+                                    // ->unique()
                                     ->validationMessages([
-                                        'unique' => 'NIK sudah ada',
+                                        // 'unique' => 'NIK sudah ada',
                                         'max_digits' => 'Tidak boleh lebih dari 30 angka'
                                     ])
-                                    ->label('NIK Ibu')
+                                    ->label('NIK Ibu (Jangan hapus tanda @, bila ada)')
                             ]),
                         Section::make('Data Wali')
                             ->schema([
@@ -240,6 +246,10 @@ class PesertaDidikResource extends Resource
                                         'SD' => 'SD',
                                         'SMP' => 'SMP',
                                         'SMA / Sederajat' => 'SMA / Sederajat',
+                                        'D1' => 'D1',
+                                        'D2' => 'D2',
+                                        'D3' => 'D3',
+                                        'D4' => 'D4',
                                         'S1' => 'S1',
                                         'S2' => 'S2',
                                         'S3' => 'S3',
@@ -248,18 +258,18 @@ class PesertaDidikResource extends Resource
                                 TextInput::make('pekerjaan-wali')
                                     ->label('Pekerjaan Wali'),
                                 TextInput::make('penghasilan-wali')
-                                    ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
-                                    ->label('Penghasilan Wali')
-                                    ->numeric()
-                                    ->prefix('Rp'),
+                                    // ->currencyMask(thousandSeparator: '.', decimalSeparator: ',', precision: 2)
+                                    ->label('Penghasilan Wali'),
+                                // ->numeric()
+                                // ->prefix('Rp'),
                                 TextInput::make('nik-wali')
-                                    ->afterStateUpdated(fn($state, $set) => $set('nik-wali', '@ ' . $state))
-                                    ->unique()
+                                    // ->afterStateUpdated(fn($state, $set) => $set('nik-wali', '@ ' . $state))
+                                    // ->unique()
                                     ->validationMessages([
-                                        'unique' => 'NIK sudah ada',
+                                        // 'unique' => 'NIK sudah ada',
                                         'max_digits' => 'Tidak boleh lebih dari 30 angka'
                                     ])
-                                    ->label('NIK Wali')
+                                    ->label('NIK Wali (Jangan hapus tanda @, bila ada)')
                             ]),
                         Select::make('rombel-saat-ini')
                             ->options([
@@ -340,13 +350,13 @@ class PesertaDidikResource extends Resource
                         TextInput::make('lintang'),
                         TextInput::make('bujur'),
                         TextInput::make('no-kk')
-                            ->afterStateUpdated(fn($state, $set) => $set('no-kk', '@ ' . $state))
-                            ->unique()
+                            // ->afterStateUpdated(fn($state, $set) => $set('no-kk', '@ ' . $state))
+                            // ->unique()
                             ->validationMessages([
-                                'unique' => 'Nomor KK sudah ada',
+                                // 'unique' => 'Nomor KK sudah ada',
                                 'max_digits' => 'Tidak boleh lebih dari 30 angka'
                             ])
-                            ->label('Nomor KK'),
+                            ->label('Nomor KK (Jangan hapus tanda @, bila ada)'),
                         TextInput::make('berat-badan')
                             ->label('Berat Badan')
                             ->required()
@@ -362,7 +372,7 @@ class PesertaDidikResource extends Resource
                             ->label('Jumlah Saudara Kandung')
                             ->numeric(),
                         TextInput::make('jarak-ke-sekolah')
-                            ->label('Jarak Dari Rumah Ke Sekolah')
+                            ->label('Jarak Dari Rumah Ke Sekolah (KM)')
                             ->numeric(),
                     ]),
             ]);
